@@ -336,14 +336,15 @@ public class BajtixPlayerController : MonoBehaviour {
             return;
 
         var intent = transform.forward;
+        var intent2 = transform.TransformDirection(input);
         float angle = Vector3.Angle(contact.normal, intent);
         if(Input.GetButton("Jump") && wallJumpCooldown <= 0) {
             
             wallJumpCooldown = 0.2f;
             Vector3 vector;
-            if(angle > minWallJumpAngle)
+            if(angle > minWallJumpAngle && Vector3.Angle(intent2, contact.normal) < 130)
                 vector = (contact.normal + Vector3.up * 1.5f)  * wallJumpForce;
-            else vector = contact.normal * wallJumpForce * 0.0f;
+            else vector = contact.normal * wallJumpForce * 0.8f;
             Debug.DrawRay(contactpoint, vector, Color.red, 10);
             rb.AddForce(vector, ForceMode.Impulse);
         }
