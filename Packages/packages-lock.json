@@ -1,14 +1,5 @@
 {
   "dependencies": {
-    "com.looooong.srp.vxgi": {
-      "version": "https://github.com/Looooong/Unity-SRP-VXGI.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.postprocessing": "2.1.7"
-      },
-      "hash": "ef2e1838b13b663f68c3e5e32c6ed3f3cc56138c"
-    },
     "com.unity.collab-proxy": {
       "version": "1.7.1",
       "depth": 0,
@@ -62,15 +53,6 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.postprocessing": {
-      "version": "3.1.1",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.physics": "1.0.0"
-      },
       "url": "https://packages.unity.com"
     },
     "com.unity.probuilder": {
@@ -202,6 +184,13 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "nl.elraccoone.tweens": {
+      "version": "https://github.com/Bajtix/unity-tweens.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9ae6cc4aa57111ff0ddd1b83e7d690734cbf6a8f"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

@@ -6,9 +6,7 @@ public class WeaponManager : MonoBehaviour {
     public List<Weapon> weapons;
 
     private Weapon selectedWeapon;
-
-[SerializeField]
-    private int selected = 0;
+    public int selected = 0;
 
     private float switchWheelProgress = 0;
 

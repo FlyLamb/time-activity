@@ -9,6 +9,8 @@ public class WeaponGun : Weapon {
     private float bulletForce;
     private float _shootDelay;
 
+    
+
 [SerializeField]
     private Transform shootPoint;
 
@@ -28,6 +30,6 @@ public class WeaponGun : Weapon {
 
     public override void WeaponUpdate() {
         base.WeaponUpdate();
-        _shootDelay-=Time.deltaTime;
+        _shootDelay -= Time.deltaTime;
     }
 }

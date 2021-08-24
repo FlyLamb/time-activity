@@ -242,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Pistol
   weaponDescription: Pew pew haha skrrrt boom boom pew skrt
-  icon: {fileID: 0}
+  icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   animator: {fileID: 0}
   shootDelay: 0.2
   bulletForce: 1000
