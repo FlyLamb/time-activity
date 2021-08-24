@@ -1,7 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 using System.Collections.Generic;
-
+using ElRaccoone.Tweens;
 public class WeaponDisplay : MonoBehaviour {
     [SerializeField]
     private Image weapon1, weapon2, weapon3;
@@ -17,6 +17,10 @@ public class WeaponDisplay : MonoBehaviour {
         weapon1.sprite = GetImage(wm.selected - 1);
         weapon2.sprite = GetImage(wm.selected);
         weapon3.sprite = GetImage(wm.selected + 1);
+    }
+
+    public void ShowAnimation() {
+        gameObject.TweenAnchoredPositionX(-75,0.1f).SetOnComplete( () => gameObject.TweenAnchoredPositionX(75,0.2f).SetDelay(2f));
     }
 
     private Sprite GetImage(int index) {
