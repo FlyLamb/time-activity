@@ -20,6 +20,7 @@ public class WeaponDisplay : MonoBehaviour {
     }
 
     public void ShowAnimation() {
+        gameObject.TweenCancelAll();
         gameObject.TweenAnchoredPositionX(-75,0.1f).SetOnComplete( () => gameObject.TweenAnchoredPositionX(75,0.2f).SetDelay(2f));
     }
 
