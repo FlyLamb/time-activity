@@ -341,9 +341,9 @@ public class BajtixPlayerController : MonoBehaviour {
             
             wallJumpCooldown = 0.2f;
             Vector3 vector;
-            if(angle < minWallJumpAngle)
-                vector = (contact.normal + Vector3.up)  * wallJumpForce;
-                else vector = contact.normal * wallJumpForce;
+            if(angle > minWallJumpAngle)
+                vector = (contact.normal + Vector3.up * 1.5f)  * wallJumpForce;
+            else vector = contact.normal * wallJumpForce * 0.0f;
             Debug.DrawRay(contactpoint, vector, Color.red, 10);
             rb.AddForce(vector, ForceMode.Impulse);
         }
