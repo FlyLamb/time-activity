@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Weapon : MonoBehaviour {
     public string weaponName;
@@ -12,22 +13,21 @@ public class Weapon : MonoBehaviour {
     protected Animator animator;
 
     public virtual void Fire1() {
-        if(animator != null)
-        animator.Play("Fire1");
+        if(animator != null) animator.Play("Fire1", 0);
     }
 
     public virtual void Fire2() {
-        if(animator != null) animator.Play("Fire2");
+        if(animator != null) animator.Play("Fire2", 0);
     }
 
     public virtual void Show() {
-        if(animator != null) animator.Play("Show");
+        if(animator != null) animator.Play("Show", 0);
     }
 
     public virtual void Hide() {
         if(animator != null) {
-            animator.Play("Hide");
-            Destroy(gameObject,animator.GetCurrentAnimatorClipInfo(0).Length);
+            animator.Play("Hide", 0);
+            Destroy(gameObject,animator.GetCurrentAnimatorClipInfo(0).First((w) => w.clip.name == "Hide").clip.length);
         } else Destroy(gameObject);
     }
 
