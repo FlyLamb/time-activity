@@ -9,6 +9,8 @@ public class PlayerBullet : Bullet{
     [SerializeField]
     protected float damage;
 
+    
+
     protected override void OnCollisionEnter(Collision other) {
         
         if(other.collider.GetComponent<Enemy>())

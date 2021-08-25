@@ -5,6 +5,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
     [SerializeField]
     protected Rigidbody rb;
+ [SerializeField]
+    protected GameObject particles;
 
     private void Start() {
         if(rb == null)
@@ -16,6 +18,7 @@ public class Bullet : MonoBehaviour {
     }
 
     protected virtual void OnCollisionEnter(Collision other) {
+        if(particles!=null) Instantiate(particles, transform.position, Quaternion.LookRotation(other.contacts[0].normal));
         Destroy(gameObject);
     }
 }
