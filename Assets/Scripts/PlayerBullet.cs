@@ -6,8 +6,6 @@ public class PlayerBullet : Bullet{
     [SerializeField]
     protected DamageType type;
 
-    [SerializeField]
-    protected float damage;
 
     
 

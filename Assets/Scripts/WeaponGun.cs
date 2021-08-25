@@ -8,8 +8,8 @@ public class WeaponGun : Weapon {
 [SerializeField]
     private float bulletForce;
     private float _shootDelay;
-
-    
+[SerializeField]
+    private float damage;
 
 [SerializeField]
     private Transform shootPoint;
@@ -25,7 +25,7 @@ public class WeaponGun : Weapon {
         animator.StopPlayback();
         base.Fire1();
         var go = Instantiate(bullet.gameObject, shootPoint.position, Quaternion.identity).GetComponent<Bullet>();
-        go.Shoot(PlayerManager.Instance.camera.transform.forward, bulletForce);
+        go.Shoot(PlayerManager.Instance.camera.transform.forward, bulletForce, damage);
         _shootDelay = shootDelay;
     }
 

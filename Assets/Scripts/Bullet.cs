@@ -8,13 +8,17 @@ public class Bullet : MonoBehaviour {
  [SerializeField]
     protected GameObject particles;
 
+[SerializeField]
+    protected float damage;
+
     private void Start() {
         if(rb == null)
             rb = GetComponent<Rigidbody>();
     }
 
-    public virtual void Shoot(Vector3 direction, float force) {
+    public virtual void Shoot(Vector3 direction, float force, float damage = -1) {
         if(rb != null) rb.AddForce(direction.normalized * force);
+        if(damage != -1) this.damage = damage;
     }
 
     protected virtual void OnCollisionEnter(Collision other) {

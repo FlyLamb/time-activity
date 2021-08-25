@@ -103,7 +103,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pistol
+  m_Name: Pistol 1
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -169,7 +169,7 @@ AnimatorStateMachine:
     m_Position: {x: 280, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7898311212126085485}
-    m_Position: {x: 210, y: 230, z: 0}
+    m_Position: {x: 170, y: 240, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
