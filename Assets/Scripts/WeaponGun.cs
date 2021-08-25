@@ -22,6 +22,7 @@ public class WeaponGun : Weapon {
     public override void Fire1() {
 
         if(_shootDelay > 0) return;
+        animator.StopPlayback();
         base.Fire1();
         var go = Instantiate(bullet.gameObject, shootPoint.position, Quaternion.identity).GetComponent<Bullet>();
         go.Shoot(PlayerManager.Instance.camera.transform.forward, bulletForce);

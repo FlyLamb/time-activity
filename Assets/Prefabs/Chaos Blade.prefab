@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Chaos Blade
   weaponDescription: 
-  icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 63aa40e2563975062a4a8d093590c89b, type: 3}
   animator: {fileID: 1822455504537530208}
   hitbox: {fileID: 6007983053374469106}
   damage: 15
