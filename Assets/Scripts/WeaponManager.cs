@@ -28,7 +28,7 @@ public class WeaponManager : MonoBehaviour {
         selectedWeapon = Instantiate(weapons[selected].gameObject, transform).GetComponent<Weapon>();
         selectedWeapon.Show();
         GameObject.FindObjectOfType<WeaponDisplay>().ShowAnimation();
-        delay = 0.5f;
+        delay = 0.2f;
 
     }
 
@@ -39,7 +39,7 @@ public class WeaponManager : MonoBehaviour {
 
 
         float sw = Input.GetAxis("Mouse ScrollWheel");
-        switchWheelProgress += sw;
+        switchWheelProgress -= sw;
         if(switchWheelProgress > 0.02f) {
             Select(selected+1);
             switchWheelProgress = 0;
