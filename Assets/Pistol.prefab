@@ -247,4 +247,4 @@ MonoBehaviour:
   shootDelay: 0.2
   bulletForce: 1000
   shootPoint: {fileID: 2965350738395757246}
-  bullet: {fileID: 7139629718521285411, guid: 9d51ecde7b0ec5abcb6d7a1ad8ae7887, type: 3}
+  bullet: {fileID: 1309578595078785535, guid: 9d51ecde7b0ec5abcb6d7a1ad8ae7887, type: 3}

@@ -60,6 +60,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3177664339705401442}
   - component: {fileID: 498452549290849075}
+  - component: {fileID: 5147929790218957148}
+  - component: {fileID: 6007983053374469106}
   m_Layer: 0
   m_Name: Chaos Blade
   m_TagString: Untagged
@@ -94,10 +96,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2dee99de8e886e49810f4da03aaf12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: 
+  weaponName: Chaos Blade
   weaponDescription: 
   icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   animator: {fileID: 1822455504537530208}
+  hitbox: {fileID: 6007983053374469106}
+  damage: 15
+  attackInterval: 0.55
+--- !u!65 &5147929790218957148
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2833472582305532632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4614977, y: 1.3694117, z: 1.7138548}
+  m_Center: {x: 0.8272162, y: 0.40591097, z: 0}
+--- !u!114 &6007983053374469106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2833472582305532632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378baece7a4ace0c1ad5f3d640645441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1736818268324516877
 PrefabInstance:
   m_ObjectHideFlags: 0

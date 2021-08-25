@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+
 public class Weapon : MonoBehaviour {
     public string weaponName;
     public string weaponDescription;
@@ -27,7 +28,15 @@ public class Weapon : MonoBehaviour {
     public virtual void Hide() {
         if(animator != null) {
             animator.Play("Hide", 0);
-            Destroy(gameObject,animator.GetCurrentAnimatorClipInfo(0).First((w) => w.clip.name == "Hide").clip.length);
+            float d;
+            try {
+                d = animator.runtimeAnimatorController.animationClips.First(c => c.name == "Hide").averageDuration;
+            } catch {
+                d = 0;
+            }
+            print($"Anim len " + d);
+            Destroy(gameObject,d);
+            
         } else Destroy(gameObject);
     }
 
