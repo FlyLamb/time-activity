@@ -825,9 +825,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -3181452503744645242, guid: 87c224d67580dcefba3fa261fe6f4a53, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 87c224d67580dcefba3fa261fe6f4a53, type: 3}
       propertyPath: m_Name
-      value: tallbilbord
+      value: Billboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870766572645976601, guid: 87c224d67580dcefba3fa261fe6f4a53, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87c224d67580dcefba3fa261fe6f4a53, type: 3}
@@ -854,6 +862,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.9395456, y: 0.4612673, z: 5.514716}
   m_Center: {x: 0, y: 0.003618897, z: -1.2573577}
+--- !u!114 &546816296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546816293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfdf33ce59df4f7ff899baf07c810376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1816890116}
 --- !u!1 &575712010
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,12 +907,12 @@ RectTransform:
   m_Children:
   - {fileID: 1816890115}
   m_Father: {fileID: 546816294}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: -0.133}
-  m_SizeDelta: {x: 500, y: 250}
+  m_SizeDelta: {x: 460, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &575712012
 MonoBehaviour:
@@ -10042,7 +10063,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 400, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1816890116
 MonoBehaviour:
@@ -10064,7 +10085,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sussy balls
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10091,8 +10112,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -28,7 +28,7 @@ public class WeaponManager : MonoBehaviour {
         selectedWeapon = Instantiate(weapons[selected].gameObject, transform).GetComponent<Weapon>();
         selectedWeapon.Show();
         GameObject.FindObjectOfType<WeaponDisplay>().ShowAnimation();
-        delay = 1;
+        delay = 0.5f;
 
     }
 
