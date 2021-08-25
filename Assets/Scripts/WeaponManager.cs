@@ -10,6 +10,8 @@ public class WeaponManager : MonoBehaviour {
 
     private float switchWheelProgress = 0;
 
+    private float delay = 0;
+
 
     private void Start() {
         Select(0);
@@ -17,6 +19,8 @@ public class WeaponManager : MonoBehaviour {
 
     public void Select(int index) {
         if(index < 0 || index >= weapons.Count) return;
+        if(delay > 0) return;
+
         if(selectedWeapon != null) {
             selectedWeapon.Hide();
         }
@@ -24,9 +28,13 @@ public class WeaponManager : MonoBehaviour {
         selectedWeapon = Instantiate(weapons[selected].gameObject, transform).GetComponent<Weapon>();
         selectedWeapon.Show();
         GameObject.FindObjectOfType<WeaponDisplay>().ShowAnimation();
+        delay = 1;
+
     }
 
     private void Update() {
+        if(delay >= 0)
+            delay-=Time.deltaTime;
         if(selectedWeapon != null) selectedWeapon.WeaponUpdate();
 
 
@@ -39,8 +47,9 @@ public class WeaponManager : MonoBehaviour {
             Select(selected-1);
             switchWheelProgress = 0;
         }
-
-        if(Input.GetButton("Fire1")) selectedWeapon.Fire1();
-        if(Input.GetButton("Fire2")) selectedWeapon.Fire2();
+        if(selectedWeapon != null)  {
+            if(Input.GetButton("Fire1")) selectedWeapon.Fire1();
+            if(Input.GetButton("Fire2")) selectedWeapon.Fire2();
+        }
     } 
 }

@@ -388,7 +388,7 @@ Camera:
   m_GameObject: {fileID: 7921605475707256610}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -580,6 +580,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 498452549290849075, guid: e69e8a849ac8dfbf793451273c8b375b, type: 3}
   - {fileID: 1879108789588423461, guid: 98f7a9d93db1e8dacbe16e2a17262d85, type: 3}
+  - {fileID: 1879108789588423461, guid: a2d9883f0258e48d1a0bfdb60f5c9e99, type: 3}
   selected: 0
 --- !u!1 &7921605476662282339
 GameObject:

@@ -34,7 +34,6 @@ public class Weapon : MonoBehaviour {
             } catch {
                 d = 0;
             }
-            print($"Anim len " + d);
             Destroy(gameObject,d);
             
         } else Destroy(gameObject);
