@@ -26,6 +26,8 @@ public class Explosion : MonoBehaviour {
         {
             if(item.GetComponent<Rigidbody>())
                 item.GetComponent<Rigidbody>().AddExplosionForce(force,transform.position, radius, 1.2f);
+            if(item.GetComponent<Enemy>())
+                item.GetComponent<Enemy>().Hit(damage);
         }
     }
 }

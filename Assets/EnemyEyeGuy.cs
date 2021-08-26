@@ -27,6 +27,8 @@ public class EnemyEyeGuy : EnemyFlyingPathfinder {
         rigidbody.useGravity = false;
         laserLoaded = laserRegenTime;
         bigLaser.SetActive(false);
+
+        target = PlayerManager.Instance.controller.transform;
     }
 
     [System.Obsolete] // fuck this shit
@@ -50,11 +52,14 @@ public class EnemyEyeGuy : EnemyFlyingPathfinder {
                     print("HIT THE PLAYER");
                     laserLoaded = laserRegenTime;
                     animator.SetTrigger("Attack");
-                    rigidbody.freezeRotation = true;
+                    rigidbody.constraints = RigidbodyConstraints.FreezeAll;
                     gameObject.TweenDelayedInvoke(0.5f, () => {
                         bigLaser.SetActive(true);
                         Instantiate(eyeLaserExplosion, hit.point, Quaternion.LookRotation(hit.normal));
-                    }).TweenDelayedInvoke(0.7f, ()=> {bigLaser.SetActive(false); rigidbody.freezeRotation = false;});
+                    }).TweenDelayedInvoke(0.7f, () => {
+                        bigLaser.SetActive(false); 
+                        rigidbody.constraints = RigidbodyConstraints.None;
+                    });
                 }
             }
         }
@@ -66,7 +71,7 @@ public class EnemyEyeGuy : EnemyFlyingPathfinder {
         base.FixedUpdate();
         
         Vector3 direction = next - transform.position;
-        Vector3 playerDirection = PlayerManager.Instance.controller.transform.position - transform.position;
+        Vector3 playerDirection = target.position - transform.position;
         playerDirection.Normalize();
         direction.Normalize();
 
