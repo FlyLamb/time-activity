@@ -39,7 +39,13 @@ public class PlayerCamera : MonoBehaviour {
         transform.localRotation = Quaternion.Euler(rotation.y, 0,0);
         camera.fieldOfView = Mathf.Lerp(camera.fieldOfView,fovKick.Evaluate(playerController.rb.velocity.magnitude) * 70,Time.deltaTime * fovChangeSpeed);
 
-        
+        if(Input.GetKeyDown(KeyCode.E)) {
+            RaycastHit hit;
+            if(Physics.Raycast(transform.position, transform.forward, out hit,5)) {
+                if(hit.collider.GetComponent<Interactable>())
+                hit.collider.GetComponent<Interactable>().Interact();
+            }
+        }
     }
 
     private void FixedUpdate() {

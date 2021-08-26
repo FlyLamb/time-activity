@@ -8,7 +8,10 @@ public class Billboard : MonoBehaviour {
     public string testString = @"<b>Najnowsze zmiany</b>";
     private int testLine = 0;
 
+    public bool test;
+
     private void Start() {
+        if(test)
         StartCoroutine(Test());
     }
 
