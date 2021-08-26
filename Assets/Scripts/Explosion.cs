@@ -26,7 +26,7 @@ public class Explosion : MonoBehaviour {
         Collider[] cols = Physics.OverlapSphere(transform.position, radius);
         foreach (var item in cols)
         {
-            float damage = this.damage * (1-(Vector3.Distance(item.transform.position, transform.position) / radius));
+            float damage = this.damage * Mathf.Clamp01(1-(Vector3.Distance(item.transform.position, transform.position) / radius));
             if(item.GetComponent<Rigidbody>())
                 item.GetComponent<Rigidbody>().AddExplosionForce(force,transform.position, radius, 1.2f);
             if(item.GetComponent<Enemy>())

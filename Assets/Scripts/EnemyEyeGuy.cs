@@ -49,17 +49,17 @@ public class EnemyEyeGuy : EnemyFlyingPathfinder {
             
             if(Physics.Raycast(transform.position,transform.forward * -1, out hit)) {
                 laser.SetPosition(1, hit.point);
-                Collider[] ws = Physics.OverlapSphere(hit.point, 2);
+                Collider[] ws = Physics.OverlapSphere(hit.point, 1.5f);
                 foreach(Collider aa in ws) {
                     if(aa.gameObject.layer == 6) {
                         print("HIT THE PLAYER");
                         laserLoaded = laserRegenTime;
                         animator.SetTrigger("Attack");
                         rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-                        gameObject.TweenDelayedInvoke(0.5f, () => {
+                        gameObject.TweenDelayedInvoke(0.7f, () => {
                             bigLaser.SetActive(true);
                             Instantiate(eyeLaserExplosion, hit.point, Quaternion.LookRotation(hit.normal));
-                        }).TweenDelayedInvoke(0.7f, () => {
+                        }).TweenDelayedInvoke(1f, () => {
                             bigLaser.SetActive(false); 
                             rigidbody.constraints = RigidbodyConstraints.None;
                         });
