@@ -83,7 +83,7 @@ MonoBehaviour:
   animator: {fileID: 3786491378914237434}
   hitbox: {fileID: 6007983053374469106}
   damage: 20
-  attackInterval: 0.55
+  attackInterval: 0.36666667
 --- !u!65 &5147929790218957148
 BoxCollider:
   m_ObjectHideFlags: 0

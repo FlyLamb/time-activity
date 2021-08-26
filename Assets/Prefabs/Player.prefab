@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1917062586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1917062587}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1917062587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917062586}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.89, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7921605475269877122}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7921605475234374915
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +125,7 @@ Transform:
   m_Children:
   - {fileID: 7921605475660462374}
   - {fileID: 7921605475707256622}
+  - {fileID: 1917062587}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -179,7 +210,7 @@ MonoBehaviour:
   normalCheckerHeight: 1.157
   stairLookahead: 16
   minWallJumpAngle: 80
-  wallJumpForce: 10
+  wallJumpForce: 12
   angleFriction:
     serializedVersion: 2
     m_Curve:
@@ -244,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7921605475269877126}
   camera: {fileID: 7921605475707256620}
+  maxHealth: 0
 --- !u!1 &7921605475497830116
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +613,9 @@ MonoBehaviour:
   - {fileID: 498452549290849075, guid: e69e8a849ac8dfbf793451273c8b375b, type: 3}
   - {fileID: 1879108789588423461, guid: 98f7a9d93db1e8dacbe16e2a17262d85, type: 3}
   - {fileID: 1879108789588423461, guid: a2d9883f0258e48d1a0bfdb60f5c9e99, type: 3}
+  - {fileID: 498452549290849075, guid: ec1e0407535476a3a9aacca10211b04a, type: 3}
+  - {fileID: 1879108789588423461, guid: 840c8ad7fb2d58fb689b13fa6ace34d7, type: 3}
+  - {fileID: 498452549290849075, guid: 80d2676145259cf55b190adc6183efc3, type: 3}
   selected: 0
 --- !u!1 &7921605476662282339
 GameObject:

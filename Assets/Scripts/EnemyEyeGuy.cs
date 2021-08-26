@@ -36,6 +36,8 @@ public class EnemyEyeGuy : EnemyFlyingPathfinder {
     
     protected override void Life() {
         base.Life();
+        if(health <= 0) return;
+        
         if(laserLoaded > 0) {
             laserLoaded -= Time.deltaTime;
             laser.enabled = false;
@@ -68,6 +70,15 @@ public class EnemyEyeGuy : EnemyFlyingPathfinder {
                 }
             }
         }
+    }
+
+    protected override void Die()
+    {
+        rigidbody.useGravity = true;
+        rigidbody.drag *= 0.1f;
+        laser.enabled = false;
+
+        Destroy(gameObject, 10);
     }
 
     override protected void FixedUpdate() {
