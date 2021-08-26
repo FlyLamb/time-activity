@@ -129,9 +129,9 @@ MonoBehaviour:
   weaponDescription: Pew pew haha skrrrt boom boom pew skrt
   icon: {fileID: 21300000, guid: 333beaabdd04eccd0aa1c067abbd20b8, type: 3}
   animator: {fileID: 3291290129502498896}
-  shootDelay: 0.6
+  shootDelay: 0.35
   bulletForce: 1100
-  damage: 12
+  damage: 10
   shootPoint: {fileID: 2965350738395757246}
   bullet: {fileID: 1309578595078785535, guid: 9d51ecde7b0ec5abcb6d7a1ad8ae7887, type: 3}
 --- !u!1001 &1811963342282498352

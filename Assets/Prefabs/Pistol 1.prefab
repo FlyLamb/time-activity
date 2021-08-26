@@ -131,7 +131,7 @@ MonoBehaviour:
   animator: {fileID: 8580610063298596081}
   shootDelay: 0.5
   bulletForce: 1000
-  damage: 6
+  damage: 15
   shootPoint: {fileID: 2965350738395757246}
   bullet: {fileID: 1309578595078785535, guid: 9d51ecde7b0ec5abcb6d7a1ad8ae7887, type: 3}
 --- !u!1001 &3381099253445722945
