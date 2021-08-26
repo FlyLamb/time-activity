@@ -16,6 +16,10 @@ public class IndicatorManager : MonoBehaviour {
 [SerializeField]
     private Indicator indicator;
 
+    
+
+    
+
     public void Indicate(Vector3 position, string text, Color color, float duration = 1) {
         var idi = Instantiate(indicator.gameObject, position, Quaternion.identity).GetComponent<Indicator>();
         idi.Spawn(text, color, duration);

@@ -17,4 +17,28 @@ public class PlayerManager : MonoBehaviour {
     public BajtixPlayerController controller;
     public new PlayerCamera camera;
 
+    private StatsDisplay display;
+    private UIManager uI;
+
+    private void Start() {
+        display = GameObject.FindObjectOfType<StatsDisplay>();
+        uI = GameObject.FindObjectOfType<UIManager>();
+    }
+
+    public float maxHealth;
+    private float health = 100;
+
+    public void Hit(float dmg) {
+        health -= dmg;
+        if(health <= 0)
+            Die();
+        display.SetHealth(health);
+
+    }
+
+    public void Die() {
+        Time.timeScale = 0.1f;
+        uI.ShowDeath();
+    }
+
 }

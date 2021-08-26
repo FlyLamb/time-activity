@@ -20,10 +20,13 @@ public class PlayerCamera : MonoBehaviour {
 
     private new Camera camera;
 
+    private float shakeTime, shakeStr;
+    private Vector3 originalPoint;
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
         camera = GetComponent<Camera>();
+        originalPoint = transform.localPosition;
     }
 
     private void Update() {
@@ -35,5 +38,19 @@ public class PlayerCamera : MonoBehaviour {
         playerController.transform.rotation = Quaternion.Euler(0,rotation.x, 0);
         transform.localRotation = Quaternion.Euler(rotation.y, 0,0);
         camera.fieldOfView = Mathf.Lerp(camera.fieldOfView,fovKick.Evaluate(playerController.rb.velocity.magnitude) * 70,Time.deltaTime * fovChangeSpeed);
+
+        
+    }
+
+    private void FixedUpdate() {
+        if(shakeTime > 0) {
+            transform.localPosition = originalPoint + new Vector3(Random.Range(-shakeStr,shakeStr),Random.Range(-shakeStr,shakeStr),0);
+            shakeTime -= Time.fixedDeltaTime;
+        } else transform.localPosition = originalPoint;
+    }
+
+    public void Shake(float strength, float duration) {
+        shakeTime = duration;
+        shakeStr = strength;
     }
 }

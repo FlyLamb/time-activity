@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ElRaccoone.Tweens;
-
+using System.Linq;
 
 
 public class EnemyEyeGuy : EnemyFlyingPathfinder {
@@ -29,6 +29,7 @@ public class EnemyEyeGuy : EnemyFlyingPathfinder {
         bigLaser.SetActive(false);
 
         target = PlayerManager.Instance.controller.transform;
+        laserLoaded = Random.Range(5,12);
     }
 
     [System.Obsolete] // fuck this shit
@@ -48,18 +49,22 @@ public class EnemyEyeGuy : EnemyFlyingPathfinder {
             
             if(Physics.Raycast(transform.position,transform.forward * -1, out hit)) {
                 laser.SetPosition(1, hit.point);
-                if(hit.collider.gameObject.layer == 6) {
-                    print("HIT THE PLAYER");
-                    laserLoaded = laserRegenTime;
-                    animator.SetTrigger("Attack");
-                    rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-                    gameObject.TweenDelayedInvoke(0.5f, () => {
-                        bigLaser.SetActive(true);
-                        Instantiate(eyeLaserExplosion, hit.point, Quaternion.LookRotation(hit.normal));
-                    }).TweenDelayedInvoke(0.7f, () => {
-                        bigLaser.SetActive(false); 
-                        rigidbody.constraints = RigidbodyConstraints.None;
-                    });
+                Collider[] ws = Physics.OverlapSphere(hit.point, 2);
+                foreach(Collider aa in ws) {
+                    if(aa.gameObject.layer == 6) {
+                        print("HIT THE PLAYER");
+                        laserLoaded = laserRegenTime;
+                        animator.SetTrigger("Attack");
+                        rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+                        gameObject.TweenDelayedInvoke(0.5f, () => {
+                            bigLaser.SetActive(true);
+                            Instantiate(eyeLaserExplosion, hit.point, Quaternion.LookRotation(hit.normal));
+                        }).TweenDelayedInvoke(0.7f, () => {
+                            bigLaser.SetActive(false); 
+                            rigidbody.constraints = RigidbodyConstraints.None;
+                        });
+                        break;
+                    }
                 }
             }
         }
