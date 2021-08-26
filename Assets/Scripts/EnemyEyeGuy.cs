@@ -32,6 +32,16 @@ public class EnemyEyeGuy : EnemyFlyingPathfinder {
         laserLoaded = Random.Range(5,12);
     }
 
+    public override void Hit(float damage, DamageType damageType = DamageType.Normal)
+    {
+        if(damageType == DamageType.Melee) {
+            damage *= 3;
+            Critical();
+        }
+        
+        base.Hit(damage, damageType);
+    }
+
     [System.Obsolete] // fuck this shit
     
     protected override void Life() {

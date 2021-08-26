@@ -20,7 +20,7 @@ public class WeaponChaosBlade : Weapon {
 
     private void Attack() {
         
-        hitbox.Hit(damage);
+        hitbox.Hit(damage, DamageType.Melee);
         _attackInterval = attackInterval;
     }
 

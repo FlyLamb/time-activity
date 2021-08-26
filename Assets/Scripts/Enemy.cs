@@ -14,6 +14,10 @@ public class Enemy : MonoBehaviour {
         Life();
     }
 
+    protected void Critical() {
+        IndicatorManager.Instance.Indicate(transform.position, "<b>Critical!</b>", Color.red, 2);
+    }
+
     protected virtual void Spawn() {
         health = maxHealth;
     }
