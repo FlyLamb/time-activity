@@ -611,6 +611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
+  moneyDrop: 1000
   target: {fileID: 0}
   path: []
   laserRegenTime: 10

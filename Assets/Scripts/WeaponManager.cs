@@ -37,7 +37,7 @@ public class WeaponManager : MonoBehaviour {
             delay-=Time.deltaTime;
         if(selectedWeapon != null) selectedWeapon.WeaponUpdate();
 
-
+        if(Cursor.lockState == CursorLockMode.None) return;
         float sw = Input.GetAxis("Mouse ScrollWheel");
         switchWheelProgress -= sw;
         if(switchWheelProgress > 0.02f) {

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
     public float maxHealth;
     protected float health;
+[SerializeField]
+    protected int moneyDrop;
 
     private void Start() {
         Spawn();
@@ -27,13 +29,19 @@ public class Enemy : MonoBehaviour {
     }
 
     public virtual void Hit(float damage, DamageType damageType = DamageType.Normal) {
-        health -= damage;
+        if(health <= 0) return; //dead already lol
+        health -= damage; 
         if(health <= 0) Die();
         IndicatorManager.Instance.Indicate(transform.position, damage.ToString(), Color.white, 1);
     }
 
     protected virtual void Die() {
+        
         Destroy(gameObject);
+    }
+
+    protected void DropCash() {
+        PlayerManager.Instance.AddMoney(moneyDrop, transform.position);
     }
 
     protected void Unregister() {
