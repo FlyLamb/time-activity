@@ -12,6 +12,9 @@ public class UIManager : MonoBehaviour {
     [SerializeField] private GameObject waveAnnouncer;
     [SerializeField] private TextMeshProUGUI waveText;
 
+    [SerializeField] public LoadoutDisplay loadoutDisplay;
+    [SerializeField] public ShopTree shopDisplay;
+
     private static UIManager instance;
 
     private Tween<float> announcerTween;

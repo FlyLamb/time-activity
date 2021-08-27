@@ -3,6 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour {
+
+
+    public static WeaponManager Instance {
+        get {
+            if(instance == null)
+                instance = GameObject.FindObjectOfType<WeaponManager>();
+            return instance;
+        }
+    }
+
+    private static WeaponManager instance;
+
     public List<Weapon> weapons;
 
     private Weapon selectedWeapon;
@@ -29,7 +41,9 @@ public class WeaponManager : MonoBehaviour {
         selectedWeapon.Show();
         GameObject.FindObjectOfType<WeaponDisplay>().ShowAnimation();
         delay = 0.2f;
-
+        if(!GameManager.unlocked.Contains(weapons[selected])) {
+            GameManager.unlocked.Add(weapons[selected]);
+        }
     }
 
     private void Update() {

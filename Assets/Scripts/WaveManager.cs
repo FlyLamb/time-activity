@@ -15,6 +15,10 @@ public class WaveManager : MonoBehaviour {
 
     private static WaveManager instance;
 
+    private void Awake() {
+        instance = this;
+    }
+
 
     [System.Serializable]
     public class Wave {
@@ -95,6 +99,8 @@ Interact to continue", true);
         waveNum++;
         MusicManager.Instance.StopWave();
         UIManager.Instance.Announce("Wave finished!");
+
+        GameManager.money = PlayerManager.Instance.GetMoney();
     }
 
     private void FixedUpdate() {
