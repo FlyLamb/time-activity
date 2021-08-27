@@ -32,9 +32,10 @@ public class WeaponGun : Weapon {
         Vector3 dir = PlayerManager.Instance.camera.transform.forward;
         RaycastHit aimTarget;
         if(Physics.Raycast(PlayerManager.Instance.camera.transform.position, PlayerManager.Instance.camera.transform.forward, out aimTarget, 1000,aimMask, QueryTriggerInteraction.Ignore)) {
-            dir = aimTarget.point - shootPoint.position + (new Vector3(Random.Range(-spread,spread),Random.Range(-spread,spread),Random.Range(-spread,spread)));
+            dir = aimTarget.point - shootPoint.position ;
             dir.Normalize();
-            Debug.DrawLine(transform.position, aimTarget.point, Color.red, 100);
+            dir += new Vector3(Random.Range(-1,1),Random.Range(-1,1),Random.Range(-1,1)).normalized * spread * 0.05f;
+            Debug.DrawLine(transform.position, aimTarget.point, Color.red, 1);
         }
         go.Shoot(dir, bulletForce, damage);
         _shootDelay = shootDelay;
