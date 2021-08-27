@@ -4,6 +4,8 @@ using UnityEngine;
 using ElRaccoone.Tweens;
 using System.Linq;
 
+// shit's obsoleteee damn
+#pragma warning disable CS0809
 
 public class EnemyEyeGuy : EnemyFlyingPathfinder {
     private new Rigidbody rigidbody;

@@ -24,7 +24,7 @@ public class WaveManager : MonoBehaviour {
     public int waveNum = 0;
     
     [SerializeField]
-    private Transform[] spawnPoints;
+    private List<Transform> spawnPoints;
     private List<int> usedSpawns = new List<int>();
 
     public List<Wave> waves;
@@ -34,10 +34,20 @@ public class WaveManager : MonoBehaviour {
 [SerializeField]
     private Billboard[] billboards;
 
+    [ContextMenu("add children")]
+    public void Children() {
+        spawnPoints = new List<Transform>();
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            spawnPoints.Add(transform.GetChild(i));
+            transform.GetChild(i).gameObject.name = "" + i;
+        }
+    }
+
     public Vector3 GetRandomSpawn() {
-        int r = 0;
-        while(usedSpawns.Contains(r) && usedSpawns.Count != spawnPoints.Length) {
-            r = Random.Range(0,spawnPoints.Length);
+        int r = Random.Range(0,spawnPoints.Count);
+        while(usedSpawns.Contains(r) && usedSpawns.Count != spawnPoints.Count) {
+            r = Random.Range(0,spawnPoints.Count);
         }
         usedSpawns.Add(r);
         return spawnPoints[r].position;
