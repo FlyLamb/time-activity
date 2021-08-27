@@ -84,8 +84,7 @@ public class EnemyEyeGuy : EnemyFlyingPathfinder {
         }
     }
 
-    protected override void Die()
-    {
+    protected override void Die() {
         DropCash();
         rigidbody.useGravity = true;
         rigidbody.drag *= 0.1f;
