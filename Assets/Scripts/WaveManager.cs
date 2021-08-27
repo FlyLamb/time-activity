@@ -82,6 +82,8 @@ Come here, little one",true);
         Display(@"Wave complete. 
 Interact to continue", true);
         waveNum++;
+
+        UIManager.Instance.Announce("Wave finished!");
     }
 
     private void FixedUpdate() {

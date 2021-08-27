@@ -5,6 +5,8 @@ using UnityEngine;
 public class WeaponChaosBlade : Weapon {
     [SerializeField] private MeleeWeaponHitbox hitbox;
     [SerializeField] private float damage, attackInterval;
+
+    [SerializeField] private float pushForce = 3;
     private float _attackInterval; // TODO: make attack interval a player variable, so the interval cannot be avoided by switching weapons
     public override void Fire1() {
         if(_attackInterval > 0) return;
@@ -16,6 +18,7 @@ public class WeaponChaosBlade : Weapon {
         if(_attackInterval > 0) return;
         base.Fire2();
         Attack();
+        PlayerManager.Instance.controller.rb.AddForce(PlayerManager.Instance.controller.transform.forward * pushForce, ForceMode.Impulse);
     }
 
     private void Attack() {

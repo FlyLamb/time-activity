@@ -227,7 +227,7 @@ public class BajtixPlayerController : MonoBehaviour {
         if(!isGrounded) return;
         stairChecker.localPosition = transform.InverseTransformDirection(SkipY(smoothedVelocity * Time.fixedDeltaTime * stairLookahead) + stepCheckY * Vector3.up);
         RaycastHit hit;
-        if(Physics.Raycast(stairChecker.position, Vector3.down, out hit, normalCheckerHeight + 0.5f, groundMask)) {
+        if(Physics.Raycast(stairChecker.position, Vector3.down, out hit, normalCheckerHeight + 0.5f, groundMask, QueryTriggerInteraction.Ignore)) {
             var w = hit.distance - normalCheckerHeight;
             //Debug.Log("Hit distance: " + hit.distance + "; Diff: " + (hit.distance - normalCheckerHeight));
             if(w < -0.01 && w > -stepHeight && Vector3.Angle(Vector3.up, hit.normal) < normalSteepPoint * 45) {

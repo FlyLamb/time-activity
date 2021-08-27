@@ -89,6 +89,7 @@ public class EnemyEyeGuy : EnemyFlyingPathfinder {
         laser.enabled = false;
         animator.StopPlayback();
         Unregister();
+        gameObject.TweenLocalScale(Vector3.zero, 5).SetDelay(5);
         Destroy(gameObject, 10);
     }
 

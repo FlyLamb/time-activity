@@ -29,10 +29,15 @@ public class UIManager : MonoBehaviour {
     }
 
     public void AnnounceNewWave(int waveNum, int enemyCount) {
+        
+        
+        Announce($"<b>Wave {waveNum}</b>");
+    }
+
+    public void Announce(string text) {
         if(tween != null)
             tween.Cancel();
-        waveText.text = $"<b>Wave {waveNum}</b>";
+        waveText.text = text;
         tween = waveAnnouncer.TweenAnchoredPositionY(-40, 0.1f).SetOnComplete(()=>waveAnnouncer.TweenAnchoredPositionY(40, 0.1f).SetDelay(2));
-        
     }
 }

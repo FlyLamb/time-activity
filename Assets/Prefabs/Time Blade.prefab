@@ -84,6 +84,7 @@ MonoBehaviour:
   hitbox: {fileID: 6007983053374469106}
   damage: 20
   attackInterval: 0.36666667
+  pushForce: 5
 --- !u!65 &5147929790218957148
 BoxCollider:
   m_ObjectHideFlags: 0
