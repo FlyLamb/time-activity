@@ -79,6 +79,7 @@ Come here, little one",true);
 
 [ContextMenu("Spawn Wave")]
     public void SpawnWave() {
+        MusicManager.Instance.StartWave();
         usedSpawns.Clear();
         enemiesAlive.Clear();
         foreach (var item in waves[waveNum].enemies) {
@@ -92,7 +93,7 @@ Come here, little one",true);
         Display(@"Wave complete. 
 Interact to continue", true);
         waveNum++;
-
+        MusicManager.Instance.StopWave();
         UIManager.Instance.Announce("Wave finished!");
     }
 
