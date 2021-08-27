@@ -14,7 +14,10 @@ public class UIManager : MonoBehaviour {
 
     private static UIManager instance;
 
-    private Tween<float> tween;
+    private Tween<float> announcerTween;
+
+[SerializeField]
+    private CanvasGroup shopMenu;
 
     public static UIManager Instance {
         get {
@@ -35,9 +38,27 @@ public class UIManager : MonoBehaviour {
     }
 
     public void Announce(string text) {
-        if(tween != null)
-            tween.Cancel();
+        if(announcerTween != null)
+            announcerTween.Cancel();
         waveText.text = text;
-        tween = waveAnnouncer.TweenAnchoredPositionY(-40, 0.1f).SetOnComplete(()=>waveAnnouncer.TweenAnchoredPositionY(40, 0.1f).SetDelay(2));
+        announcerTween = waveAnnouncer.TweenAnchoredPositionY(-40, 0.1f).SetOnComplete(()=>waveAnnouncer.TweenAnchoredPositionY(40, 0.1f).SetDelay(2));
+    }
+
+    public void ShowShopMenu() {
+        Cursor.lockState = CursorLockMode.None;
+        shopMenu.gameObject.SetActive(true);
+        shopMenu.TweenCanvasGroupAlpha(1,0.2f);
+    }
+
+    public void HideShopMenu() {
+        Cursor.lockState = CursorLockMode.Locked;
+        shopMenu.TweenCanvasGroupAlpha(0, 0.2f).SetOnComplete(()=> {
+            shopMenu.gameObject.SetActive(false);
+        });
+    }
+
+    public void ShopMenuNewWave() {
+        HideShopMenu();
+        gameObject.TweenDelayedInvoke(5,()=>WaveManager.Instance.SpawnWave());
     }
 }

@@ -72,7 +72,7 @@ Come here, little one",true);
     }
 
     public void Interact(Interactable i) {
-        if(enemiesAlive.Count <= 0) SpawnWave();
+        if(enemiesAlive.Count <= 0) UIManager.Instance.ShowShopMenu();
     }
 
     

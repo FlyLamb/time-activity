@@ -29,7 +29,12 @@ public class PlayerCamera : MonoBehaviour {
         originalPoint = transform.localPosition;
     }
 
+
+
     private void Update() {
+        if(Cursor.lockState == CursorLockMode.None) return;
+
+
         Vector2 input = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y") * (invertY ? 1 : -1));
 
         rotation += input * sensitivity;

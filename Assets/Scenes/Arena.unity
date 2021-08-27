@@ -1390,6 +1390,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7921605475269877120, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921605475269877120, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
+      propertyPath: moneyParticle
+      value: 
+      objectReference: {fileID: 7223936229037270320, guid: fbc79dd9d2c93d506a923ef33fde5ab6, type: 3}
     - target: {fileID: 7921605475269877122, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
       propertyPath: m_RootOrder
       value: 0
