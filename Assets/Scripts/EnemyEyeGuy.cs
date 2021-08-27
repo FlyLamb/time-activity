@@ -87,7 +87,8 @@ public class EnemyEyeGuy : EnemyFlyingPathfinder {
         rigidbody.useGravity = true;
         rigidbody.drag *= 0.1f;
         laser.enabled = false;
-
+        animator.StopPlayback();
+        Unregister();
         Destroy(gameObject, 10);
     }
 

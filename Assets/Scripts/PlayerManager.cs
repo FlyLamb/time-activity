@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour {
 
     private void Start() {
         display = GameObject.FindObjectOfType<StatsDisplay>();
-        uI = GameObject.FindObjectOfType<UIManager>();
+        uI = UIManager.Instance;
     }
 
     public float maxHealth;

@@ -41,7 +41,7 @@ public class PlayerCamera : MonoBehaviour {
 
         if(Input.GetKeyDown(KeyCode.E)) {
             RaycastHit hit;
-            if(Physics.Raycast(transform.position, transform.forward, out hit,5)) {
+            if(Physics.Raycast(transform.position, transform.forward, out hit,5, LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore)) {
                 if(hit.collider.GetComponent<Interactable>())
                 hit.collider.GetComponent<Interactable>().Interact();
             }

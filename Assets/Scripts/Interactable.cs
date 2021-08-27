@@ -5,11 +5,12 @@ using UnityEngine.Events;
 using System;
 
 public class Interactable : MonoBehaviour {
-    public UnityEvent onInteract;
+    public UnityEvent onInteract = new UnityEvent();
     public Action<Interactable> onInteractAction;
     public void Interact() {
-        onInteract.Invoke();
+        
         onInteractAction.Invoke(this);
+        onInteract.Invoke();
         print("interact");
     }
 }

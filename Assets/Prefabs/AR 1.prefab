@@ -114,6 +114,9 @@ MonoBehaviour:
   bulletForce: 1000
   damage: 9
   shootPoint: {fileID: 2965350738395757246}
+  aimMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
   bullet: {fileID: 1309578595078785535, guid: 9d51ecde7b0ec5abcb6d7a1ad8ae7887, type: 3}
 --- !u!95 &8267099367588233475
 Animator:

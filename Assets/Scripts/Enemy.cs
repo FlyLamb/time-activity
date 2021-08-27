@@ -35,4 +35,8 @@ public class Enemy : MonoBehaviour {
     protected virtual void Die() {
         Destroy(gameObject);
     }
+
+    protected void Unregister() {
+        WaveManager.Instance.UnregisterEnemy(gameObject);
+    }
 }

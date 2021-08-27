@@ -5,6 +5,17 @@ using System.Linq;
 
 public class WaveManager : MonoBehaviour {
 
+    public static WaveManager Instance {
+        get {
+            if(instance == null)
+                instance = GameObject.FindObjectOfType<WaveManager>();
+            return instance;
+        }
+    }
+
+    private static WaveManager instance;
+
+
     [System.Serializable]
     public class Wave {
         public List<GameObject> enemies;
@@ -12,14 +23,16 @@ public class WaveManager : MonoBehaviour {
 
     public int waveNum = 0;
     
-    public Transform[] spawnPoints;
+    [SerializeField]
+    private Transform[] spawnPoints;
     private List<int> usedSpawns = new List<int>();
 
     public List<Wave> waves;
 
     private List<GameObject> enemiesAlive = new List<GameObject>();
 
-    public Billboard[] billboards;
+[SerializeField]
+    private Billboard[] billboards;
 
     public Vector3 GetRandomSpawn() {
         int r = 0;
@@ -30,11 +43,21 @@ public class WaveManager : MonoBehaviour {
         return spawnPoints[r].position;
     }
 
+    public void UnregisterEnemy(GameObject e) {
+        if(enemiesAlive.Contains(e))
+        enemiesAlive[enemiesAlive.IndexOf(e)] = null; // the cleanup will deal with it, this way is less likely to cause glitches
+    }
+
+    public void RegisterEnemy(GameObject e) {
+        if(enemiesAlive.Contains(e)) return;
+        enemiesAlive.Add(e);
+    }
+
     private void Start() {
-        Display("Interact to start wave.");
-        foreach (var item in billboards)
-        {
-            item.gameObject.AddComponent<Interactable>().onInteractAction = Interact;
+        Display(@"Interact to start wave.
+Come here, little one",true);
+        foreach (var item in billboards) {
+            item.gameObject.AddComponent<Interactable>().onInteractAction += Interact;
         }
     }
 
@@ -51,11 +74,13 @@ public class WaveManager : MonoBehaviour {
         foreach (var item in waves[waveNum].enemies) {
             enemiesAlive.Add(Instantiate(item, GetRandomSpawn(), Quaternion.identity));
         }
+        UIManager.Instance.AnnounceNewWave(waveNum, enemiesAlive.Count);
     }
 
     private void WaveFinished() {
         print("Wave finished");
-        Display("Wave complete. Interact to continue");
+        Display(@"Wave complete. 
+Interact to continue", true);
         waveNum++;
     }
 
@@ -72,9 +97,9 @@ public class WaveManager : MonoBehaviour {
 
     }
 
-    private void Display(string txt) {
+    private void Display(string txt, bool scr = false) {
         foreach (var item in billboards) {
-            item.SetText(txt);
+            item.SetText(txt,scr);
         }
     }
 }
