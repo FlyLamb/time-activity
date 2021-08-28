@@ -3,7 +3,17 @@ guid: fc0a9b4efb217d8d6ba5a5cf9cfb20d1
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: drewno
+    second: {fileID: 2100000, guid: 548819d0debbe1c47af7859bedaab767, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: ce0cfb04eb02ff2a8a54e121415ee252, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
