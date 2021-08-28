@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour {
     }
 
     public void ShowDeath(string message = "<size=162>b</size>URWA") {
-        death.TweenCanvasGroupAlpha(1,1.5f).SetUseUnscaledTime(true);
+        death.TweenCanvasGroupAlpha(1,1.5f).SetUseUnscaledTime(true).SetOnComplete(()=>GameManager.instance.Death());
     }
 
     public void AnnounceNewWave(int waveNum, int enemyCount) {
@@ -64,6 +64,7 @@ public class UIManager : MonoBehaviour {
 
     public void ShopMenuNewWave() {
         HideShopMenu();
-        gameObject.TweenDelayedInvoke(5,()=>WaveManager.Instance.SpawnWave());
+       // gameObject.TweenDelayedInvoke(3,()=>WaveManager.Instance.SpawnWave());
+       WaveManager.Instance.SpawnWave();
     }
 }

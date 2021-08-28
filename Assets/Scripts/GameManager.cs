@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     public static GameManager instance;
@@ -17,8 +18,12 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Awake() {
-        if(instance != null) Destroy(gameObject);
-        else instance = this;
+        instance = this;
+    }
+
+    public void Death() {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
 

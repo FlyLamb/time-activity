@@ -48,6 +48,7 @@ public class PlayerManager : MonoBehaviour {
     public void Die() {
         Time.timeScale = 0.1f;
         uI.ShowDeath();
+        
     }
 
     public void AddMoney(int amount, Vector3 fromPosition) {
