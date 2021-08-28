@@ -16,6 +16,8 @@ public class WaveManager : MonoBehaviour {
     private static WaveManager instance;
 
     private void Awake() {
+        if(instance != null)
+        Destroy(instance);
         instance = this;
     }
 

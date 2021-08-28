@@ -31,6 +31,8 @@ public class PlayerManager : MonoBehaviour {
     private void Start() {
         display = GameObject.FindObjectOfType<StatsDisplay>();
         uI = UIManager.Instance;
+        money = GameManager.money;
+        display.SetMoney(money);
     }
 
    

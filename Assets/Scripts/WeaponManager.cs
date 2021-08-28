@@ -26,12 +26,14 @@ public class WeaponManager : MonoBehaviour {
 
 
     private void Start() {
-        if(GameManager.loadout != null)
-        weapons = GameManager.loadout;
+        if(GameManager.loadout != null) {
+            weapons = GameManager.loadout;
+        }
         Select(0);
     }
 
     public void Select(int index) {
+        
         if(index < 0 || index >= weapons.Count) return;
         if(delay > 0) return;
 
