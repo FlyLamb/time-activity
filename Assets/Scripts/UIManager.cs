@@ -44,10 +44,11 @@ public class UIManager : MonoBehaviour {
         if(announcerTween != null)
             announcerTween.Cancel();
         waveText.text = text;
-        announcerTween = waveAnnouncer.TweenAnchoredPositionY(-40, 0.1f).SetOnComplete(()=>waveAnnouncer.TweenAnchoredPositionY(40, 0.1f).SetDelay(2));
+        announcerTween = waveAnnouncer.TweenAnchoredPositionY(-50, 0.1f).SetOnComplete(()=>waveAnnouncer.TweenAnchoredPositionY(40, 0.1f).SetDelay(2));
     }
 
     public void ShowShopMenu() {
+        shopMenu.TweenCancelAll();
         Cursor.lockState = CursorLockMode.None;
         shopMenu.gameObject.SetActive(true);
         shopMenu.TweenCanvasGroupAlpha(1,0.2f);
