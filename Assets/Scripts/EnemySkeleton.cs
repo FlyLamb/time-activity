@@ -32,4 +32,10 @@ public class EnemySkeleton : EnemyWalkingPathfinder {
         gameObject.TweenDelayedInvoke(0.2f,()=>PlayerManager.Instance.Hit(damage));
         PlayerManager.Instance.controller.rb.AddForce(transform.forward * knockback + Vector3.up * knockbackVerical, ForceMode.Impulse);
     }
+
+    protected override void Die() {
+        DropCash();
+
+        Destroy(gameObject);
+    }
 }

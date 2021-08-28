@@ -5092,6 +5092,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 40
-  chargeTime: 2
+  chargeTime: 1.5
   color: {r: 1, g: 0.69300026, b: 0, a: 1}
   particles: {fileID: 5438403224122120234}

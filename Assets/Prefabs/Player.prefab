@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 7921605475269877126}
   - component: {fileID: 7921605475269877121}
   - component: {fileID: 7921605475269877120}
+  - component: {fileID: 994600094}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -275,7 +276,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7921605475269877126}
   camera: {fileID: 7921605475707256620}
-  maxHealth: 0
+  moneyParticle: {fileID: 7223936229037270320, guid: fbc79dd9d2c93d506a923ef33fde5ab6, type: 3}
+  maxHealth: 100
+--- !u!114 &994600094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921605475269877127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560dc9cee9e189eff8142431371647c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7921605475497830116
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,12 +625,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 498452549290849075, guid: e69e8a849ac8dfbf793451273c8b375b, type: 3}
-  - {fileID: 1879108789588423461, guid: 98f7a9d93db1e8dacbe16e2a17262d85, type: 3}
-  - {fileID: 1879108789588423461, guid: a2d9883f0258e48d1a0bfdb60f5c9e99, type: 3}
-  - {fileID: 498452549290849075, guid: ec1e0407535476a3a9aacca10211b04a, type: 3}
-  - {fileID: 1879108789588423461, guid: 840c8ad7fb2d58fb689b13fa6ace34d7, type: 3}
-  - {fileID: 498452549290849075, guid: 80d2676145259cf55b190adc6183efc3, type: 3}
-  - {fileID: 1879108789588423461, guid: 615d08eaae98a67db94212c29439bb4e, type: 3}
   selected: 0
 --- !u!1 &7921605476662282339
 GameObject:

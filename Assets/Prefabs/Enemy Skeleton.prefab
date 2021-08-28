@@ -234,9 +234,9 @@ MonoBehaviour:
   nearDistance: 1
   lookAtTarget: 1
   animator: {fileID: 7147803482145053205}
-  damage: 20
-  knockback: 7
-  knockbackVerical: 3
+  damage: 10
+  knockback: 15
+  knockbackVerical: 4
 --- !u!65 &832010778797614817
 BoxCollider:
   m_ObjectHideFlags: 0

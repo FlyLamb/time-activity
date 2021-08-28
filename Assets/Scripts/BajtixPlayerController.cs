@@ -230,7 +230,7 @@ public class BajtixPlayerController : MonoBehaviour {
         if(Physics.Raycast(stairChecker.position, Vector3.down, out hit, normalCheckerHeight + 0.5f, groundMask, QueryTriggerInteraction.Ignore)) {
             var w = hit.distance - normalCheckerHeight;
             //Debug.Log("Hit distance: " + hit.distance + "; Diff: " + (hit.distance - normalCheckerHeight));
-            if(w < -0.01 && w > -stepHeight && Vector3.Angle(Vector3.up, hit.normal) < normalSteepPoint * 45) {
+            if(w < -0.01 && w > -stepHeight && Vector3.Angle(Vector3.up, hit.normal) < normalSteepPoint * 0.1f * 45) {
                 rb.MovePosition(transform.position - (hit.distance - normalCheckerHeight) * Vector3.up * 0.4f);
                // Debug.Log("Step!");
             }
