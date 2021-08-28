@@ -68,7 +68,7 @@ public class WaveManager : MonoBehaviour {
     }
 
     private void Start() {
-        Display(@"Interact to start wave.
+        Display(@"Interact to start.
 Come here, little one",true);
         foreach (var item in billboards) {
             item.gameObject.AddComponent<Interactable>().onInteractAction += Interact;
@@ -95,7 +95,8 @@ Come here, little one",true);
     private void WaveFinished() {
         print("Wave finished");
         Display(@"Wave complete. 
-Interact to continue", true);
+Interact to continue
+Come here, little one", true);
         waveNum++;
         MusicManager.Instance.StopWave();
         UIManager.Instance.Announce("Wave finished!");

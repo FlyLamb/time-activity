@@ -11,5 +11,7 @@ public class GameManager : MonoBehaviour {
 
     public static List<Weapon> unlocked = new List<Weapon>();
     public static int money = 0;
+
+    public static List<Weapon> loadout;
 }
 

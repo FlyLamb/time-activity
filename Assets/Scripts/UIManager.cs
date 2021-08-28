@@ -54,6 +54,7 @@ public class UIManager : MonoBehaviour {
     }
 
     public void HideShopMenu() {
+        GameManager.loadout = WeaponManager.Instance.weapons;
         Cursor.lockState = CursorLockMode.Locked;
         shopMenu.TweenCanvasGroupAlpha(0, 0.2f).SetOnComplete(()=> {
             shopMenu.gameObject.SetActive(false);

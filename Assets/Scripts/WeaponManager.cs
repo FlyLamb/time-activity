@@ -26,6 +26,8 @@ public class WeaponManager : MonoBehaviour {
 
 
     private void Start() {
+        if(GameManager.loadout != null)
+        weapons = GameManager.loadout;
         Select(0);
     }
 

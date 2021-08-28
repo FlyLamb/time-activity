@@ -21,13 +21,13 @@ public class EnemySkeleton : EnemyWalkingPathfinder {
 
     }
 
-    private void OnTriggerEnter(Collider other) {
+    protected virtual void OnTriggerEnter(Collider other) {
         if(other.gameObject.layer == 6) {
             Slap();
         }
     }
 
-    private void Slap() {
+    protected virtual void Slap() {
         animator.SetTrigger("attack");
         gameObject.TweenDelayedInvoke(0.2f,()=>PlayerManager.Instance.Hit(damage));
         PlayerManager.Instance.controller.rb.AddForce(transform.forward * knockback + Vector3.up * knockbackVerical, ForceMode.Impulse);
