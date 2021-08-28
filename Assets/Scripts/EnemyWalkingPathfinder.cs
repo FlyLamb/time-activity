@@ -19,13 +19,14 @@ public class EnemyWalkingPathfinder : Enemy {
     protected float repathEvery = 1.0f;
 
     protected bool nearTarget = false;
+
+    public bool lookAtTarget = true;
     
     override protected void Spawn()
     {
         base.Spawn();
         path = new NavMeshPath();
         elapsed = 0.0f;
-        target = PlayerManager.Instance.controller.transform;
     }
 
     
@@ -42,6 +43,9 @@ public class EnemyWalkingPathfinder : Enemy {
         {
             elapsed -= 1.0f;
             NavMesh.CalculatePath(transform.position, target.position, NavMesh.AllAreas, path);
+            enemyController.SetJump(path.status == NavMeshPathStatus.PathInvalid);
+            enemyController.rb.AddForce(transform.forward * 5); // get unstack
+            
             cp = 0;
             if(cp < path.corners.Length) {
                 nextPoint = path.corners[cp];
@@ -60,7 +64,7 @@ public class EnemyWalkingPathfinder : Enemy {
         var py = transform.position;
         py.y = 0;
         if(Vector3.Distance(py, wy) < nearDistance) {
-            if(cp+1 < path.corners.Length) {
+            if(cp + 1 < path.corners.Length) {
                 cp++;
                 nextPoint = path.corners[cp];
                 nearTarget = false;
@@ -70,8 +74,10 @@ public class EnemyWalkingPathfinder : Enemy {
         }
         
         var bdir = (nextPoint - transform.position);
+        
         bdir.y = 0;
         bdir.Normalize();
+        transform.rotation = Quaternion.LookRotation(bdir, Vector3.up);
         if(!nearTarget)
             enemyController.SetInput(bdir);
         else 

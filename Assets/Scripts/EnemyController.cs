@@ -65,7 +65,7 @@ public class EnemyController : MonoBehaviour {
 
     private PhysicMaterial frictionMaterial;
     private Collider feet;
-    private Rigidbody rb;
+    public Rigidbody rb;
     private Vector3 feetPosition;
     private float stepCheckY;
     private Vector3 smoothedVelocity;
