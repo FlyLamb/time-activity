@@ -1,61 +1,48 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 using ElRaccoone.Tweens;
+using UnityEngine.Audio;
 
 public class MusicManager : MonoBehaviour {
-    public static MusicManager Instance {
-        get {
-            if(instance == null) instance = GameObject.FindObjectOfType<MusicManager>();
-            return instance;
-        }
+
+    public static MusicManager Instance;
+
+    public AudioSource[] sources;
+
+    public AudioMixer mixer;
+
+    public float idleTime = 60;
+
+    private float time;
+
+
+    private void Awake() {
+        if(Instance != this && Instance != null) Destroy(Instance);
+            Instance = this;
     }
 
-    private static MusicManager instance;
-    
-
-    public enum MusicState {
-        Lobby,
-        Riser,
-        Wave
+    private void Start() {
+        foreach(var s in sources) s.Play();
     }
-
-    [SerializeField]
-    private AudioClip lobby, riser, wave;
-    private MusicState state;
-
-[SerializeField]
-    private AudioSource source;
 
     public void StartWave() {
-        StartCoroutine(WaitAndSwitchMusic(riser, false, ()=>{
-            StartCoroutine(WaitAndSwitchMusic(wave,true));
-        }));
-
-    }
-
-    private IEnumerator WaitAndSwitchMusic(AudioClip ac, bool enableLoop, Action onFinish = null) {
-        print("Request switch music to " + ac.name);
-        yield return new WaitWhile(() => source.isPlaying && !source.loop);
-        if(source.loop) {
-            source.TweenAudioSourceVolume(0,1).SetOnComplete(()=>enO(ac,enableLoop,onFinish));
-        } else {
-            enO(ac,enableLoop, onFinish);
-        }
-        
-    }
-
-    private void enO(AudioClip ac, bool enableLoop, Action onFinish) {
-        source.clip = ac;
-        source.loop = enableLoop;
-        source.Play();
-        source.volume = 0.35f;
-        print("Set music to " + ac.name);
-        if(onFinish != null) onFinish.Invoke();
+        gameObject.TweenValueFloat(-80, 1, (w)=>mixer.SetFloat("Chill",w));
+        gameObject.TweenValueFloat(0, 0.5f, (w)=>mixer.SetFloat("Battle",w)).SetFrom(-80);
+        gameObject.TweenValueFloat(-80, 1, (w)=>mixer.SetFloat("Idle",w));
+        time = float.PositiveInfinity;
     }
 
     public void StopWave() {
-        StartCoroutine(WaitAndSwitchMusic(lobby,true));
+        gameObject.TweenValueFloat(-80, 1, (w)=>mixer.SetFloat("Battle",w));
+        gameObject.TweenValueFloat(0, 1, (w)=>mixer.SetFloat("Chill",w)).SetFrom(-80);
+        time = Time.time + idleTime;
+    }
+
+    private void Update() {
+        if(Time.time > time) {
+            gameObject.TweenValueFloat(0, 1, (w)=>mixer.SetFloat("Idle",w)).SetFrom(-80);
+            time = float.PositiveInfinity;
+        }
     }
 }
