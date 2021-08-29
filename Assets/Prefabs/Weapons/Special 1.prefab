@@ -131,8 +131,8 @@ MonoBehaviour:
   fire1: {fileID: 0}
   fire2: {fileID: 0}
   animator: {fileID: 3648017121955268697}
-  shootDelay: 2
-  bulletForce: 500
+  shootDelay: 1.6
+  bulletForce: 1500
   damage: 0
   spread: 2
   shootPoint: {fileID: 2965350738395757246}

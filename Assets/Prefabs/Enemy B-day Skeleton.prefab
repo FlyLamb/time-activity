@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
-  moneyDrop: 150
+  moneyDrop: 100
   target: {fileID: 0}
   enemyController: {fileID: 2917332263047546949}
   nearDistance: 2

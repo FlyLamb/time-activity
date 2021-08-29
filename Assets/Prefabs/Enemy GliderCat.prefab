@@ -185,7 +185,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.2
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: -0.63}
 --- !u!54 &3062506793738612780
 Rigidbody:
@@ -215,8 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ba6fc40dfc36943b81203d197ee486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  moneyDrop: 2000
+  maxHealth: 15
+  moneyDrop: 100
   target: {fileID: 0}
   path: []
   speed: 5
