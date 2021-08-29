@@ -1441,9 +1441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'STADION NARODOWY
-
-    <size=30>Wave {x}</size>'
+  m_text: WAVE LOADOUT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f981a8791b3d874a1a1936d43e3fb435, type: 2}
   m_sharedMaterial: {fileID: 4770021149689609640, guid: f981a8791b3d874a1a1936d43e3fb435, type: 2}
@@ -1470,7 +1468,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.05
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

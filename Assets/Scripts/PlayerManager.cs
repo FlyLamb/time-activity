@@ -48,8 +48,10 @@ public class PlayerManager : MonoBehaviour {
     }
 
     public void Die() {
+        GameManager.waveNum = 0;
         Time.timeScale = 0.1f;
         uI.ShowDeath();
+        
         MusicManager.Instance.StopWave();
     }
 
