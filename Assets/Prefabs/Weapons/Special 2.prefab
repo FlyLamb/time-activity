@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Rocket Bam Bam
-  weaponDescription: shwoo *KABOOM*
+  weaponDescription: shwoo *KABOOM* *boing boing boing*
   icon: {fileID: 21300000, guid: fee550524cb1e5c96831792146b17e5c, type: 3}
   fire1: {fileID: 0}
   fire2: {fileID: 0}
