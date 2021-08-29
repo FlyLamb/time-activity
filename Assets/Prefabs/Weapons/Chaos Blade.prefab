@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Chaos Blade
-  weaponDescription: 
+  weaponDescription: Slash Cut Swoosh
   icon: {fileID: 21300000, guid: 63aa40e2563975062a4a8d093590c89b, type: 3}
   fire1: {fileID: 0}
   fire2: {fileID: 0}
