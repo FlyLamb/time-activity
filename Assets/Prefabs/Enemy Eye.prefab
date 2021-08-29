@@ -610,8 +610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adec04e77a77ea459b68c00ab9c13442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
-  moneyDrop: 1000
+  maxHealth: 180
+  moneyDrop: 100
   target: {fileID: 0}
   path: []
   laserRegenTime: 10
@@ -704,13 +704,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10a36c7c48fc9214396af5bfa3129e5a, type: 3}
---- !u!4 &7931083864907177029 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 10a36c7c48fc9214396af5bfa3129e5a, type: 3}
-  m_PrefabInstance: {fileID: 7609508579109944238}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7303447085132515071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 10a36c7c48fc9214396af5bfa3129e5a, type: 3}
+  m_PrefabInstance: {fileID: 7609508579109944238}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7931083864907177029 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 10a36c7c48fc9214396af5bfa3129e5a, type: 3}
   m_PrefabInstance: {fileID: 7609508579109944238}
   m_PrefabAsset: {fileID: 0}

@@ -1047,26 +1047,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree:
-  - icon: {fileID: 21300000, guid: 63aa40e2563975062a4a8d093590c89b, type: 3}
+  - icon: {fileID: 21300000, guid: 90823f1d487df8e4f9118b19c45823a5, type: 3}
     weapons:
     - weapon: {fileID: 498452549290849075, guid: e69e8a849ac8dfbf793451273c8b375b, type: 3}
       price: 0
     - weapon: {fileID: 498452549290849075, guid: 80d2676145259cf55b190adc6183efc3, type: 3}
-      price: 0
+      price: 1000
     - weapon: {fileID: 498452549290849075, guid: ec1e0407535476a3a9aacca10211b04a, type: 3}
       price: 0
-  - icon: {fileID: 21300000, guid: 418c7f6e57618cace8c4b71d782ef647, type: 3}
+  - icon: {fileID: 21300000, guid: 42c4b1a0a4e2d284d8099b340ff79a93, type: 3}
     weapons:
     - weapon: {fileID: 1879108789588423461, guid: 98f7a9d93db1e8dacbe16e2a17262d85, type: 3}
-      price: 0
+      price: 100
     - weapon: {fileID: 1879108789588423461, guid: a2d9883f0258e48d1a0bfdb60f5c9e99, type: 3}
-      price: 0
+      price: 1000
     - weapon: {fileID: 1879108789588423461, guid: 615d08eaae98a67db94212c29439bb4e, type: 3}
       price: 0
-  - icon: {fileID: 21300000, guid: cf9e6a125dfd4b7c0b68083ce9286ffe, type: 3}
+  - icon: {fileID: 21300000, guid: a0b1ad6edd36e3745b62849c94d6ef8f, type: 3}
     weapons:
     - weapon: {fileID: 1879108789588423461, guid: 840c8ad7fb2d58fb689b13fa6ace34d7, type: 3}
-      price: 0
+      price: 2000
   spacing: 110
   startPos: {x: -300, y: 250, z: 0}
   treeElement: {fileID: 4332137363189962651, guid: 82ad6943ec3e2ec06837eaa1fbe29c6d, type: 3}
