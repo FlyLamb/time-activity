@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Nader 6000
   weaponDescription: klong bau hpf boing *KABOOM*
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: bc438847c2972ce49a10d3baf8d7c912, type: 3}
   fire1: {fileID: 0}
   fire2: {fileID: 0}
   animator: {fileID: 3648017121955268697}
