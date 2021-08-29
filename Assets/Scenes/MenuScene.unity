@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560dc9cee9e189eff8142431371647c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaosBlade: {fileID: 0}
+  chaosBlade: {fileID: 498452549290849075, guid: e69e8a849ac8dfbf793451273c8b375b, type: 3}
 --- !u!114 &57040103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2705,7 +2705,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh532160
+  m_Name: pb_Mesh564402
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
