@@ -67,6 +67,7 @@ public class WeaponManager : MonoBehaviour {
         }
         if(selectedWeapon != null)  {
             if(Input.GetButton("Fire1")) selectedWeapon.Fire1();
+            else
             if(Input.GetButton("Fire2")) selectedWeapon.Fire2();
         }
     } 
