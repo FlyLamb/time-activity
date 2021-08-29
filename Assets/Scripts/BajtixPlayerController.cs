@@ -329,6 +329,22 @@ public class BajtixPlayerController : MonoBehaviour {
 
 // wall jumping
     private void OnCollisionStay(Collision other) {
+        if (groundMask == (groundMask | (1 << other.gameObject.layer))) {
+            // why not negation wtf baja
+            //shut up dumbass its 3 am
+            // what the fuck?
+            // who am i talking to?
+            // who are you talking to?
+            // to you
+            // who are you
+            // and who are you?
+            //fuck
+        } else {
+            return;
+        }
+
+
+
         var contact = other.GetContact(0);
         var contactpoint = contact.point;
     
