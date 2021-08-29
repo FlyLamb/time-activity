@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 2086efd4d07ffc640b986e6bdc87e8e7, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 477cc4148fad3449482a3bc3178594e2, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -1860,7 +1860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182436537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.33, y: 13.67, z: 22.170002}
+  m_LocalPosition: {x: -2.33, y: 6.920001, z: 22.170002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1706157641}
@@ -2590,6 +2590,134 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2da3836ada18b849815bf7aa3dd235a, type: 3}
+--- !u!1 &248400216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 248400218}
+  - component: {fileID: 248400217}
+  m_Layer: 0
+  m_Name: Reflection Probe (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &248400217
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248400216}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 25.683296, y: 10, z: 20.623932}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &248400218
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248400216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.55, y: 3.6, z: 9.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &249008103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 249008105}
+  - component: {fileID: 249008104}
+  m_Layer: 0
+  m_Name: Reflection Probe (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &249008104
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249008103}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 25.683296, y: 10, z: 20.623932}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &249008105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249008103}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.55, y: 3.6, z: 9.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &272898548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2928,6 +3056,70 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1706157641}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &306470910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 306470912}
+  - component: {fileID: 306470911}
+  m_Layer: 0
+  m_Name: Reflection Probe (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &306470911
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306470910}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 25.683296, y: 10, z: 20.623932}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &306470912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306470910}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 42.55, y: 3.6, z: 33}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &313573249
 PrefabInstance:
@@ -3935,7 +4127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480100570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.42, y: 13.67, z: 12.670002}
+  m_LocalPosition: {x: 9.42, y: 6.920001, z: 12.670002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1706157641}
@@ -4671,7 +4863,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628580407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.33, y: 13.67, z: -7.83}
+  m_LocalPosition: {x: -9.33, y: 6.92, z: -7.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1706157641}
@@ -4904,6 +5096,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a83af7b28fd23124e97cfea5c16805b3, type: 3}
   m_PrefabInstance: {fileID: 313573249}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &647842583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 647842585}
+  - component: {fileID: 647842584}
+  m_Layer: 0
+  m_Name: Reflection Probe (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &647842584
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647842583}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 25.683296, y: 10, z: 20.623932}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &647842585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647842583}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.3, y: 3.6, z: 54.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &656471526 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4244515282444871371, guid: 00b206ffb4cf44dc2ae566e6e5fb981e, type: 3}
@@ -6097,7 +6353,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864745773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.08, y: 13.67, z: 15.920002}
+  m_LocalPosition: {x: -18.08, y: 6.920001, z: 15.920002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1706157641}
@@ -6581,7 +6837,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89692
+  m_Name: pb_Mesh436858
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6861,6 +7117,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e2da3836ada18b849815bf7aa3dd235a, type: 3}
   m_PrefabInstance: {fileID: 286827825}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &882976274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 882976276}
+  - component: {fileID: 882976275}
+  m_Layer: 0
+  m_Name: Reflection Probe (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &882976275
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882976274}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 25.683296, y: 10, z: 20.623932}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &882976276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882976274}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 44.3, y: 3.6, z: 10.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &886019497
 GameObject:
   m_ObjectHideFlags: 0
@@ -7885,6 +8205,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a83af7b28fd23124e97cfea5c16805b3, type: 3}
   m_PrefabInstance: {fileID: 694280918}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1064072114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1064072116}
+  - component: {fileID: 1064072115}
+  m_Layer: 0
+  m_Name: Reflection Probe (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &1064072115
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064072114}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 25.683296, y: 10, z: 20.623932}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &1064072116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064072114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.95000076, y: 3.6, z: 32.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1093498782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8429,7 +8813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149040228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.17, y: 13.67, z: -16.329998}
+  m_LocalPosition: {x: 15.17, y: 6.920001, z: -16.329998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1706157641}
@@ -8591,6 +8975,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eb034b848d0662f8c940e1c7d7f67d7c, type: 3}
   m_PrefabInstance: {fileID: 728374400}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1187727154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1187727156}
+  - component: {fileID: 1187727155}
+  m_Layer: 0
+  m_Name: Reflection Probe (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &1187727155
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187727154}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 25.683296, y: 10, z: 20.623932}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &1187727156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187727154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.9500008, y: 3.6, z: 4.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1188406055
 GameObject:
   m_ObjectHideFlags: 0
@@ -8615,7 +9063,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188406055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.42, y: 13.67, z: 1.420002}
+  m_LocalPosition: {x: 18.42, y: 6.920001, z: 1.420002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1706157641}
@@ -10298,6 +10746,238 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83af7b28fd23124e97cfea5c16805b3, type: 3}
+--- !u!1 &1423584650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1423584652}
+  - component: {fileID: 1423584651}
+  m_Layer: 0
+  m_Name: Light Probe Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!220 &1423584651
+LightProbeGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423584650}
+  m_Enabled: 1
+  m_SourcePositions:
+  - {x: 1, y: 12.721631, z: 1}
+  - {x: 1, y: 12.721631, z: -1}
+  - {x: 1, y: 10.721631, z: 1}
+  - {x: 9.75, y: 10.721631, z: 26.5}
+  - {x: -1, y: 12.721631, z: 1}
+  - {x: 7.75, y: 12.721631, z: 26.5}
+  - {x: -1, y: 10.721631, z: 1}
+  - {x: 7.75, y: 10.721631, z: 26.5}
+  - {x: -10.5, y: 10.721631, z: -24.25}
+  - {x: -12.5, y: 12.721631, z: -24.25}
+  - {x: -12.5, y: 10.721631, z: -24.25}
+  - {x: 1.75, y: 10.721631, z: -25.5}
+  - {x: -0.25, y: 12.721631, z: -25.5}
+  - {x: -0.25, y: 10.721631, z: -25.5}
+  - {x: 28.499998, y: 10.721631, z: -22.5}
+  - {x: 26.499998, y: 12.721631, z: -22.5}
+  - {x: 26.499998, y: 10.721631, z: -22.5}
+  - {x: 27.749998, y: 10.721631, z: -6.5}
+  - {x: 25.749998, y: 12.721631, z: -6.5}
+  - {x: 25.749998, y: 10.721631, z: -6.5}
+  - {x: 26.499998, y: 10.721631, z: 20.75}
+  - {x: 24.499998, y: 12.721631, z: 20.75}
+  - {x: 24.499998, y: 10.721631, z: 20.75}
+  - {x: 18.999998, y: 10.721631, z: 30.75}
+  - {x: 16.999998, y: 12.721631, z: 30.75}
+  - {x: 16.999998, y: 10.721631, z: 30.75}
+  - {x: 5, y: 10.721631, z: 30}
+  - {x: 3, y: 12.721631, z: 30}
+  - {x: 3, y: 10.721631, z: 30}
+  - {x: -4.5, y: 10.721631, z: 18.5}
+  - {x: -6.5, y: 12.721631, z: 18.5}
+  - {x: -6.5, y: 10.721631, z: 18.5}
+  - {x: -2.5, y: 10.721631, z: 12.75}
+  - {x: -4.5, y: 12.721631, z: 12.75}
+  - {x: -4.5, y: 10.721631, z: 12.75}
+  - {x: 6.5, y: 10.721631, z: 16}
+  - {x: 4.5, y: 12.721631, z: 16}
+  - {x: 4.5, y: 10.721631, z: 16}
+  - {x: -4, y: 10.721631, z: 4}
+  - {x: -6, y: 12.721631, z: 4}
+  - {x: -6, y: 10.721631, z: 4}
+  - {x: -15.25, y: -1, z: -1.5}
+  - {x: -17.25, y: 12.721631, z: -1.5}
+  - {x: -17.25, y: -1, z: -1.5}
+  - {x: -21.75, y: -1, z: -8.5}
+  - {x: -23.75, y: 12.721631, z: -8.5}
+  - {x: -23.75, y: -1, z: -8.5}
+  - {x: -19.75, y: -1, z: -21.75}
+  - {x: -21.75, y: 12.721631, z: -21.75}
+  - {x: -21.75, y: -1, z: -21.75}
+  - {x: -27, y: -1, z: -13.75}
+  - {x: -29, y: 12.721631, z: -13.75}
+  - {x: -29, y: -1, z: -13.75}
+  - {x: -25.5, y: -1, z: 0.25}
+  - {x: -27.5, y: 12.721631, z: 0.25}
+  - {x: -27.5, y: -1, z: 0.25}
+  - {x: -20.75, y: -1, z: 7.25}
+  - {x: -22.75, y: 12.721631, z: 7.25}
+  - {x: -22.75, y: -1, z: 7.25}
+  - {x: -27.5, y: -1, z: 18.25}
+  - {x: -29.5, y: 12.721631, z: 18.25}
+  - {x: -29.5, y: -1, z: 18.25}
+  - {x: -22, y: -1, z: 25}
+  - {x: -24, y: 12.721631, z: 25}
+  - {x: -24, y: -1, z: 25}
+  - {x: -14.25, y: -1, z: 27.75}
+  - {x: -16.25, y: 12.721631, z: 27.75}
+  - {x: -16.25, y: -1, z: 27.75}
+  - {x: -11, y: -1, z: 32.75}
+  - {x: -13, y: 12.721631, z: 32.75}
+  - {x: -13, y: -1, z: 32.75}
+  - {x: -2.75, y: 10.721631, z: 29}
+  - {x: -4.75, y: 12.721631, z: 29}
+  - {x: -4.75, y: 10.721631, z: 29}
+  - {x: 9.75, y: 10.721631, z: 26.5}
+  - {x: 7.75, y: 12.721631, z: 26.5}
+  - {x: 7.75, y: 10.721631, z: 26.5}
+  - {x: 1, y: 1, z: 1}
+  - {x: 1, y: 1, z: -1}
+  - {x: 1, y: -1, z: 1}
+  - {x: 9.75, y: -1, z: 26.5}
+  - {x: -1, y: 1, z: 1}
+  - {x: 7.75, y: 1, z: 26.5}
+  - {x: -1, y: -1, z: 1}
+  - {x: 7.75, y: -1, z: 26.5}
+  - {x: -10.5, y: -1, z: -24.25}
+  - {x: -12.5, y: 1, z: -24.25}
+  - {x: -12.5, y: -1, z: -24.25}
+  - {x: 1.75, y: -1, z: -25.5}
+  - {x: -0.25, y: 1, z: -25.5}
+  - {x: -0.25, y: -1, z: -25.5}
+  - {x: 28.499998, y: -1, z: -22.5}
+  - {x: 26.499998, y: 1, z: -22.5}
+  - {x: 26.499998, y: -1, z: -22.5}
+  - {x: 27.749998, y: -1, z: -6.5}
+  - {x: 25.749998, y: 1, z: -6.5}
+  - {x: 25.749998, y: -1, z: -6.5}
+  - {x: 26.499998, y: -1, z: 20.75}
+  - {x: 24.499998, y: 1, z: 20.75}
+  - {x: 24.499998, y: -1, z: 20.75}
+  - {x: 18.999998, y: -1, z: 30.75}
+  - {x: 16.999998, y: 1, z: 30.75}
+  - {x: 16.999998, y: -1, z: 30.75}
+  - {x: 5, y: -1, z: 30}
+  - {x: 3, y: 1, z: 30}
+  - {x: 3, y: -1, z: 30}
+  - {x: -4.5, y: -1, z: 18.5}
+  - {x: -6.5, y: 1, z: 18.5}
+  - {x: -6.5, y: -1, z: 18.5}
+  - {x: -2.5, y: -1, z: 12.75}
+  - {x: -4.5, y: 1, z: 12.75}
+  - {x: -4.5, y: -1, z: 12.75}
+  - {x: 6.5, y: -1, z: 16}
+  - {x: 4.5, y: 1, z: 16}
+  - {x: 4.5, y: -1, z: 16}
+  - {x: -4, y: -1, z: 4}
+  - {x: -6, y: 1, z: 4}
+  - {x: -6, y: -1, z: 4}
+  - {x: -17.25, y: 1, z: -1.5}
+  - {x: -23.75, y: 1, z: -8.5}
+  - {x: -21.75, y: 1, z: -21.75}
+  - {x: -29, y: 1, z: -13.75}
+  - {x: -27.5, y: 1, z: 0.25}
+  - {x: -22.75, y: 1, z: 7.25}
+  - {x: -29.5, y: 1, z: 18.25}
+  - {x: -24, y: 1, z: 25}
+  - {x: -16.25, y: 1, z: 27.75}
+  - {x: -13, y: 1, z: 32.75}
+  - {x: -2.75, y: -1, z: 29}
+  - {x: -4.75, y: 1, z: 29}
+  - {x: -4.75, y: -1, z: 29}
+  - {x: 9.75, y: -1, z: 26.5}
+  - {x: 7.75, y: 1, z: 26.5}
+  - {x: 7.75, y: -1, z: 26.5}
+  - {x: 1, y: 6.5569477, z: 1}
+  - {x: 1, y: 6.5569477, z: -1}
+  - {x: 1, y: 4.5569477, z: 1}
+  - {x: 9.75, y: 4.5569477, z: 26.5}
+  - {x: -1, y: 6.5569477, z: 1}
+  - {x: 7.75, y: 6.5569477, z: 26.5}
+  - {x: -1, y: 4.5569477, z: 1}
+  - {x: 7.75, y: 4.5569477, z: 26.5}
+  - {x: -10.5, y: 4.5569477, z: -24.25}
+  - {x: -12.5, y: 6.5569477, z: -24.25}
+  - {x: -12.5, y: 4.5569477, z: -24.25}
+  - {x: 1.75, y: 4.5569477, z: -25.5}
+  - {x: -0.25, y: 6.5569477, z: -25.5}
+  - {x: -0.25, y: 4.5569477, z: -25.5}
+  - {x: 28.499998, y: 4.5569477, z: -22.5}
+  - {x: 26.499998, y: 6.5569477, z: -22.5}
+  - {x: 26.499998, y: 4.5569477, z: -22.5}
+  - {x: 27.749998, y: 4.5569477, z: -6.5}
+  - {x: 25.749998, y: 6.5569477, z: -6.5}
+  - {x: 25.749998, y: 4.5569477, z: -6.5}
+  - {x: 26.499998, y: 4.5569477, z: 20.75}
+  - {x: 24.499998, y: 6.5569477, z: 20.75}
+  - {x: 24.499998, y: 4.5569477, z: 20.75}
+  - {x: 18.999998, y: 4.5569477, z: 30.75}
+  - {x: 16.999998, y: 6.5569477, z: 30.75}
+  - {x: 16.999998, y: 4.5569477, z: 30.75}
+  - {x: 5, y: 4.5569477, z: 30}
+  - {x: 3, y: 6.5569477, z: 30}
+  - {x: 3, y: 4.5569477, z: 30}
+  - {x: -4.5, y: 4.5569477, z: 18.5}
+  - {x: -6.5, y: 6.5569477, z: 18.5}
+  - {x: -6.5, y: 4.5569477, z: 18.5}
+  - {x: -2.5, y: 4.5569477, z: 12.75}
+  - {x: -4.5, y: 6.5569477, z: 12.75}
+  - {x: -4.5, y: 4.5569477, z: 12.75}
+  - {x: 6.5, y: 4.5569477, z: 16}
+  - {x: 4.5, y: 6.5569477, z: 16}
+  - {x: 4.5, y: 4.5569477, z: 16}
+  - {x: -4, y: 4.5569477, z: 4}
+  - {x: -6, y: 6.5569477, z: 4}
+  - {x: -6, y: 4.5569477, z: 4}
+  - {x: -17.25, y: 6.5569477, z: -1.5}
+  - {x: -23.75, y: 6.5569477, z: -8.5}
+  - {x: -21.75, y: 6.5569477, z: -21.75}
+  - {x: -29, y: 6.5569477, z: -13.75}
+  - {x: -27.5, y: 6.5569477, z: 0.25}
+  - {x: -22.75, y: 6.5569477, z: 7.25}
+  - {x: -29.5, y: 6.5569477, z: 18.25}
+  - {x: -24, y: 6.5569477, z: 25}
+  - {x: -16.25, y: 6.5569477, z: 27.75}
+  - {x: -13, y: 6.5569477, z: 32.75}
+  - {x: -2.75, y: 4.5569477, z: 29}
+  - {x: -4.75, y: 6.5569477, z: 29}
+  - {x: -4.75, y: 4.5569477, z: 29}
+  - {x: 9.75, y: 4.5569477, z: 26.5}
+  - {x: 7.75, y: 6.5569477, z: 26.5}
+  - {x: 7.75, y: 4.5569477, z: 26.5}
+  m_Dering: 1
+--- !u!4 &1423584652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423584650}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.78, y: 0, z: 27.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1423746639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10770,6 +11450,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a83af7b28fd23124e97cfea5c16805b3, type: 3}
   m_PrefabInstance: {fileID: 1377323428}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1488292977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1488292979}
+  - component: {fileID: 1488292978}
+  m_Layer: 0
+  m_Name: Reflection Probe (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &1488292978
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488292977}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 25.683296, y: 10, z: 20.623932}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &1488292979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488292977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 43.55, y: 3.6, z: 53.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1505104638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11163,6 +11907,70 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1569581919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1569581921}
+  - component: {fileID: 1569581920}
+  m_Layer: 0
+  m_Name: Reflection Probe (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &1569581920
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569581919}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 25.683296, y: 10, z: 20.623932}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &1569581921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569581919}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.79999924, y: 3.6, z: 55.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1571305326 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cfba30b48578bf6ac96dab5da6829ffc, type: 3}
@@ -11804,6 +12612,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a83af7b28fd23124e97cfea5c16805b3, type: 3}
   m_PrefabInstance: {fileID: 1760325798}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1673635056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1673635058}
+  - component: {fileID: 1673635057}
+  m_Layer: 0
+  m_Name: Reflection Probe (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &1673635057
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673635056}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 25.683296, y: 10, z: 20.623932}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &1673635058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673635056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 42.3, y: 3.6, z: 52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1681328329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11962,7 +12834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686166580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.33, y: 13.67, z: -2.079998}
+  m_LocalPosition: {x: -16.33, y: 6.920001, z: -2.079998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1706157641}
@@ -12125,7 +12997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - myId: 0
-    connectedNodes: 03000000080000000c000000190000001a0000001c0000001d0000001e0000001f0000002000000021000000
+    connectedNodes: 03000000080000000c000000190000001a0000001f00000020000000
     position: {x: 19.130001, y: 5.11, z: 14.68}
     myDst: 0
     weights:
@@ -12134,12 +13006,8 @@ MonoBehaviour:
     - 3.3700001
     - 9.428356
     - 18.662033
-    - 21.535927
-    - 29.940336
-    - 30.317465
-    - 23.40483
-    - 14.675355
-    - 29.270184
+    - 20.736408
+    - 9.878187
     - 0
   - myId: 1
     connectedNodes: 030000000b0000000c0000000d0000000e0000000f00000010000000110000001200000013000000140000001700000018000000190000001b0000001c0000001d0000001e0000001f00000020000000210000002200000023000000
@@ -12161,17 +13029,17 @@ MonoBehaviour:
     - 45.692745
     - 41.640453
     - 31.205566
-    - 24.272032
-    - 13.230799
-    - 22.49009
-    - 32.659096
-    - 40.36225
-    - 20.650278
-    - 15.061759
-    - 16.689266
+    - 21.710459
+    - 7.5674686
+    - 19.698137
+    - 30.80307
+    - 38.87575
+    - 17.568338
+    - 10.443617
+    - 12.678492
     - 0
   - myId: 2
-    connectedNodes: 010000000300000007000000090000000a0000000b0000000c0000000e0000000f000000100000001100000012000000150000001600000017000000180000001a0000001d0000001e0000001f000000200000002100000022000000
+    connectedNodes: 010000000300000007000000090000000a0000000b0000000c0000000e0000000f000000100000001100000012000000150000001600000017000000180000001a0000001c0000001d0000001e0000001f0000002000000021000000
     position: {x: 35.88, y: 5.11, z: 43.43}
     myDst: 0
     weights:
@@ -12192,12 +13060,12 @@ MonoBehaviour:
     - 11.58151
     - 25.426245
     - 50.496944
-    - 32.749786
-    - 18.762291
-    - 18.056467
-    - 33.51292
-    - 44.725483
-    - 43.571163
+    - 39.821587
+    - 30.89921
+    - 15.304775
+    - 14.4308195
+    - 31.706915
+    - 43.38872
     - 0
   - myId: 3
     connectedNodes: 00000000010000000700000008000000090000000a0000000d0000000e0000000f000000100000001100000014000000150000001700000018000000190000001a0000001c0000001d0000001e0000001f00000020000000210000002200000023000000
@@ -12221,17 +13089,17 @@ MonoBehaviour:
     - 9.972654
     - 12.947932
     - 30.929783
-    - 32.479164
-    - 36.96145
-    - 31.01812
-    - 19.50349
-    - 13.359119
-    - 40.236412
-    - 49.947937
-    - 44.120247
+    - 30.61223
+    - 35.332157
+    - 29.057465
+    - 16.204897
+    - 7.7896476
+    - 38.745083
+    - 48.754578
+    - 42.764576
     - 0
   - myId: 4
-    connectedNodes: 000000000300000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000017000000190000001a0000001b0000001c0000001d0000001e00000020000000210000002200000023000000
+    connectedNodes: 000000000300000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000017000000190000001a0000001b0000001c0000001d0000001e000000200000002100000023000000
     position: {x: 5.38, y: 5.11, z: 13.68}
     myDst: 0
     weights:
@@ -12256,16 +13124,15 @@ MonoBehaviour:
     - 19.635717
     - 9.839406
     - 12.536802
-    - 14.832012
-    - 27.723928
-    - 35.099377
-    - 25.066084
-    - 20.783073
-    - 35.975876
-    - 40.307426
+    - 10.109456
+    - 25.511345
+    - 33.37932
+    - 22.594715
+    - 17.72424
+    - 38.818825
     - 0
   - myId: 5
-    connectedNodes: 03000000090000000a0000000b0000000c0000000d0000000e0000000f00000010000000110000001200000013000000140000001700000018000000190000001b0000001c0000001d0000001e0000001f000000210000002200000023000000
+    connectedNodes: 03000000090000000a0000000b0000000c0000000d0000000e0000000f00000010000000110000001200000013000000140000001700000018000000190000001b0000001d00000021000000
     position: {x: 3.13, y: 5.11, z: 31.18}
     myDst: 0
     weights:
@@ -12286,13 +13153,8 @@ MonoBehaviour:
     - 40.272057
     - 31.78103
     - 20.658386
-    - 15.270103
-    - 14.458686
-    - 24.739212
-    - 29.998602
-    - 14.573042
-    - 20.900387
-    - 24.88727
+    - 9.553331
+    - 9.725538
     - 0
   - myId: 6
     connectedNodes: 010000000a0000000d0000000e0000001c0000001d0000001e0000001f00000020000000210000002200000023000000
@@ -12303,17 +13165,17 @@ MonoBehaviour:
     - 3.37
     - 15.09747
     - 16.368244
-    - 30.26109
-    - 17.790054
-    - 13.549393
-    - 23.67168
-    - 36.3463
-    - 30.237494
-    - 25.593136
-    - 15.09747
+    - 28.24794
+    - 14.096049
+    - 8.111632
+    - 21.037134
+    - 34.68812
+    - 28.22266
+    - 23.178032
+    - 10.495054
     - 0
   - myId: 7
-    connectedNodes: 030000000b0000000d00000017000000180000001c0000001d0000001e0000001f00000020000000210000002200000023000000
+    connectedNodes: 030000000b0000000d00000017000000180000001c0000001d0000001e0000001f0000002000000021000000
     position: {x: 33.88, y: 5.11, z: 28.68}
     myDst: 0
     weights:
@@ -12322,17 +13184,15 @@ MonoBehaviour:
     - 35.532925
     - 10.163358
     - 12.797709
-    - 34.013065
-    - 32.125008
-    - 22.025352
-    - 12.777073
-    - 20.58418
-    - 39.94166
-    - 44.91563
-    - 35.532925
+    - 32.235092
+    - 30.236216
+    - 19.165821
+    - 6.7428575
+    - 17.490599
+    - 38.438896
     - 0
   - myId: 8
-    connectedNodes: 00000000030000000c000000190000001a0000001c0000001d0000001e0000001f0000002000000021000000
+    connectedNodes: 00000000030000000c000000190000001a0000001f00000020000000
     position: {x: 19.130001, y: 5.11, z: 14.68}
     myDst: 0
     weights:
@@ -12341,20 +13201,17 @@ MonoBehaviour:
     - 3.3700001
     - 9.428356
     - 18.662033
-    - 21.535927
-    - 29.940336
-    - 30.317465
-    - 23.40483
-    - 14.675355
-    - 29.270184
+    - 20.736408
+    - 9.878187
     - 0
   - myId: 9
-    connectedNodes: 030000000a0000000c0000000e0000000f0000001000000011000000120000001300000014000000160000001700000018000000190000001b0000001e0000001f00000020000000
+    connectedNodes: 030000000a0000000b0000000c0000000e0000000f0000001000000011000000120000001300000014000000160000001700000018000000190000001b0000001e0000001f00000020000000210000002200000023000000
     position: {x: 3.13, y: 1.7400002, z: 31.18}
     myDst: 0
     weights:
     - 33.158436
     - 19.995312
+    - 30.85146
     - 22.98369
     - 12.811128
     - 19.927996
@@ -12368,9 +13225,12 @@ MonoBehaviour:
     - 40.13081
     - 31.601852
     - 20.381659
-    - 26.550697
-    - 31.509157
-    - 33.79581
+    - 23.273527
+    - 28.801815
+    - 31.28697
+    - 11.916459
+    - 19.143003
+    - 23.430847
     - 0
   - myId: 10
     connectedNodes: 03000000090000000b0000000c0000000d0000000e0000000f00000010000000110000001200000013000000150000001600000018000000190000001c0000001f000000200000002100000023000000
@@ -12392,38 +13252,41 @@ MonoBehaviour:
     - 14.5122175
     - 36.661346
     - 39.473087
-    - 31.759163
-    - 25.558939
-    - 37.60272
-    - 31.736681
-    - 17.912134
+    - 29.07511
+    - 22.135422
+    - 35.36498
+    - 29.05055
+    - 12.552373
     - 0
   - myId: 11
-    connectedNodes: 01000000070000000a0000000c0000000d0000000f00000011000000120000001500000017000000180000001a0000001c0000001d0000001f000000210000002200000023000000
+    connectedNodes: 0100000007000000090000000a0000000c0000000d0000000e0000000f0000001000000011000000120000001500000017000000180000001a0000001c0000001d0000001e000000210000002200000023000000
     position: {x: 33.88, y: 1.7400002, z: 28.68}
     myDst: 0
     weights:
     - 34.502354
     - 3.37
+    - 30.85146
     - 24.395184
     - 20.336237
     - 36.817112
+    - 18.04335
     - 15.15132
+    - 23.511965
     - 24.884735
     - 11.792477
     - 34.563198
     - 9.588375
     - 12.34603
     - 38.54215
-    - 35.352505
-    - 33.539932
-    - 16.00514
-    - 41.088287
-    - 45.93827
-    - 36.817112
+    - 32.962357
+    - 31.010395
+    - 20.36528
+    - 39.050797
+    - 44.1253
+    - 34.5285
     - 0
   - myId: 12
-    connectedNodes: 000000000100000008000000090000000a0000000b0000000d0000000e0000000f000000100000001100000012000000140000001500000017000000190000001a0000001d0000001e000000200000002200000023000000
+    connectedNodes: 000000000100000008000000090000000a0000000b0000000d0000000e0000000f000000100000001100000012000000140000001500000017000000190000001a0000001d0000001e0000001f000000200000002200000023000000
     position: {x: 19.130001, y: 1.74, z: 14.68}
     myDst: 0
     weights:
@@ -12444,11 +13307,12 @@ MonoBehaviour:
     - 29.838806
     - 8.80551
     - 18.355232
-    - 31.45369
-    - 31.812883
-    - 17.557817
-    - 42.709568
-    - 41.338932
+    - 28.741123
+    - 29.13378
+    - 21.84982
+    - 12.041366
+    - 40.753216
+    - 39.314434
     - 0
   - myId: 13
     connectedNodes: 0100000003000000070000000a0000000b0000000c0000000e0000000f00000010000000110000001200000013000000140000001500000016000000180000001b0000001c0000001d0000001e0000001f00000020000000210000002200000023000000
@@ -12472,17 +13336,17 @@ MonoBehaviour:
     - 24.563463
     - 48.193504
     - 44.70273
-    - 30.805845
-    - 13.8406105
-    - 15.110013
-    - 29.34493
-    - 42.29066
-    - 28.001116
-    - 16.944763
-    - 0
+    - 31.536686
+    - 15.398863
+    - 16.549168
+    - 30.111252
+    - 42.825954
+    - 28.803211
+    - 18.239723
+    - 6.749998
     - 0
   - myId: 14
-    connectedNodes: 0100000003000000090000000a0000000c0000000d0000000f0000001000000011000000120000001400000015000000160000001700000018000000190000001c0000001d0000001e0000001f00000020000000210000002200000023000000
+    connectedNodes: 0100000003000000090000000a0000000b0000000c0000000d0000000f0000001000000011000000120000001400000015000000160000001700000018000000190000001c0000001d0000001e0000001f00000020000000210000002200000023000000
     position: {x: 15.88, y: 1.74, z: 29.93}
     myDst: 0
     weights:
@@ -12490,6 +13354,7 @@ MonoBehaviour:
     - 21.89993
     - 12.811128
     - 16.017569
+    - 18.04335
     - 15.592466
     - 27.51885
     - 10.000001
@@ -12502,14 +13367,14 @@ MonoBehaviour:
     - 26.258413
     - 27.750978
     - 24.115597
-    - 21.785017
-    - 20.392143
-    - 20.653439
-    - 21.37351
-    - 25.390095
-    - 25.429499
-    - 30.995758
-    - 27.51885
+    - 17.643824
+    - 15.892044
+    - 16.22597
+    - 17.13314
+    - 21.940247
+    - 21.985836
+    - 28.239239
+    - 24.37221
     - 0
   - myId: 15
     connectedNodes: 0100000003000000090000000a0000000b0000000c0000000d0000000e000000100000001100000012000000150000001700000018000000190000001c0000001d0000001e0000001f00000020000000210000002200000023000000
@@ -12531,17 +13396,17 @@ MonoBehaviour:
     - 20.300354
     - 27.252832
     - 30.905695
-    - 29.328262
-    - 22.302456
-    - 16.097345
-    - 19.01018
-    - 29.533318
-    - 32.00343
-    - 32.730675
-    - 24.05924
+    - 26.398191
+    - 18.27887
+    - 9.789895
+    - 14.074959
+    - 26.625822
+    - 29.341728
+    - 30.133282
+    - 20.385403
     - 0
   - myId: 16
-    connectedNodes: 0100000003000000090000000a0000000c0000000d0000000e0000000f000000110000001200000014000000150000001600000017000000190000001c0000001d0000001e0000001f00000020000000210000002200000023000000
+    connectedNodes: 0100000003000000090000000a0000000b0000000c0000000d0000000e0000000f000000110000001200000014000000150000001600000017000000190000001c0000001d0000001e0000001f0000002000000023000000
     position: {x: 10.63, y: 1.74, z: 25.18}
     myDst: 0
     weights:
@@ -12549,6 +13414,7 @@ MonoBehaviour:
     - 23.874294
     - 9.604687
     - 21.600058
+    - 23.511965
     - 13.509256
     - 30.859636
     - 7.079901
@@ -12560,17 +13426,15 @@ MonoBehaviour:
     - 33.922882
     - 32.42259
     - 22.252123
-    - 17.638508
-    - 21.047436
-    - 25.587488
-    - 25.93467
-    - 25.645409
-    - 21.547958
-    - 30.512571
-    - 30.859636
+    - 12.158721
+    - 16.724596
+    - 22.16838
+    - 22.56822
+    - 22.235209
+    - 28.08976
     - 0
   - myId: 17
-    connectedNodes: 0100000003000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001200000013000000150000001600000017000000190000001c0000001d0000001e0000001f00000020000000210000002200000023000000
+    connectedNodes: 0100000003000000090000000a0000000b0000000c0000000d0000000e0000000f00000010000000120000001300000015000000160000001700000018000000190000001c0000001d0000001e0000001f00000020000000210000002200000023000000
     position: {x: 10.88, y: 1.74, z: 38.18}
     myDst: 0
     weights:
@@ -12589,15 +13453,16 @@ MonoBehaviour:
     - 16.903683
     - 23.79274
     - 31.201872
+    - 36.066525
     - 33.59486
-    - 23.877594
-    - 16.279343
-    - 19.270885
-    - 26.024113
-    - 33.547867
-    - 24.027836
-    - 24.019045
-    - 20.684282
+    - 20.170696
+    - 10.086353
+    - 14.425136
+    - 22.670952
+    - 31.018976
+    - 20.348328
+    - 20.337946
+    - 16.265211
     - 0
   - myId: 18
     connectedNodes: 01000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000140000001500000017000000190000001a0000001c0000001d0000001e0000001f00000020000000210000002200000023000000
@@ -12619,17 +13484,17 @@ MonoBehaviour:
     - 21.376959
     - 15.363334
     - 26.866049
-    - 26.129236
-    - 28.761774
-    - 25.341953
-    - 18.96647
-    - 18.256695
-    - 32.45088
-    - 40.80609
-    - 36.103146
+    - 22.791546
+    - 25.767366
+    - 21.884518
+    - 14.015868
+    - 13.039343
+    - 29.829132
+    - 38.75377
+    - 33.76618
     - 0
   - myId: 19
-    connectedNodes: 01000000090000000a0000000d00000011000000140000001a0000001b0000001c0000001d000000210000002200000023000000
+    connectedNodes: 01000000090000000a0000000d00000011000000140000001a0000001b0000001d000000210000002200000023000000
     position: {x: -5.6900005, y: 1.74, z: 17.07}
     myDst: 0
     weights:
@@ -12641,14 +13506,13 @@ MonoBehaviour:
     - 27.251146
     - 15.700318
     - 3.8810437
-    - 18.301674
-    - 28.921167
-    - 18.786533
-    - 32.472702
-    - 41.124584
+    - 25.945162
+    - 13.771398
+    - 29.852873
+    - 39.08899
     - 0
   - myId: 20
-    connectedNodes: 0100000003000000090000000c0000000d0000000e000000100000001200000013000000190000001b0000001c0000001d0000001e0000001f00000020000000210000002200000023000000
+    connectedNodes: 0100000003000000090000000c0000000d0000000e000000100000001200000013000000190000001b0000001c0000001d000000210000002200000023000000
     position: {x: -5.4400005, y: 1.74, z: 44.32}
     myDst: 0
     weights:
@@ -12663,17 +13527,14 @@ MonoBehaviour:
     - 27.251146
     - 47.207653
     - 31.025192
-    - 28.490635
-    - 19.970572
-    - 31.196215
-    - 41.36425
-    - 47.656017
-    - 22.799643
-    - 15.531944
-    - 23.010788
+    - 25.464363
+    - 15.347355
+    - 18.8823
+    - 8.82943
+    - 19.136715
     - 0
   - myId: 21
-    connectedNodes: 030000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001600000018000000190000001c0000001d0000001e0000001f000000210000002200000023000000
+    connectedNodes: 030000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001600000018000000190000001d0000001e00000020000000210000002200000023000000
     position: {x: 11.559999, y: 1.74, z: 55.07}
     myDst: 0
     weights:
@@ -12690,16 +13551,15 @@ MonoBehaviour:
     - 17.29523
     - 46.89483
     - 49.47727
-    - 37.653336
-    - 23.297129
-    - 22.38328
-    - 34.27366
-    - 35.21727
-    - 25.182806
-    - 15.89194
+    - 19.480085
+    - 18.377398
+    - 45.427097
+    - 32.817276
+    - 21.70003
+    - 9.448349
     - 0
   - myId: 22
-    connectedNodes: 090000000a0000000d0000000e0000001000000011000000150000001d0000001e0000002200000023000000
+    connectedNodes: 090000000a0000000d0000000e0000001000000011000000150000001c0000001d0000001e0000002200000023000000
     position: {x: 28.81, y: 1.74, z: 53.82}
     myDst: 0
     weights:
@@ -12710,13 +13570,14 @@ MonoBehaviour:
     - 33.922882
     - 23.79274
     - 17.29523
-    - 31.59812
-    - 20.559576
-    - 38.89388
-    - 24.563463
+    - 42.09277
+    - 28.899113
+    - 16.106327
+    - 36.73488
+    - 20.978115
     - 0
   - myId: 23
-    connectedNodes: 010000000300000007000000090000000b0000000c0000000e0000000f000000100000001100000012000000180000001a0000001e0000001f0000002000000022000000
+    connectedNodes: 010000000300000007000000090000000b0000000c0000000e0000000f000000100000001100000012000000180000001a0000001c0000001d0000001f000000200000002100000022000000
     position: {x: 41.809998, y: 1.74, z: 34.07}
     myDst: 0
     weights:
@@ -12733,13 +13594,15 @@ MonoBehaviour:
     - 21.376959
     - 15.258195
     - 48.10665
-    - 26.785513
-    - 19.342602
-    - 29.622307
-    - 51.486656
+    - 41.765038
+    - 37.300148
+    - 14.520804
+    - 26.724495
+    - 47.24194
+    - 49.875782
     - 0
   - myId: 24
-    connectedNodes: 010000000300000007000000090000000a0000000b0000000d0000000e0000000f00000015000000170000001c0000001d0000001e0000001f000000200000002200000023000000
+    connectedNodes: 010000000300000007000000090000000a0000000b0000000d0000000e0000000f0000001100000015000000170000001e0000001f000000200000002200000023000000
     position: {x: 41.309998, y: 1.74, z: 18.82}
     myDst: 0
     weights:
@@ -12752,18 +13615,17 @@ MonoBehaviour:
     - 48.193504
     - 27.750978
     - 27.252832
+    - 36.066525
     - 46.89483
     - 15.258195
-    - 41.585255
-    - 43.47633
-    - 34.39762
-    - 22.488749
-    - 21.55142
-    - 56.464443
-    - 48.193504
+    - 31.93609
+    - 18.50571
+    - 17.354574
+    - 54.999554
+    - 46.468605
     - 0
   - myId: 25
-    connectedNodes: 00000000010000000300000008000000090000000a0000000c0000000e0000000f00000010000000110000001200000014000000150000001a0000001c0000001d0000001e0000001f0000002000000021000000
+    connectedNodes: 00000000010000000300000008000000090000000a0000000c0000000e0000000f00000010000000110000001200000014000000150000001a0000001d0000001f000000200000002200000023000000
     position: {x: 23.56, y: 1.74, z: 7.0699997}
     myDst: 0
     weights:
@@ -12782,15 +13644,14 @@ MonoBehaviour:
     - 47.207653
     - 49.47727
     - 19.907598
-    - 29.800903
-    - 39.358307
-    - 38.591858
-    - 29.444931
-    - 17.12378
-    - 37.82296
+    - 37.226254
+    - 26.52775
+    - 11.399182
+    - 49.307316
+    - 47.661217
     - 0
   - myId: 26
-    connectedNodes: 0000000003000000080000000b0000000c000000120000001300000017000000190000001b0000001c0000001f00000020000000
+    connectedNodes: 0000000003000000080000000b0000000c000000120000001300000017000000190000001b00000020000000
     position: {x: 3.8099995, y: 1.74, z: 4.5699997}
     myDst: 0
     weights:
@@ -12804,12 +13665,10 @@ MonoBehaviour:
     - 48.10665
     - 19.907598
     - 13.667937
-    - 23.228674
-    - 40.753605
-    - 29.494938
+    - 26.583244
     - 0
   - myId: 27
-    connectedNodes: 01000000090000000d00000013000000140000001a0000001c0000001d000000210000002200000023000000
+    connectedNodes: 01000000090000000d00000013000000140000001a0000001d000000210000002200000023000000
     position: {x: -6.6900005, y: 1.74, z: 13.32}
     myDst: 0
     weights:
@@ -12819,37 +13678,30 @@ MonoBehaviour:
     - 3.8810437
     - 31.025192
     - 13.667937
-    - 20.0762
-    - 32.18946
-    - 21.217007
-    - 35.82184
-    - 44.70273
+    - 29.544525
+    - 16.9375
+    - 33.46523
+    - 42.8375
     - 0
   - myId: 28
-    connectedNodes: 00000000010000000300000007000000080000000a0000000b0000000d0000000e0000000f00000010000000110000001200000013000000140000001500000018000000190000001a0000001b0000001d0000001e0000001f00000020000000210000002200000023000000
-    position: {x: 2.83, y: 17.21, z: 21.87}
+    connectedNodes: 0100000003000000070000000a0000000b0000000d0000000e0000000f0000001000000011000000120000001400000016000000170000001d0000001e0000001f00000020000000210000002200000023000000
+    position: {x: 2.83, y: 10.46, z: 21.87}
     myDst: 0
     weights:
-    - 21.535927
-    - 24.272032
-    - 32.479164
-    - 34.013065
-    - 21.535927
-    - 31.759163
-    - 35.352505
-    - 30.805845
-    - 21.785017
-    - 29.328262
-    - 17.638508
-    - 23.877594
-    - 26.129236
-    - 18.301674
-    - 28.490635
-    - 37.653336
-    - 41.585255
-    - 29.800903
-    - 23.228674
-    - 20.0762
+    - 21.710459
+    - 30.61223
+    - 32.235092
+    - 29.07511
+    - 32.962357
+    - 31.536686
+    - 17.643824
+    - 26.398191
+    - 12.158721
+    - 20.170696
+    - 22.791546
+    - 25.464363
+    - 42.09277
+    - 41.765038
     - 17.016539
     - 27.781515
     - 29.251068
@@ -12859,30 +13711,28 @@ MonoBehaviour:
     - 30.805845
     - 0
   - myId: 29
-    connectedNodes: 00000000010000000300000007000000080000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000018000000190000001b0000001c0000001e0000001f00000020000000210000002200000023000000
-    position: {x: 5.83, y: 17.21, z: 38.620003}
+    connectedNodes: 0100000003000000070000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000017000000190000001b0000001c0000001e0000001f00000020000000210000002200000023000000
+    position: {x: 5.83, y: 10.460001, z: 38.620003}
     myDst: 0
     weights:
-    - 29.940336
-    - 13.230799
-    - 36.96145
-    - 32.125008
-    - 29.940336
-    - 33.539932
-    - 31.45369
-    - 13.8406105
-    - 20.392143
-    - 22.302456
-    - 21.047436
-    - 16.279343
-    - 28.761774
-    - 28.921167
-    - 19.970572
-    - 23.297129
-    - 31.59812
-    - 43.47633
-    - 39.358307
-    - 32.18946
+    - 7.5674686
+    - 35.332157
+    - 30.236216
+    - 31.010395
+    - 28.741123
+    - 15.398863
+    - 15.892044
+    - 18.27887
+    - 16.724596
+    - 10.086353
+    - 25.767366
+    - 25.945162
+    - 15.347355
+    - 19.480085
+    - 28.899113
+    - 37.300148
+    - 37.226254
+    - 29.544525
     - 17.016539
     - 16.190275
     - 25.86141
@@ -12892,29 +13742,25 @@ MonoBehaviour:
     - 13.8406105
     - 0
   - myId: 30
-    connectedNodes: 0000000001000000030000000700000008000000090000000c0000000d0000000e0000000f0000001000000011000000120000001400000015000000160000001700000018000000190000001c0000001d0000001f00000020000000210000002200000023000000
-    position: {x: 21.58, y: 17.21, z: 42.370003}
+    connectedNodes: 010000000300000007000000090000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001500000016000000180000001c0000001d0000001f00000020000000210000002200000023000000
+    position: {x: 21.58, y: 10.460001, z: 42.370003}
     myDst: 0
     weights:
-    - 30.317465
-    - 22.49009
-    - 31.01812
-    - 22.025352
-    - 30.317465
-    - 26.550697
-    - 31.812883
-    - 15.110013
-    - 20.653439
-    - 16.097345
-    - 25.587488
-    - 19.270885
-    - 25.341953
-    - 31.196215
-    - 22.38328
-    - 20.559576
-    - 26.785513
-    - 34.39762
-    - 38.591858
+    - 19.698137
+    - 29.057465
+    - 19.165821
+    - 23.273527
+    - 20.36528
+    - 29.13378
+    - 16.549168
+    - 16.22597
+    - 9.789895
+    - 22.16838
+    - 14.425136
+    - 21.884518
+    - 18.377398
+    - 16.106327
+    - 31.93609
     - 27.781515
     - 16.190275
     - 14.407029
@@ -12924,30 +13770,27 @@ MonoBehaviour:
     - 15.110013
     - 0
   - myId: 31
-    connectedNodes: 0000000001000000030000000700000008000000090000000a0000000b0000000d0000000e0000000f00000010000000110000001200000014000000150000001700000018000000190000001a0000001c0000001d0000001e00000020000000210000002200000023000000
-    position: {x: 30.58, y: 17.21, z: 31.120003}
+    connectedNodes: 0000000001000000030000000700000008000000090000000a0000000c0000000d0000000e0000000f0000001000000011000000120000001700000018000000190000001c0000001d0000001e00000020000000210000002200000023000000
+    position: {x: 30.58, y: 10.460001, z: 31.120003}
     myDst: 0
     weights:
-    - 23.40483
-    - 32.659096
-    - 19.50349
-    - 12.777073
-    - 23.40483
-    - 31.509157
-    - 25.558939
-    - 16.00514
-    - 29.34493
-    - 21.37351
-    - 19.01018
-    - 25.93467
-    - 26.024113
-    - 18.96647
-    - 41.36425
-    - 34.27366
-    - 19.342602
-    - 22.488749
-    - 29.444931
-    - 40.753605
+    - 20.736408
+    - 30.80307
+    - 16.204897
+    - 6.7428575
+    - 20.736408
+    - 28.801815
+    - 22.135422
+    - 21.84982
+    - 30.111252
+    - 17.13314
+    - 14.074959
+    - 22.56822
+    - 22.670952
+    - 14.015868
+    - 14.520804
+    - 18.50571
+    - 26.52775
     - 29.251068
     - 25.86141
     - 14.407029
@@ -12957,29 +13800,29 @@ MonoBehaviour:
     - 29.34493
     - 0
   - myId: 32
-    connectedNodes: 0000000001000000030000000700000008000000090000000a0000000c0000000d0000000e0000000f000000100000001100000012000000140000001700000018000000190000001a0000001c0000001d0000001e0000001f000000210000002200000023000000
-    position: {x: 27.33, y: 17.21, z: 13.370003}
+    connectedNodes: 0000000001000000030000000700000008000000090000000a0000000c0000000d0000000e0000000f000000100000001100000012000000150000001700000018000000190000001a0000001c0000001d0000001e0000001f000000210000002200000023000000
+    position: {x: 27.33, y: 10.460001, z: 13.370003}
     myDst: 0
     weights:
-    - 14.675355
-    - 40.36225
-    - 13.359119
-    - 20.58418
-    - 14.675355
-    - 33.79581
-    - 37.60272
-    - 17.557817
-    - 42.29066
-    - 25.390095
-    - 29.533318
-    - 25.645409
-    - 33.547867
-    - 18.256695
-    - 47.656017
-    - 29.622307
-    - 21.55142
-    - 17.12378
-    - 29.494938
+    - 9.878187
+    - 38.87575
+    - 7.7896476
+    - 17.490599
+    - 9.878187
+    - 31.28697
+    - 35.36498
+    - 12.041366
+    - 42.825954
+    - 21.940247
+    - 26.625822
+    - 22.235209
+    - 31.018976
+    - 13.039343
+    - 45.427097
+    - 26.724495
+    - 17.354574
+    - 11.399182
+    - 26.583244
     - 25.932604
     - 33.16342
     - 29.564548
@@ -12989,28 +13832,26 @@ MonoBehaviour:
     - 42.29066
     - 0
   - myId: 33
-    connectedNodes: 00000000010000000300000007000000080000000a0000000b0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000190000001b0000001c0000001d0000001e0000001f000000200000002200000023000000
-    position: {x: -4.17, y: 17.21, z: 27.620003}
+    connectedNodes: 010000000300000007000000090000000a0000000b0000000d0000000e0000000f0000001100000012000000130000001400000015000000170000001b0000001c0000001d0000001e0000001f000000200000002200000023000000
+    position: {x: -4.17, y: 10.460001, z: 27.620003}
     myDst: 0
     weights:
-    - 29.270184
-    - 20.650278
-    - 40.236412
-    - 39.94166
-    - 29.270184
-    - 31.736681
-    - 41.088287
-    - 28.001116
-    - 25.429499
-    - 32.00343
-    - 21.547958
-    - 24.027836
-    - 32.45088
-    - 18.786533
-    - 22.799643
-    - 35.21727
-    - 37.82296
-    - 21.217007
+    - 17.568338
+    - 38.745083
+    - 38.438896
+    - 11.916459
+    - 29.05055
+    - 39.050797
+    - 28.803211
+    - 21.985836
+    - 29.341728
+    - 20.348328
+    - 29.829132
+    - 13.771398
+    - 18.8823
+    - 32.817276
+    - 47.24194
+    - 16.9375
     - 9.058837
     - 14.866069
     - 29.675327
@@ -13020,28 +13861,28 @@ MonoBehaviour:
     - 28.001116
     - 0
   - myId: 34
-    connectedNodes: 0100000003000000070000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000017000000180000001b0000001c0000001d0000001e0000001f000000200000002100000023000000
-    position: {x: -5.92, y: 17.21, z: 45.620003}
+    connectedNodes: 0100000003000000090000000b0000000c0000000d0000000e0000000f0000001100000012000000130000001400000015000000160000001700000018000000190000001b0000001c0000001d0000001e0000001f000000200000002100000023000000
+    position: {x: -5.92, y: 10.460001, z: 45.620003}
     myDst: 0
     weights:
-    - 15.061759
-    - 49.947937
-    - 44.91563
-    - 45.93827
-    - 42.709568
-    - 16.944763
-    - 30.995758
-    - 32.730675
-    - 30.512571
-    - 24.019045
-    - 40.80609
-    - 32.472702
-    - 15.531944
-    - 25.182806
-    - 38.89388
-    - 51.486656
-    - 56.464443
-    - 35.82184
+    - 10.443617
+    - 48.754578
+    - 19.143003
+    - 44.1253
+    - 40.753216
+    - 18.239723
+    - 28.239239
+    - 30.133282
+    - 20.337946
+    - 38.75377
+    - 29.852873
+    - 8.82943
+    - 21.70003
+    - 36.73488
+    - 49.875782
+    - 54.999554
+    - 49.307316
+    - 33.46523
     - 25.310574
     - 13.677079
     - 27.69138
@@ -13051,28 +13892,29 @@ MonoBehaviour:
     - 16.944763
     - 0
   - myId: 35
-    connectedNodes: 0100000003000000070000000a0000000b0000000c0000000d0000000e0000000f00000010000000110000001200000013000000140000001500000016000000180000001b0000001c0000001d0000001e0000001f000000200000002100000022000000
-    position: {x: 9.83, y: 17.21, z: 51.870003}
+    connectedNodes: 0100000003000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000018000000190000001b0000001c0000001d0000001e0000001f000000200000002100000022000000
+    position: {x: 9.83, y: 10.460001, z: 51.870003}
     myDst: 0
     weights:
-    - 16.689266
-    - 44.120247
-    - 35.532925
-    - 17.912134
-    - 36.817112
-    - 41.338932
-    - 0
-    - 27.51885
-    - 24.05924
-    - 30.859636
-    - 20.684282
-    - 36.103146
-    - 41.124584
-    - 23.010788
-    - 15.89194
-    - 24.563463
-    - 48.193504
-    - 44.70273
+    - 12.678492
+    - 42.764576
+    - 23.430847
+    - 12.552373
+    - 34.5285
+    - 39.314434
+    - 6.749998
+    - 24.37221
+    - 20.385403
+    - 28.08976
+    - 16.265211
+    - 33.76618
+    - 39.08899
+    - 19.136715
+    - 9.448349
+    - 20.978115
+    - 46.468605
+    - 47.661217
+    - 42.8375
     - 30.805845
     - 13.8406105
     - 15.110013
@@ -13233,7 +14075,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722422947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.33, y: 13.67, z: 8.920002}
+  m_LocalPosition: {x: -6.33, y: 6.920001, z: 8.920002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1706157641}
@@ -14681,6 +15523,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a83af7b28fd23124e97cfea5c16805b3, type: 3}
   m_PrefabInstance: {fileID: 1334197904}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1908467781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1908467783}
+  - component: {fileID: 1908467782}
+  m_Layer: 0
+  m_Name: Reflection Probe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &1908467782
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908467781}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 25.683296, y: 10, z: 20.623932}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &1908467783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908467781}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.3, y: 3.6, z: 32.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1909677967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15079,7 +15985,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 10730
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.3563156e-19, y: 1.3555995e-19, z: 1.3563156e-19, w: -0.00000001391858}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
