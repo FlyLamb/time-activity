@@ -23,6 +23,9 @@ public class WeaponGun : Weapon {
 [SerializeField]
     private Bullet bullet;
 
+    [SerializeField]
+    protected bool tripleUltra = true;
+
     private bool reloadedRecently = false;
 
     public override void Fire1() {
@@ -56,6 +59,7 @@ public class WeaponGun : Weapon {
     }
 
     public override void Fire2() {
+        if(!tripleUltra) return;
         if(_shootDelay > 0) return;
         base.Fire2();
         _shootDelay = shootDelay* 3;
