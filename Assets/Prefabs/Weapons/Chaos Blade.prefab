@@ -192,10 +192,12 @@ MonoBehaviour:
   weaponName: Chaos Blade
   weaponDescription: 
   icon: {fileID: 21300000, guid: 63aa40e2563975062a4a8d093590c89b, type: 3}
+  fire1: {fileID: 0}
+  fire2: {fileID: 0}
   animator: {fileID: 1822455504537530208}
   hitbox: {fileID: 6007983053374469106}
-  damage: 20
-  attackInterval: 0.55
+  damage: 12
+  attackInterval: 0.4
   pushForce: 3
 --- !u!65 &5147929790218957148
 BoxCollider:
@@ -384,13 +386,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5deafa922cb56b70baf1e0df4241ccf, type: 3}
---- !u!4 &2274549251173856230 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a5deafa922cb56b70baf1e0df4241ccf, type: 3}
-  m_PrefabInstance: {fileID: 1736818268324516877}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1502798004693330268 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a5deafa922cb56b70baf1e0df4241ccf, type: 3}
+  m_PrefabInstance: {fileID: 1736818268324516877}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2274549251173856230 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a5deafa922cb56b70baf1e0df4241ccf, type: 3}
   m_PrefabInstance: {fileID: 1736818268324516877}
   m_PrefabAsset: {fileID: 0}

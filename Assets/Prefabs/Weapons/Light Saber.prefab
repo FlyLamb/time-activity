@@ -82,7 +82,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 286b029d19092c587bb2c7608efaf122, type: 3}
   animator: {fileID: 518164583968340125}
   hitbox: {fileID: 6007983053374469106}
-  damage: 9
+  damage: 10
   attackInterval: 0.55
   pushForce: 0.5
 --- !u!65 &5147929790218957148

@@ -128,12 +128,10 @@ MonoBehaviour:
   weaponName: Pistol
   weaponDescription: Pew pew haha skrrrt boom boom pew skrt
   icon: {fileID: 21300000, guid: 418c7f6e57618cace8c4b71d782ef647, type: 3}
-  fire1: {fileID: 8300000, guid: dd35ff03e1ae56e4393b2839e9b42cba, type: 3}
-  fire2: {fileID: 0}
   animator: {fileID: 8580610063298596081}
-  shootDelay: 0.5
-  bulletForce: 1000
-  damage: 15
+  shootDelay: 0.33
+  bulletForce: 2000
+  damage: 12
   spread: 0.2
   shootPoint: {fileID: 2965350738395757246}
   aimMask:

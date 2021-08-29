@@ -553,8 +553,33 @@ MonoBehaviour:
     - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
     - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
     - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
+  - enemies:
+    - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
+    - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
+    - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
+  - enemies:
+    - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
     - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
     - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
+    - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
+    - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
+  - enemies:
+    - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
+    - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
+    - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
+    - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
+    - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
+  - enemies:
+    - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
+    - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
+    - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
+    - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
+    - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
+    - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
+    - {fileID: 2917332263047546948, guid: 1dfb986835e445358a079e99b3586d23, type: 3}
+    - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
+    - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
+    - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
   billboards:
   - {fileID: 1591076307}
 --- !u!4 &229367978
@@ -6300,6 +6325,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 920387551, guid: 53d87d523a476eef8914967d3a864758, type: 3}
+      propertyPath: tree.Array.data[0].weapons.Array.data[2].price
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 5990179703371283731, guid: 53d87d523a476eef8914967d3a864758, type: 3}
       propertyPath: m_Name
       value: Canvas
