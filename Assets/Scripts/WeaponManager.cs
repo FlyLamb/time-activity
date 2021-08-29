@@ -24,6 +24,8 @@ public class WeaponManager : MonoBehaviour {
 
     private float delay = 0;
 
+    public AudioSource source;
+
 
     private void Start() {
         if(GameManager.loadout != null) {
@@ -50,6 +52,11 @@ public class WeaponManager : MonoBehaviour {
         }
     }
 
+    public void APlay(AudioClip clip) {
+        if(clip == null) return;
+        source.PlayOneShot(clip);
+    }
+
     private void Update() {
         if(delay >= 0)
             delay-=Time.deltaTime;
@@ -67,7 +74,7 @@ public class WeaponManager : MonoBehaviour {
         }
         if(selectedWeapon != null)  {
             if(Input.GetButton("Fire1")) selectedWeapon.Fire1();
-            else
+        else
             if(Input.GetButton("Fire2")) selectedWeapon.Fire2();
         }
     } 

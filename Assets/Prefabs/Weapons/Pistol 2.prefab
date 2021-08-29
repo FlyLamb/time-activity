@@ -128,6 +128,8 @@ MonoBehaviour:
   weaponName: Stronger Pistol
   weaponDescription: Pew pew haha skrrrt boom boom pew skrt
   icon: {fileID: 21300000, guid: 333beaabdd04eccd0aa1c067abbd20b8, type: 3}
+  fire1: {fileID: 8300000, guid: dd35ff03e1ae56e4393b2839e9b42cba, type: 3}
+  fire2: {fileID: 0}
   animator: {fileID: 3291290129502498896}
   shootDelay: 0.35
   bulletForce: 1100

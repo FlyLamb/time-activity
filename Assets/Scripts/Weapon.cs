@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour {
     public string weaponName;
     public string weaponDescription;
     public Sprite icon;
+    public AudioClip fire1, fire2;
     
 
 [SerializeField]
@@ -15,10 +16,12 @@ public class Weapon : MonoBehaviour {
 
     public virtual void Fire1() {
         if(animator != null) animator.Play("Fire1", 0);
+        WeaponManager.Instance.APlay(fire1);
     }
 
     public virtual void Fire2() {
         if(animator != null) animator.Play("Fire2", 0);
+        WeaponManager.Instance.APlay(fire2);
     }
 
     public virtual void Show() {

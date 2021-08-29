@@ -4836,7 +4836,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 06a650a2841f1edbe8d56f9c1c7d1577, type: 2}
+  - {fileID: 2100000, guid: c2fe76daf41d59447a8ccde788f7e00b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4895,7 +4895,7 @@ GameObject:
   - component: {fileID: 2595051615556853340}
   - component: {fileID: 2595051615556853331}
   m_Layer: 0
-  m_Name: Flesh Explosion
+  m_Name: Nade Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4913,8 +4913,8 @@ Transform:
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 1289750220073151747}
-  - {fileID: 1926507019376890871}
-  - {fileID: 7789361666587736794}
+  - {fileID: 514511227934870059}
+  - {fileID: 8200672637087932092}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -4926,7 +4926,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2595051615556853330}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 2
   cullingMode: 0
@@ -9762,7 +9762,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 06a650a2841f1edbe8d56f9c1c7d1577, type: 2}
+  - {fileID: 2100000, guid: c2fe76daf41d59447a8ccde788f7e00b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9820,11 +9820,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad77e0e1002f1811bb6ff5e549a3119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 700
-  radius: 5
-  damage: 25
+  force: 1000
+  radius: 8
+  damage: 15
   explodeOnPlay: 1
---- !u!1 &5149345076437865783
+--- !u!1 &3627279642192069804
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9832,8 +9832,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7789361666587736794}
-  - component: {fileID: 734462687983758448}
+  - component: {fileID: 514511227934870059}
+  - component: {fileID: 6462502952277945228}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -9841,39 +9841,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7789361666587736794
+--- !u!4 &514511227934870059
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5149345076437865783}
+  m_GameObject: {fileID: 3627279642192069804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2595051615556853342}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &734462687983758448
+--- !u!108 &6462502952277945228
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5149345076437865783}
+  m_GameObject: {fileID: 3627279642192069804}
   m_Enabled: 1
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.13757895, b: 0, a: 1}
-  m_Intensity: 10
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Intensity: 6
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -9917,7 +9917,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &7660386959335438868
+--- !u!1 &5025963822089050082
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9925,8 +9925,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1926507019376890871}
-  - component: {fileID: 4672314448547286696}
+  - component: {fileID: 8200672637087932092}
+  - component: {fileID: 5123937629241657126}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -9934,31 +9934,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1926507019376890871
+--- !u!4 &8200672637087932092
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7660386959335438868}
+  m_GameObject: {fileID: 5025963822089050082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2595051615556853342}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &4672314448547286696
+--- !u!82 &5123937629241657126
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7660386959335438868}
+  m_GameObject: {fileID: 5025963822089050082}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1598208881009485032, guid: fce9a1ed91609084ea2295a2c9fbb242, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 6e3663901c93ad445aad860d81e67085, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 50e180d5652b9c44daa6a5fd9f92d7cc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -10034,7 +10034,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

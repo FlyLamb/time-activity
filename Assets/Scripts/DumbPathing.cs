@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
+using Random = UnityEngine.Random;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -70,6 +71,10 @@ public class DumbPathing : MonoBehaviour {
             makeIntoNodes.Add(transform.GetChild(i));
             transform.GetChild(i).gameObject.name = "" + i;
         }
+    }
+
+    public Vector3 GetRandomPoint() {
+        return nodes[Random.Range(0,nodes.Count)].position;
     }
 
 [ContextMenu("bake")]

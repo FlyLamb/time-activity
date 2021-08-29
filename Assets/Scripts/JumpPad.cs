@@ -32,6 +32,7 @@ public class JumpPad : MonoBehaviour {
             other.GetComponent<Rigidbody>().AddForce(transform.forward * force, ForceMode.Impulse);
             _chargeTime = chargeTime;
             particles.Play();
+            GetComponentInChildren<AudioSource>().Play();
         }
     }
 }
