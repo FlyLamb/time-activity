@@ -23,7 +23,7 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField]
     private GameObject moneyParticle;
 
-     public float maxHealth;
+    public float maxHealth;
     private float health = 100;
 
     private int money = 0;
@@ -41,6 +41,8 @@ public class PlayerManager : MonoBehaviour {
         health -= dmg;
         if(health <= 0)
             Die();
+            if(health > 100)
+            health = 100;
         display.SetHealth(health);
 
     }
@@ -48,7 +50,7 @@ public class PlayerManager : MonoBehaviour {
     public void Die() {
         Time.timeScale = 0.1f;
         uI.ShowDeath();
-        
+        MusicManager.Instance.StopWave();
     }
 
     public void AddMoney(int amount, Vector3 fromPosition) {

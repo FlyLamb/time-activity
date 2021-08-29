@@ -17,7 +17,11 @@ public class UIManager : MonoBehaviour {
 
     private static UIManager instance;
 
+    private bool isPaused = false;
+
     private Tween<float> announcerTween;
+
+    public GameObject menu;
 
 [SerializeField]
     private CanvasGroup shopMenu;
@@ -51,13 +55,21 @@ public class UIManager : MonoBehaviour {
         shopMenu.TweenCancelAll();
         Cursor.lockState = CursorLockMode.None;
         shopMenu.gameObject.SetActive(true);
-        shopMenu.TweenCanvasGroupAlpha(1,0.2f);
+        shopMenu.TweenCanvasGroupAlpha(1,0.2f).SetUseUnscaledTime(true);
+    }
+
+    public void RestartWave() {
+        GameManager.instance.RestartWave();
+    }
+
+    public void MainMenu() {
+        GameManager.instance.MainMenu();
     }
 
     public void HideShopMenu() {
         GameManager.loadout = WeaponManager.Instance.weapons;
         Cursor.lockState = CursorLockMode.Locked;
-        shopMenu.TweenCanvasGroupAlpha(0, 0.2f).SetOnComplete(()=> {
+        shopMenu.TweenCanvasGroupAlpha(0, 0.2f).SetUseUnscaledTime(true).SetOnComplete(()=> {
             shopMenu.gameObject.SetActive(false);
         });
     }
@@ -66,5 +78,27 @@ public class UIManager : MonoBehaviour {
         HideShopMenu();
        // gameObject.TweenDelayedInvoke(3,()=>WaveManager.Instance.SpawnWave());
        WaveManager.Instance.SpawnWave();
+    }
+
+    private void Update() {
+        Cursor.visible = Cursor.lockState != CursorLockMode.Locked;
+
+        if(Input.GetKeyDown(KeyCode.Escape) && death.alpha < 0.5f) {
+            Pause();
+            
+        }
+    }
+
+    public void Pause() {
+        if(shopDisplay.gameObject.activeSelf)
+                HideShopMenu();
+
+            print("Pause");
+            isPaused = !isPaused;
+
+            Time.timeScale = isPaused ? 0.01f : 1f;
+
+            menu.SetActive(isPaused);
+            Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
     }
 }

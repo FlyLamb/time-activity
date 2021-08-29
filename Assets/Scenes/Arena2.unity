@@ -6102,30 +6102,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 778351833, guid: 53d87d523a476eef8914967d3a864758, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 43.06006
-      objectReference: {fileID: 0}
-    - target: {fileID: 920387551, guid: 53d87d523a476eef8914967d3a864758, type: 3}
-      propertyPath: tree.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 920387551, guid: 53d87d523a476eef8914967d3a864758, type: 3}
-      propertyPath: tree.Array.data[3].icon
-      value: 
-      objectReference: {fileID: 21300000, guid: a82afcd39db0efa4f9a669daf06be884, type: 3}
-    - target: {fileID: 920387551, guid: 53d87d523a476eef8914967d3a864758, type: 3}
-      propertyPath: tree.Array.data[3].weapons.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 920387551, guid: 53d87d523a476eef8914967d3a864758, type: 3}
-      propertyPath: tree.Array.data[3].weapons.Array.data[0].price
-      value: 3000
-      objectReference: {fileID: 0}
-    - target: {fileID: 920387551, guid: 53d87d523a476eef8914967d3a864758, type: 3}
-      propertyPath: tree.Array.data[3].weapons.Array.data[0].weapon
-      value: 
-      objectReference: {fileID: 8184739100865164654, guid: a482e7b32baf304409f2e8391d988461, type: 3}
     - target: {fileID: 5990179703371283731, guid: 53d87d523a476eef8914967d3a864758, type: 3}
       propertyPath: m_Name
       value: Canvas

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using ElRaccoone.Tweens;
 
 public class WaveManager : MonoBehaviour {
 
@@ -75,6 +76,8 @@ Come here, little one",true);
         foreach (var item in billboards) {
             item.gameObject.AddComponent<Interactable>().onInteractAction += Interact;
         }
+
+        waveNum = GameManager.waveNum;
     }
 
     public void Interact(Interactable i) {
@@ -104,6 +107,13 @@ Come here, little one", true);
         UIManager.Instance.Announce("Wave finished!");
 
         GameManager.money = PlayerManager.Instance.GetMoney();
+
+        if(waveNum >= waves.Count) {
+            UIManager.Instance.Announce("Arena finished!");
+            gameObject.TweenDelayedInvoke(5, ()=> GameManager.instance.NextArena());
+        }
+
+        PlayerManager.Instance.Hit(-10);
     }
 
     private void FixedUpdate() {
