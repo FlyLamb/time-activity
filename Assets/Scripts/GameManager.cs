@@ -15,10 +15,13 @@ public class GameManager : MonoBehaviour {
 
     public Weapon chaosBlade;
 
+    [ContextMenu("Reset to default")]
+
     public void StartGame() {
         loadout = new List<Weapon>();
         money = 0;
         unlocked = new List<Weapon>();
+        if(chaosBlade == null) return;
         unlocked.Add(chaosBlade);
         loadout.Add(chaosBlade);
         SceneManager.LoadScene(1);

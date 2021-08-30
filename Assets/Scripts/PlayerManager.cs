@@ -26,12 +26,15 @@ public class PlayerManager : MonoBehaviour {
     public float maxHealth;
     private float health = 100;
 
+    public bool freeeMoneeey;
+
     private int money = 0;
 
     private void Start() {
         display = GameObject.FindObjectOfType<StatsDisplay>();
         uI = UIManager.Instance;
         money = GameManager.money;
+        if(freeeMoneeey) money = 99999;
         display.SetMoney(money);
     }
 

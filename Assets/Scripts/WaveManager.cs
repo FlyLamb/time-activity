@@ -113,7 +113,7 @@ Come here, little one", true);
             gameObject.TweenDelayedInvoke(5, ()=> GameManager.instance.NextArena());
         }
 
-        PlayerManager.Instance.Hit(-10);
+        PlayerManager.Instance.Hit(-25);
     }
 
     private void FixedUpdate() {

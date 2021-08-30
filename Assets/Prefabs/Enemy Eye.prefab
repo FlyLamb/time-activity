@@ -610,8 +610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adec04e77a77ea459b68c00ab9c13442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 180
-  moneyDrop: 100
+  maxHealth: 190
+  moneyDrop: 200
   target: {fileID: 0}
   path: []
   laserRegenTime: 10

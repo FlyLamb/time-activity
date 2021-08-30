@@ -222,7 +222,7 @@ MonoBehaviour:
   speed: 5
   rigidbody: {fileID: 3062506793738612780}
   bombInterval: 2
-  bombObject: {fileID: 360364855985497126, guid: 6d89a269ad1805746ad614a38a7c8bf2, type: 3}
+  bombObject: {fileID: 360364855985497126, guid: a0c08c2bca85eca4e9f44ec1aba68daf, type: 3}
 --- !u!1 &4976024947927730199
 GameObject:
   m_ObjectHideFlags: 0
