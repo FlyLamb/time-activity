@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour {
         if(health <= 0) return; //dead already lol
         health -= damage; 
         if(health <= 0) Die();
-        IndicatorManager.Instance.Indicate(transform.position, damage.ToString(), Color.white, 1);
+        IndicatorManager.Instance.Indicate(transform.position, damage.ToString("0.0"), Color.white, 1);
     }
 
     protected virtual void Die() {
