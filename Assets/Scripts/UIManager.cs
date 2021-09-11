@@ -62,6 +62,12 @@ public class UIManager : MonoBehaviour {
         GameManager.instance.RestartWave();
     }
 
+    public void ReplaytWave() {
+        HideShopMenu();
+        WaveManager.Instance.ReplayWave();
+    }
+
+
     public void MainMenu() {
         GameManager.instance.MainMenu();
     }

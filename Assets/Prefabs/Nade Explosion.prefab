@@ -4927,7 +4927,7 @@ ParticleSystem:
   m_GameObject: {fileID: 2595051615556853330}
   serializedVersion: 8
   lengthInSec: 2
-  simulationSpeed: 1
+  simulationSpeed: 1.2
   stopAction: 2
   cullingMode: 0
   ringBufferMode: 0
@@ -9821,7 +9821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 1000
-  radius: 8
+  radius: 5
   damage: 15
   explodeOnPlay: 1
 --- !u!1 &3627279642192069804

@@ -31,12 +31,13 @@ public class Enemy : MonoBehaviour {
     public virtual void Hit(float damage, DamageType damageType = DamageType.Normal) {
         if(health <= 0) return; //dead already lol
         health -= damage; 
+
         if(health <= 0) Die();
+
         IndicatorManager.Instance.Indicate(transform.position, damage.ToString("0.0"), Color.white, 1);
     }
 
     protected virtual void Die() {
-        
         Destroy(gameObject);
     }
 

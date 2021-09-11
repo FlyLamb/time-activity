@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec1fe24a56f143d4b0ebf4c99b8eb83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Stronger Pistol
+  weaponName: AR1
   weaponDescription: 'haha skrrrt bangbangbang. rapid. '
   icon: {fileID: 21300000, guid: cf9e6a125dfd4b7c0b68083ce9286ffe, type: 3}
   fire1: {fileID: 8300000, guid: f3e42fb1cef895b48b19d6c48e38485a, type: 3}
@@ -114,8 +114,8 @@ MonoBehaviour:
   animator: {fileID: 8267099367588233475}
   shootDelay: 0.15
   bulletForce: 1000
-  damage: 8
-  spread: 1
+  damage: 5
+  spread: 0.8
   shootPoint: {fileID: 2965350738395757246}
   aimMask:
     serializedVersion: 2

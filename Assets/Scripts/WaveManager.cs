@@ -97,6 +97,13 @@ Come here, little one",true);
         UIManager.Instance.AnnounceNewWave(waveNum, enemiesAlive.Count);
     }
 
+    public void ReplayWave() {
+        if(waveNum <= 0) return;
+        
+        waveNum--;
+        SpawnWave();
+    }
+
     private void WaveFinished() {
         print("Wave finished");
         Display(@"Wave complete. 
