@@ -1,5 +1,5 @@
 /*
-    A basic, prolly glitchy, not really optymised Physics Player Movement script.
+    A basic, prolly glitchy, not really optimised Physics Player Movement script.
     Written by bajtixone (https://github.com/Bajtix) (https://bajtix.xyz/)
     This script may not be the best, I might improve it in the future, but I just needed to get it working and I've decided to share it in case someone needs a quck solution.
     If for some weird reason you decide to use this script feel free to do so, I don't require credit, but if it's gonna be open source it'd be sick if you were to keep this comment.
@@ -27,8 +27,9 @@ using UnityEngine;
 [RequireComponent(typeof(CapsuleCollider))]
 [RequireComponent(typeof(SphereCollider))]
 [RequireComponent(typeof(Rigidbody))]
-public class BajtixPlayerController : MonoBehaviour {
-    
+public class BajtixPlayerController : MonoBehaviour
+{
+
     [Header("Basic Settings")]
     public float force = 300;
     public float speed = 4;
@@ -57,11 +58,11 @@ public class BajtixPlayerController : MonoBehaviour {
 
     [Tooltip("This curve determines the material friction and the ramp slide force that the object will encounter. It should decrease after a certain value.")]
     public AnimationCurve angleFriction = new AnimationCurve(new Keyframe[] {
-        new Keyframe(0f, 0.7f), 
-        new Keyframe(0.4f, 0.7f), 
+        new Keyframe(0f, 0.7f),
+        new Keyframe(0.4f, 0.7f),
         new Keyframe(0.5f, 0f)}); // the default curve
 
-    
+
 
     private PhysicMaterial frictionMaterial;
     private Collider feet;
@@ -81,7 +82,8 @@ public class BajtixPlayerController : MonoBehaviour {
     private float wallJumpCooldown;
 
     [ContextMenu("Setup prefab")]
-    void CreateBaseSetup() {
+    void CreateBaseSetup()
+    {
         SphereCollider sc = GetComponent<SphereCollider>();
         CapsuleCollider cc = GetComponent<CapsuleCollider>();
         Rigidbody bd = GetComponent<Rigidbody>();
@@ -101,9 +103,9 @@ public class BajtixPlayerController : MonoBehaviour {
 
         Transform po = new GameObject("Checkers").transform;
         po.SetParent(transform);
-        po.localPosition = new Vector3(0,-0.783f,0);
+        po.localPosition = new Vector3(0, -0.783f, 0);
 
-// STUPID ASS WAY OF DOING IT! THERE SOULD BE A LOOP HERE OR SOMETHIN... 
+        // STUPID ASS WAY OF DOING IT! THERE SOULD BE A LOOP HERE OR SOMETHIN... 
         groundCheckers = new Transform[9];
 
         var g = new GameObject("Ground Checker");
@@ -154,47 +156,53 @@ public class BajtixPlayerController : MonoBehaviour {
 
         g = new GameObject("StairChecker");
         g.transform.SetParent(po);
-        g.transform.localPosition = new Vector3(0,0.9f,0);
+        g.transform.localPosition = new Vector3(0, 0.9f, 0);
         stairChecker = g.transform;
     }
 
     [ContextMenu("Get Normal Checker Height ")]
-    void GetNormalCheckerHeight() {
-        if(!isGrounded) {Debug.LogError("Not grounded!"); return;}
+    void GetNormalCheckerHeight()
+    {
+        if (!isGrounded) { Debug.LogError("Not grounded!"); return; }
         stairChecker.localPosition = transform.InverseTransformDirection(SkipY(smoothedVelocity * Time.fixedDeltaTime * stairLookahead) + stepCheckY * Vector3.up);
         RaycastHit hit;
-        if(Physics.Raycast(stairChecker.position, Vector3.down, out hit, normalCheckerHeight + 0.5f, groundMask)) {
+        if (Physics.Raycast(stairChecker.position, Vector3.down, out hit, normalCheckerHeight + 0.5f, groundMask))
+        {
             var w = hit.distance - normalCheckerHeight;
             Debug.Log("Hit distance: " + hit.distance);
-            
-        } else {
+
+        }
+        else
+        {
             Debug.LogError("The ground checkers did not hit! Do you have the layer mask set up correctly?");
         }
     }
 
-    void Start() {
+    void Start()
+    {
         rb = GetComponent<Rigidbody>();
         feet = GetComponent<SphereCollider>();
         feetPosition = GetComponent<CapsuleCollider>().height / 2 * Vector3.down;
         stepCheckY = stairChecker.localPosition.y;
 
         //Create and setup the material
-        frictionMaterial = new PhysicMaterial("Player Instance " + Random.Range(0,10000)) {frictionCombine = PhysicMaterialCombine.Minimum};
+        frictionMaterial = new PhysicMaterial("Player Instance " + Random.Range(0, 10000)) { frictionCombine = PhysicMaterialCombine.Minimum };
         feet.material = frictionMaterial;
     }
 
-    
+
 
     // TODO: Maybe some cleanup?
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         isGrounded = CheckGroundClearence();
         // THE INPUT IS DONE HERE
-        input = new Vector3(Input.GetAxis("Horizontal"),0, Input.GetAxis("Vertical"));
+        input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         Motors(input.x, input.z);
         var jump = Input.GetButton("Jump");
 
-        
+
         wallJumpCooldown -= Time.fixedDeltaTime;
         // Friction and ramps
 
@@ -202,63 +210,81 @@ public class BajtixPlayerController : MonoBehaviour {
         float estimatedFriction = EstimateFrictionForNormal(avgNormal);
         frictionMaterial.staticFriction = frictionMaterial.dynamicFriction = isGrounded ? estimatedFriction : 0f;
 
-        if(avgNormal > normalSteepPoint) {
-           DoRampForces(estimatedFriction);
+        if (avgNormal > normalSteepPoint)
+        {
+            DoRampForces(estimatedFriction);
         }
 
-        if(enableStairs) StairWalking();
-        
+        if (enableStairs) StairWalking();
+
         // Jumping
 
-        if(jumpCooldown > 0) jumpCooldown-=Time.fixedDeltaTime;
+        if (jumpCooldown > 0) jumpCooldown -= Time.fixedDeltaTime;
 
-        if(jump && jumpCooldown <= 0) Jump(); else if(isGrounded) rb.AddForce(Vector3.down * downPushForce);    
+        if (jump && jumpCooldown <= 0) Jump(); else if (isGrounded) rb.AddForce(Vector3.down * downPushForce);
     }
 
     ///<summary>Manages the downwards force that causes the player to slide down</summary>
-    void DoRampForces(float frictionEst) {
+    void DoRampForces(float frictionEst)
+    {
         var nrml = GetAverageFeetNormalVector3();
         nrml.y = -nrml.y;
-        rb.AddForce(nrml * (1-frictionEst) * rampAdjustForce);
+        rb.AddForce(nrml * (1 - frictionEst) * rampAdjustForce);
     }
 
     ///<summary>Step height</summary>
-    void StairWalking() {
-        if(!isGrounded) return;
+    void StairWalking()
+    {
+        if (!isGrounded) return;
         stairChecker.localPosition = transform.InverseTransformDirection(SkipY(smoothedVelocity * Time.fixedDeltaTime * stairLookahead) + stepCheckY * Vector3.up);
         RaycastHit hit;
-        if(Physics.Raycast(stairChecker.position, Vector3.down, out hit, normalCheckerHeight + 0.5f, groundMask, QueryTriggerInteraction.Ignore)) {
+        if (Physics.Raycast(stairChecker.position, Vector3.down, out hit, normalCheckerHeight + 0.5f, groundMask, QueryTriggerInteraction.Ignore))
+        {
             var w = hit.distance - normalCheckerHeight;
             //Debug.Log("Hit distance: " + hit.distance + "; Diff: " + (hit.distance - normalCheckerHeight));
-            if(w < -0.01 && w > -stepHeight && Vector3.Angle(Vector3.up, hit.normal) < normalSteepPoint * 0.1f * 45) {
+            if (w < -0.01 && w > -stepHeight && Vector3.Angle(Vector3.up, hit.normal) < normalSteepPoint * 0.1f * 45)
+            {
                 rb.MovePosition(transform.position - (hit.distance - normalCheckerHeight) * Vector3.up * 0.4f);
-               // Debug.Log("Step!");
+                // Debug.Log("Step!");
             }
         }
 
     }
 
     ///<summary>Tries to jump if possible</summary>
-    void Jump() {
-        if(isGrounded) JustJump();
-        jumpCooldown = 0.15f;
+    void Jump()
+    {
+        if (isGrounded) JustJump(true);
+        else JustJump(false);
+
+        jumpCooldown = 0.5f;
     }
 
     ///<summary>Jumps. Self explainatory</summary>
-    void JustJump() {
-        rb.AddForce(Vector3.up * jumpForce);
+    void JustJump(bool up)
+    {
+        if (up)
+        {
+            rb.AddForce(Vector3.up * jumpForce);
+        }
+        else
+        {
+            rb.AddForce(Vector3.down * jumpForce * 3);
+        }
     }
 
-    bool CheckGroundClearence() {
+    bool CheckGroundClearence()
+    {
         bool g = false;
-        foreach(var w in groundCheckers) 
-            g |= Physics.Raycast(w.position,Vector3.down, 0.3f, groundMask);
+        foreach (var w in groundCheckers)
+            g |= Physics.Raycast(w.position, Vector3.down, 0.3f, groundMask);
 
         return g;
     }
 
     ///<summary>Does the movement stand</summary>
-    void Motors(float x, float y) {
+    void Motors(float x, float y)
+    {
         Vector3 input = new Vector3(x, 0, y);
         input = Vector3.ClampMagnitude(input, 1);
 
@@ -267,9 +293,10 @@ public class BajtixPlayerController : MonoBehaviour {
         float forceCoefficient = Mathf.Clamp01(speed - velocity); // we calculate it so it is gradual, used for the player not to exceed the speed too much
         Vector3 velocityDirection = transform.InverseTransformDirection(rb.velocity);
 
-        if(velocityDirection.magnitude > 0.2f && isGrounded) {
+        if (velocityDirection.magnitude > 0.2f && isGrounded)
+        {
 
-            velocityDirection = Vector3.ClampMagnitude(velocityDirection,1);
+            velocityDirection = Vector3.ClampMagnitude(velocityDirection, 1);
 
             // ignore the y components in further calculations
             velocityDirection = SkipY(velocityDirection);
@@ -277,59 +304,70 @@ public class BajtixPlayerController : MonoBehaviour {
 
             Vector3 correctionForce = transform.TransformDirection(input - velocityDirection);
             rb.AddForce(correctionForce * force / 5); // this force is there to handle qucik direction changes
-            
+
             // DEBUG ONLY VECTOR DRAWING
             // Debug.DrawRay(transform.position, input, Color.black, Time.fixedDeltaTime);
             // Debug.DrawRay(transform.position, velocityDirection, Color.blue, Time.fixedDeltaTime);
             // Debug.DrawRay(transform.position, correctionForce, Color.red, Time.fixedDeltaTime);     
         }
-        smoothedVelocity = Vector3.Lerp(smoothedVelocity,rb.velocity * 0.5f + forceDirection * 2,Time.fixedDeltaTime * 20);
-        if(!isGrounded || avgNormal > normalSteepPoint) {
-            if(IsRoughlyOpposite(forceDirection.normalized,rb.velocity.normalized) || SkipY(rb.velocity).magnitude < 0.5f) 
+        smoothedVelocity = Vector3.Lerp(smoothedVelocity, rb.velocity * 0.5f + forceDirection * 2, Time.fixedDeltaTime * 20);
+        if (!isGrounded || avgNormal > normalSteepPoint)
+        {
+            if (IsRoughlyOpposite(forceDirection.normalized, rb.velocity.normalized) || SkipY(rb.velocity).magnitude < 0.5f)
                 rb.AddForce(forceDirection * force * airControl); // this makes it so it is easier to change direction midair
             else
                 rb.AddForce(forceDirection * force * airControl * 0.05f); // air control
         }
-        else  {
+        else
+        {
             rb.AddForce(forceDirection * force * forceCoefficient);
         }
     }
 
     ///<summary>Checks if the vectors are roughly opposite</summary>
-    bool IsRoughlyOpposite(Vector3 a, Vector3 b) {
-        return Vector3.Angle(a,b) > 90;
+    bool IsRoughlyOpposite(Vector3 a, Vector3 b)
+    {
+        return Vector3.Angle(a, b) > 90;
     }
 
     ///<summary>Ignores the Y component of vec3</summary>
-    Vector3 SkipY(Vector3 vector) {
+    Vector3 SkipY(Vector3 vector)
+    {
         vector.y = 0;
         return vector;
     }
 
-    float EstimateFrictionForNormal(float normal) {
+    float EstimateFrictionForNormal(float normal)
+    {
         return angleFriction.Evaluate(normal);
     }
 
-    float GetAverageFeetNormal() {
+    float GetAverageFeetNormal()
+    {
         return Mathf.Clamp01(Vector3.Angle(Vector3.up, GetAverageFeetNormalVector3()) / 90f);
     }
 
-    Vector3 GetAverageFeetNormalVector3() {
+    Vector3 GetAverageFeetNormalVector3()
+    {
         Vector3 normal = Vector3.zero;
         Vector3 feetPosition = this.feetPosition + transform.position;
-        foreach(var w in groundCheckers) {
+        foreach (var w in groundCheckers)
+        {
             RaycastHit hit;
-            if(Physics.Raycast(w.position,Vector3.down, out hit, 0.3f,groundMask)) {
+            if (Physics.Raycast(w.position, Vector3.down, out hit, 0.3f, groundMask))
+            {
                 normal += hit.normal;
             }
         }
-       
+
         return normal / groundCheckers.Length;
     }
 
-// wall jumping
-    private void OnCollisionStay(Collision other) {
-        if (groundMask == (groundMask | (1 << other.gameObject.layer))) {
+    // wall jumping
+    private void OnCollisionStay(Collision other)
+    {
+        if (groundMask == (groundMask | (1 << other.gameObject.layer)))
+        {
             // why not negation wtf baja
             //shut up dumbass its 3 am
             // what the fuck?
@@ -339,7 +377,9 @@ public class BajtixPlayerController : MonoBehaviour {
             // who are you
             // and who are you?
             //fuck
-        } else {
+        }
+        else
+        {
             return;
         }
 
@@ -347,19 +387,20 @@ public class BajtixPlayerController : MonoBehaviour {
 
         var contact = other.GetContact(0);
         var contactpoint = contact.point;
-    
-        if(Mathf.Abs(contactpoint.y - transform.position.y) > 0.8f) // another dumb constant lol
+
+        if (Mathf.Abs(contactpoint.y - transform.position.y) > 0.8f) // another dumb constant lol
             return;
 
         var intent = transform.forward;
         var intent2 = transform.TransformDirection(input);
         float angle = Vector3.Angle(contact.normal, intent);
-        if(Input.GetButton("Jump") && wallJumpCooldown <= 0) {
-            
+        if (Input.GetButton("Jump") && wallJumpCooldown <= 0)
+        {
+
             wallJumpCooldown = 0.1f;
             Vector3 vector;
-            if(angle > minWallJumpAngle && Vector3.Angle(intent2, contact.normal) < 130)
-                vector = (contact.normal + Vector3.up * 1.5f)  * wallJumpForce;
+            if (angle > minWallJumpAngle && Vector3.Angle(intent2, contact.normal) < 130)
+                vector = (contact.normal + Vector3.up * 1.5f) * wallJumpForce;
             else vector = contact.normal * wallJumpForce * 0.8f;
             Debug.DrawRay(contactpoint, vector, Color.red, 10);
             rb.AddForce(vector, ForceMode.Impulse);

@@ -313,8 +313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 500
-  speed: 7
-  jumpForce: 700
+  speed: 8.5
+  jumpForce: 800
   groundMask:
     serializedVersion: 2
     m_Bits: 1
@@ -332,13 +332,13 @@ MonoBehaviour:
   enableStairs: 1
   normalSteepPoint: 0.4
   rampAdjustForce: 500
-  airControl: 0.24
+  airControl: 0.25
   stepHeight: 0.8
   downPushForce: 15
   normalCheckerHeight: 1.157
   stairLookahead: 16
   minWallJumpAngle: 80
-  wallJumpForce: 12
+  wallJumpForce: 10
   angleFriction:
     serializedVersion: 2
     m_Curve:
@@ -405,6 +405,7 @@ MonoBehaviour:
   camera: {fileID: 7921605475707256620}
   moneyParticle: {fileID: 7223936229037270320, guid: fbc79dd9d2c93d506a923ef33fde5ab6, type: 3}
   maxHealth: 100
+  freeeMoneeey: 0
 --- !u!114 &994600094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560dc9cee9e189eff8142431371647c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chaosBlade: {fileID: 0}
 --- !u!1 &7921605475497830116
 GameObject:
   m_ObjectHideFlags: 0

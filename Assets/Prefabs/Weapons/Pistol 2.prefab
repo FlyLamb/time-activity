@@ -131,9 +131,9 @@ MonoBehaviour:
   fire1: {fileID: 8300000, guid: dd35ff03e1ae56e4393b2839e9b42cba, type: 3}
   fire2: {fileID: 8300000, guid: c30b8a0d297fd2c44a5b2b04d8f06c84, type: 3}
   animator: {fileID: 3291290129502498896}
-  shootDelay: 0.45
-  bulletForce: 2200
-  damage: 17
+  shootDelay: 0.5
+  bulletForce: 15000
+  damage: 20
   spread: 0.3
   shootPoint: {fileID: 2965350738395757246}
   aimMask:

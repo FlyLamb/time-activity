@@ -196,9 +196,9 @@ MonoBehaviour:
   fire2: {fileID: 0}
   animator: {fileID: 1822455504537530208}
   hitbox: {fileID: 6007983053374469106}
-  damage: 12
+  damage: 15
   attackInterval: 0.4
-  pushForce: 3
+  pushForce: 5
 --- !u!65 &5147929790218957148
 BoxCollider:
   m_ObjectHideFlags: 0
