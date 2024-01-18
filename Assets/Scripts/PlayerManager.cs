@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour {
     private static PlayerManager instance;
     public static PlayerManager Instance {
         get {
-            if(instance == null) {
+            if (instance == null) {
                 instance = GameObject.FindObjectOfType<PlayerManager>();
             }
             return instance;
@@ -19,14 +19,12 @@ public class PlayerManager : MonoBehaviour {
     private StatsDisplay display;
     private UIManager uI;
 
-    
+
     [SerializeField]
     private GameObject moneyParticle;
 
     public float maxHealth;
     private float health = 100;
-
-    public bool freeeMoneeey;
 
     private int money = 0;
 
@@ -34,17 +32,16 @@ public class PlayerManager : MonoBehaviour {
         display = GameObject.FindObjectOfType<StatsDisplay>();
         uI = UIManager.Instance;
         money = GameManager.money;
-        if(freeeMoneeey) money = 99999;
         display.SetMoney(money);
     }
 
-   
+
 
     public void Hit(float dmg) {
         health -= dmg;
-        if(health <= 0)
+        if (health <= 0)
             Die();
-            if(health > 100)
+        if (health > 100)
             health = 100;
         display.SetHealth(health);
 
@@ -54,12 +51,12 @@ public class PlayerManager : MonoBehaviour {
         GameManager.waveNum = 0;
         Time.timeScale = 0.1f;
         uI.ShowDeath();
-        
+
         MusicManager.Instance.StopWave();
     }
 
     public void AddMoney(int amount, Vector3 fromPosition) {
-        if(fromPosition == Vector3.zero) fromPosition = Vector3.positiveInfinity;
+        if (fromPosition == Vector3.zero) fromPosition = Vector3.positiveInfinity;
 
         Instantiate(moneyParticle, fromPosition, Quaternion.identity);
         money += amount;

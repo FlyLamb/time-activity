@@ -48,7 +48,8 @@ public class GameManager : MonoBehaviour {
     private void Start() {
         if (!m_debugEnabled) return;
         money = m_dbgMoney;
-        loadout = m_debugLoadout;
+        loadout.Clear();
+        loadout.AddRange(m_debugLoadout);
     }
 
     public void Death() {

@@ -5,33 +5,28 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour {
     public float force;
     public float chargeTime = 2;
-    private float _chargeTime;
-
-[SerializeField]
-    private Color color;
-
-    private new MeshRenderer renderer;
-
-[SerializeField]
-    private ParticleSystem particles;
+    [SerializeField][ColorUsage(false, true)] private Color m_color;
+    [SerializeField] private ParticleSystem m_particles;
+    private float m_chargeTime;
+    private MeshRenderer m_renderer;
 
     private void Start() {
-        renderer = GetComponent<MeshRenderer>();
+        m_renderer = GetComponent<MeshRenderer>();
     }
 
     private void Update() {
-        if(chargeTime > 0)
-            _chargeTime -= Time.deltaTime;
-        renderer.materials[1].SetColor("_EmissionColor", color * (chargeTime - _chargeTime) / chargeTime * 4);
+        if (m_chargeTime > 0)
+            m_chargeTime -= Time.deltaTime;
+        m_renderer.materials[1].SetColor("_EmissionColor", m_color * (chargeTime - m_chargeTime) / chargeTime);
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(_chargeTime > 0) return;
-        
-        if(other.GetComponent<Rigidbody>()) {
+        if (m_chargeTime > 0) return;
+
+        if (other.GetComponent<Rigidbody>()) {
             other.GetComponent<Rigidbody>().AddForce(transform.forward * force, ForceMode.Impulse);
-            _chargeTime = chargeTime;
-            particles.Play();
+            m_chargeTime = chargeTime;
+            m_particles.Play();
             GetComponentInChildren<AudioSource>().Play();
         }
     }
