@@ -27,13 +27,13 @@ using UnityEngine;
 [RequireComponent(typeof(CapsuleCollider))]
 [RequireComponent(typeof(SphereCollider))]
 [RequireComponent(typeof(Rigidbody))]
-public class BajtixPlayerController : MonoBehaviour
-{
+public class BajtixPlayerController : MonoBehaviour {
 
     [Header("Basic Settings")]
     public float force = 300;
     public float speed = 4;
     public float jumpForce = 700;
+    public float slamForce = 1900;
     [Tooltip("What is treated as ground")]
     public LayerMask groundMask;
     [Tooltip("List of objects, which's positions will be used for ground checking.")]
@@ -75,15 +75,16 @@ public class BajtixPlayerController : MonoBehaviour
 
     [Space]
     [Header("Display-only")]
-    public bool isGrounded = true;
+    public bool isGrounded = false;
+    public bool isWalled = false;
+    public Vector3 jumpDirection = Vector3.up;
     public float avgNormal;
 
     private float jumpCooldown = 0.2f;
     private float wallJumpCooldown;
 
     [ContextMenu("Setup prefab")]
-    void CreateBaseSetup()
-    {
+    void CreateBaseSetup() {
         SphereCollider sc = GetComponent<SphereCollider>();
         CapsuleCollider cc = GetComponent<CapsuleCollider>();
         Rigidbody bd = GetComponent<Rigidbody>();
@@ -161,25 +162,20 @@ public class BajtixPlayerController : MonoBehaviour
     }
 
     [ContextMenu("Get Normal Checker Height ")]
-    void GetNormalCheckerHeight()
-    {
+    void GetNormalCheckerHeight() {
         if (!isGrounded) { Debug.LogError("Not grounded!"); return; }
         stairChecker.localPosition = transform.InverseTransformDirection(SkipY(smoothedVelocity * Time.fixedDeltaTime * stairLookahead) + stepCheckY * Vector3.up);
         RaycastHit hit;
-        if (Physics.Raycast(stairChecker.position, Vector3.down, out hit, normalCheckerHeight + 0.5f, groundMask))
-        {
+        if (Physics.Raycast(stairChecker.position, Vector3.down, out hit, normalCheckerHeight + 0.5f, groundMask)) {
             var w = hit.distance - normalCheckerHeight;
             Debug.Log("Hit distance: " + hit.distance);
 
-        }
-        else
-        {
+        } else {
             Debug.LogError("The ground checkers did not hit! Do you have the layer mask set up correctly?");
         }
     }
 
-    void Start()
-    {
+    void Start() {
         rb = GetComponent<Rigidbody>();
         feet = GetComponent<SphereCollider>();
         feetPosition = GetComponent<CapsuleCollider>().height / 2 * Vector3.down;
@@ -194,8 +190,7 @@ public class BajtixPlayerController : MonoBehaviour
 
     // TODO: Maybe some cleanup?
 
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         isGrounded = CheckGroundClearence();
         // THE INPUT IS DONE HERE
         input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -210,8 +205,7 @@ public class BajtixPlayerController : MonoBehaviour
         float estimatedFriction = EstimateFrictionForNormal(avgNormal);
         frictionMaterial.staticFriction = frictionMaterial.dynamicFriction = isGrounded ? estimatedFriction : 0f;
 
-        if (avgNormal > normalSteepPoint)
-        {
+        if (avgNormal > normalSteepPoint) {
             DoRampForces(estimatedFriction);
         }
 
@@ -221,29 +215,28 @@ public class BajtixPlayerController : MonoBehaviour
 
         if (jumpCooldown > 0) jumpCooldown -= Time.fixedDeltaTime;
 
-        if (jump && jumpCooldown <= 0) Jump(); else if (isGrounded) rb.AddForce(Vector3.down * downPushForce);
+        if (jump && jumpCooldown <= 0)
+            Jump();
+        else if (isGrounded)
+            rb.AddForce(Vector3.down * downPushForce);
     }
 
     ///<summary>Manages the downwards force that causes the player to slide down</summary>
-    void DoRampForces(float frictionEst)
-    {
+    void DoRampForces(float frictionEst) {
         var nrml = GetAverageFeetNormalVector3();
         nrml.y = -nrml.y;
         rb.AddForce(nrml * (1 - frictionEst) * rampAdjustForce);
     }
 
     ///<summary>Step height</summary>
-    void StairWalking()
-    {
+    void StairWalking() {
         if (!isGrounded) return;
         stairChecker.localPosition = transform.InverseTransformDirection(SkipY(smoothedVelocity * Time.fixedDeltaTime * stairLookahead) + stepCheckY * Vector3.up);
         RaycastHit hit;
-        if (Physics.Raycast(stairChecker.position, Vector3.down, out hit, normalCheckerHeight + 0.5f, groundMask, QueryTriggerInteraction.Ignore))
-        {
+        if (Physics.Raycast(stairChecker.position, Vector3.down, out hit, normalCheckerHeight + 0.5f, groundMask, QueryTriggerInteraction.Ignore)) {
             var w = hit.distance - normalCheckerHeight;
             //Debug.Log("Hit distance: " + hit.distance + "; Diff: " + (hit.distance - normalCheckerHeight));
-            if (w < -0.01 && w > -stepHeight && Vector3.Angle(Vector3.up, hit.normal) < normalSteepPoint * 0.1f * 45)
-            {
+            if (w < -0.01 && w > -stepHeight && Vector3.Angle(Vector3.up, hit.normal) < normalSteepPoint * 0.1f * 45) {
                 rb.MovePosition(transform.position - (hit.distance - normalCheckerHeight) * Vector3.up * 0.4f);
                 // Debug.Log("Step!");
             }
@@ -252,29 +245,27 @@ public class BajtixPlayerController : MonoBehaviour
     }
 
     ///<summary>Tries to jump if possible</summary>
-    void Jump()
-    {
-        if (isGrounded) JustJump(true);
-        else JustJump(false);
+    void Jump() {
 
-        jumpCooldown = 0.5f;
+        if (isGrounded) {
+            JustJump(Vector3.up, jumpForce);
+            jumpCooldown = 0.5f;
+        } else if (isWalled) {
+            JustJump(jumpDirection, wallJumpForce);
+        } else {
+            JustJump(Vector3.down, slamForce);
+            jumpCooldown = 0.5f;
+        }
+
+
     }
 
-    ///<summary>Jumps. Self explainatory</summary>
-    void JustJump(bool up)
-    {
-        if (up)
-        {
-            rb.AddForce(Vector3.up * jumpForce);
-        }
-        else
-        {
-            rb.AddForce(Vector3.down * jumpForce * 3);
-        }
+    ///<summary>Jumps. Self explanatory</summary>
+    void JustJump(Vector3 direction, float force) {
+        rb.AddForce(direction.normalized * force);
     }
 
-    bool CheckGroundClearence()
-    {
+    bool CheckGroundClearence() {
         bool g = false;
         foreach (var w in groundCheckers)
             g |= Physics.Raycast(w.position, Vector3.down, 0.3f, groundMask);
@@ -283,8 +274,7 @@ public class BajtixPlayerController : MonoBehaviour
     }
 
     ///<summary>Does the movement stand</summary>
-    void Motors(float x, float y)
-    {
+    void Motors(float x, float y) {
         Vector3 input = new Vector3(x, 0, y);
         input = Vector3.ClampMagnitude(input, 1);
 
@@ -293,8 +283,7 @@ public class BajtixPlayerController : MonoBehaviour
         float forceCoefficient = Mathf.Clamp01(speed - velocity); // we calculate it so it is gradual, used for the player not to exceed the speed too much
         Vector3 velocityDirection = transform.InverseTransformDirection(rb.velocity);
 
-        if (velocityDirection.magnitude > 0.2f && isGrounded)
-        {
+        if (velocityDirection.magnitude > 0.2f && isGrounded) {
 
             velocityDirection = Vector3.ClampMagnitude(velocityDirection, 1);
 
@@ -311,51 +300,41 @@ public class BajtixPlayerController : MonoBehaviour
             // Debug.DrawRay(transform.position, correctionForce, Color.red, Time.fixedDeltaTime);     
         }
         smoothedVelocity = Vector3.Lerp(smoothedVelocity, rb.velocity * 0.5f + forceDirection * 2, Time.fixedDeltaTime * 20);
-        if (!isGrounded || avgNormal > normalSteepPoint)
-        {
+        if (!isGrounded || avgNormal > normalSteepPoint) {
             if (IsRoughlyOpposite(forceDirection.normalized, rb.velocity.normalized) || SkipY(rb.velocity).magnitude < 0.5f)
                 rb.AddForce(forceDirection * force * airControl); // this makes it so it is easier to change direction midair
             else
                 rb.AddForce(forceDirection * force * airControl * 0.05f); // air control
-        }
-        else
-        {
+        } else {
             rb.AddForce(forceDirection * force * forceCoefficient);
         }
     }
 
     ///<summary>Checks if the vectors are roughly opposite</summary>
-    bool IsRoughlyOpposite(Vector3 a, Vector3 b)
-    {
+    bool IsRoughlyOpposite(Vector3 a, Vector3 b) {
         return Vector3.Angle(a, b) > 90;
     }
 
     ///<summary>Ignores the Y component of vec3</summary>
-    Vector3 SkipY(Vector3 vector)
-    {
+    Vector3 SkipY(Vector3 vector) {
         vector.y = 0;
         return vector;
     }
 
-    float EstimateFrictionForNormal(float normal)
-    {
+    float EstimateFrictionForNormal(float normal) {
         return angleFriction.Evaluate(normal);
     }
 
-    float GetAverageFeetNormal()
-    {
+    float GetAverageFeetNormal() {
         return Mathf.Clamp01(Vector3.Angle(Vector3.up, GetAverageFeetNormalVector3()) / 90f);
     }
 
-    Vector3 GetAverageFeetNormalVector3()
-    {
+    Vector3 GetAverageFeetNormalVector3() {
         Vector3 normal = Vector3.zero;
         Vector3 feetPosition = this.feetPosition + transform.position;
-        foreach (var w in groundCheckers)
-        {
+        foreach (var w in groundCheckers) {
             RaycastHit hit;
-            if (Physics.Raycast(w.position, Vector3.down, out hit, 0.3f, groundMask))
-            {
+            if (Physics.Raycast(w.position, Vector3.down, out hit, 0.3f, groundMask)) {
                 normal += hit.normal;
             }
         }
@@ -363,27 +342,16 @@ public class BajtixPlayerController : MonoBehaviour
         return normal / groundCheckers.Length;
     }
 
+
+    private void OnCollisionExit(Collision other) {
+        if (groundMask != (groundMask | (1 << other.gameObject.layer))) return;
+        isWalled = false;
+    }
+
     // wall jumping
-    private void OnCollisionStay(Collision other)
-    {
-        if (groundMask == (groundMask | (1 << other.gameObject.layer)))
-        {
-            // why not negation wtf baja
-            //shut up dumbass its 3 am
-            // what the fuck?
-            // who am i talking to?
-            // who are you talking to?
-            // to you
-            // who are you
-            // and who are you?
-            //fuck
-        }
-        else
-        {
-            return;
-        }
+    private void OnCollisionStay(Collision other) {
 
-
+        if (groundMask != (groundMask | (1 << other.gameObject.layer))) return;
 
         var contact = other.GetContact(0);
         var contactpoint = contact.point;
@@ -393,17 +361,12 @@ public class BajtixPlayerController : MonoBehaviour
 
         var intent = transform.forward;
         var intent2 = transform.TransformDirection(input);
-        float angle = Vector3.Angle(contact.normal, intent);
-        if (Input.GetButton("Jump") && wallJumpCooldown <= 0)
-        {
 
-            wallJumpCooldown = 0.1f;
-            Vector3 vector;
-            if (angle > minWallJumpAngle && Vector3.Angle(intent2, contact.normal) < 130)
-                vector = (contact.normal + Vector3.up * 1.5f) * wallJumpForce;
-            else vector = contact.normal * wallJumpForce * 0.8f;
-            Debug.DrawRay(contactpoint, vector, Color.red, 10);
-            rb.AddForce(vector, ForceMode.Impulse);
-        }
+        float angle = Vector3.Angle(contact.normal, intent);
+        // if (angle > minWallJumpAngle && Vector3.Angle(intent2, contact.normal) < 130)
+        jumpDirection = contact.normal + Vector3.up * 5;
+
+
+        isWalled = true;
     }
 }

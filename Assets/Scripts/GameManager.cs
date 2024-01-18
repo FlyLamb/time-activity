@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,8 +14,14 @@ public class GameManager : MonoBehaviour {
     public static List<Weapon> loadout = new List<Weapon>();
 
     public static int waveNum = 0;
+    [SerializeField] private Weapon m_chaosBlade;
 
-    public Weapon chaosBlade;
+
+    [Header("Debug")][SerializeField] private bool m_debugEnabled = false;
+    [SerializeField] private List<Weapon> m_debugLoadout;
+    [SerializeField] private int m_dbgMoney = Int16.MaxValue;
+
+
 
     [ContextMenu("Reset to default")]
 
@@ -21,14 +29,26 @@ public class GameManager : MonoBehaviour {
         loadout = new List<Weapon>();
         money = 0;
         unlocked = new List<Weapon>();
-        if(chaosBlade == null) return;
-        unlocked.Add(chaosBlade);
-        loadout.Add(chaosBlade);
+
+        if (m_chaosBlade == null) throw new Exception("YOU FORGOT TO ADD THE DEFAULT SWORD MORON");
+        unlocked.Add(m_chaosBlade);
+        loadout.Add(m_chaosBlade);
+
         SceneManager.LoadScene(1);
     }
 
     private void Awake() {
         instance = this;
+
+        if (!Application.isEditor) {
+            m_debugEnabled = false;
+        }
+    }
+
+    private void Start() {
+        if (!m_debugEnabled) return;
+        money = m_dbgMoney;
+        loadout = m_debugLoadout;
     }
 
     public void Death() {
