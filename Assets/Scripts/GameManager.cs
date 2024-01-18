@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour {
         money = m_dbgMoney;
         loadout.Clear();
         loadout.AddRange(m_debugLoadout);
+        WeaponManager.Instance.weapons = loadout;
     }
 
     public void Death() {
