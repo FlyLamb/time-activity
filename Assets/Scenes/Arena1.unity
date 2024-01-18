@@ -1020,6 +1020,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
+      propertyPath: m_debugEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
+      propertyPath: m_debugLoadout.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
+      propertyPath: m_debugLoadout.Array.data[0]
+      value: 
+      objectReference: {fileID: 498452549290849075, guid: ec1e0407535476a3a9aacca10211b04a, type: 3}
+    - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
+      propertyPath: m_debugLoadout.Array.data[1]
+      value: 
+      objectReference: {fileID: 8184739100865164654, guid: a482e7b32baf304409f2e8391d988461, type: 3}
+    - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
+      propertyPath: m_debugLoadout.Array.data[2]
+      value: 
+      objectReference: {fileID: 5777148857974166071, guid: ece90a32d1da640489820a5fccf92a6a, type: 3}
     - target: {fileID: 1917062586, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -9032,7 +9052,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 778351833, guid: 53d87d523a476eef8914967d3a864758, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 30.319824
+      value: 30.319702
       objectReference: {fileID: 0}
     - target: {fileID: 2323437212339787727, guid: 53d87d523a476eef8914967d3a864758, type: 3}
       propertyPath: m_AnchoredPosition.x
