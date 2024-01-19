@@ -862,7 +862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 2
   invertY: 0
-  playerController: {fileID: 7921605475269877126}
+  playerController: {fileID: 7921605475269877125}
   minY: -90
   maxY: 90
   fovChangeSpeed: 5
@@ -965,9 +965,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 441fadb24bebd785d9cce741ea3c869b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 6839350451462014696}
   weapons:
   - {fileID: 498452549290849075, guid: e69e8a849ac8dfbf793451273c8b375b, type: 3}
+  m_source: {fileID: 6839350451462014696}
 --- !u!1 &7921605476662282339
 GameObject:
   m_ObjectHideFlags: 0
