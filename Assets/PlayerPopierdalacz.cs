@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(SphereCollider))]
@@ -33,18 +34,26 @@ public class PlayerPopierdalacz : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        float dst = 0;
-        dst += GetDistance(Vector3.forward * m_radius);
-        dst += GetDistance(Vector3.back * m_radius);
-        dst += GetDistance(Vector3.right * m_radius);
-        dst += GetDistance(Vector3.left * m_radius);
-        dst += GetDistance(Vector3.zero);
-        dst /= 5;
+        // float dst = 0;
+        // dst += GetDistance(Vector3.forward * m_radius);
+        // dst += GetDistance(Vector3.back * m_radius);
+        // dst += GetDistance(Vector3.right * m_radius);
+        // dst += GetDistance(Vector3.left * m_radius);
+        // dst += GetDistance(Vector3.zero);
+        // dst /= 5;
+        float[] distances = {
+            GetDistance(Vector3.forward * m_radius),
+            GetDistance(Vector3.back * m_radius),
+            GetDistance(Vector3.right * m_radius),
+            GetDistance(Vector3.left * m_radius),
+            GetDistance(Vector3.zero)
+        };
+        float dst = distances.Min();
         m_springJoint.connectedAnchor = transform.up * m_playerHeight;
         m_groundPoint.position = transform.position - transform.up * dst;
 
 
-        ///
+        //transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
 
         //var inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
         var inputVector = new Vector3(
