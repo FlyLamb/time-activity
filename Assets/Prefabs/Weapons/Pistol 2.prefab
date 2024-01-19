@@ -115,15 +115,15 @@ MonoBehaviour:
   m_fire1: {fileID: 8300000, guid: dd35ff03e1ae56e4393b2839e9b42cba, type: 3}
   m_fire2: {fileID: 8300000, guid: c30b8a0d297fd2c44a5b2b04d8f06c84, type: 3}
   m_animator: {fileID: 3291290129502498896}
-  shootPoint: {fileID: 2965350738395757246}
-  bullet: {fileID: 1309578595078785535, guid: 38a71911f1a73d340b91eb0fc8da4d84, type: 3}
-  aimMask:
+  m_shootPoint: {fileID: 2965350738395757246}
+  m_bullet: {fileID: 1309578595078785535, guid: 38a71911f1a73d340b91eb0fc8da4d84, type: 3}
+  m_aimMask:
     serializedVersion: 2
     m_Bits: 769
   m_shotCooldown: 0.5
   m_shotSpread: 0.3
   m_bulletDamage: 20
-  m_bulletForce: 300
+  m_bulletForce: 30
   m_tripleUltra: 1
 --- !u!1001 &1811963342282498352
 PrefabInstance:

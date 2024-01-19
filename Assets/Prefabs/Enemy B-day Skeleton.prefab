@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b1bd1c4a17e84d91135a0f8742e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
+  maxHealth: 20
   moneyDrop: 100
   target: {fileID: 0}
   enemyController: {fileID: 2917332263047546949}
