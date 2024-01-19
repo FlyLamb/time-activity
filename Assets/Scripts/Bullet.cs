@@ -1,28 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Bullet : MonoBehaviour {
-    [SerializeField]
-    protected Rigidbody rb;
- [SerializeField]
-    protected GameObject particles;
-
-[SerializeField]
-    protected float damage;
+    [SerializeField][FormerlySerializedAs("rb")] protected Rigidbody m_rb;
+    [SerializeField][FormerlySerializedAs("particles")] protected GameObject m_particles;
+    [SerializeField][FormerlySerializedAs("damage")] protected float m_damage;
 
     private void Start() {
-        if(rb == null)
-            rb = GetComponent<Rigidbody>();
+        if (m_rb == null) m_rb = GetComponent<Rigidbody>();
     }
 
     public virtual void Shoot(Vector3 direction, float force, float damage = -1) {
-        if(rb != null) rb.AddForce(direction.normalized * force);
-        if(damage != -1) this.damage = damage;
+        if (m_rb != null) m_rb.AddForce(direction.normalized * force, ForceMode.Impulse);
+        if (damage != -1) this.m_damage = damage;
     }
 
     protected virtual void OnCollisionEnter(Collision other) {
-        if(particles!=null) Instantiate(particles, transform.position, Quaternion.LookRotation(other.contacts[0].normal));
+        if (m_particles != null) Instantiate(m_particles, transform.position, Quaternion.LookRotation(other.contacts[0].normal));
         Destroy(gameObject);
     }
 }

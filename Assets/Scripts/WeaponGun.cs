@@ -1,73 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class WeaponGun : Weapon {
-[SerializeField]
-    private float shootDelay;
-[SerializeField]
-    private float bulletForce;
-    private float _shootDelay;
-[SerializeField]
-    private float damage;
 
-    [SerializeField]
-    private float spread = 1;
+    [Header("Gun Params")][SerializeField][FormerlySerializedAs("shootPoint")] protected Transform m_shootPoint;
+    [SerializeField][FormerlySerializedAs("bullet")] protected Bullet m_bullet;
+    [SerializeField][FormerlySerializedAs("aimMask")] protected LayerMask m_aimMask = int.MaxValue;
+    [SerializeField][FormerlySerializedAs("shootDelay")] protected float m_shotCooldown;
+    [SerializeField][FormerlySerializedAs("spread")] protected float m_shotSpread = 1;
+    [SerializeField][FormerlySerializedAs("damage")] protected float m_bulletDamage;
+    [SerializeField][FormerlySerializedAs("bulletForce")] protected float m_bulletForce;
+    [SerializeField][FormerlySerializedAs("tripleUltra")] protected bool m_tripleUltra = true;
 
-[SerializeField]
-    private Transform shootPoint;
-
-[SerializeField]
-    private LayerMask aimMask = int.MaxValue;
-
-[SerializeField]
-    private Bullet bullet;
-
-    [SerializeField]
-    protected bool tripleUltra = true;
-
-    private bool reloadedRecently = false;
+    protected bool m_reloadedRecently = false;
 
     public override void Fire1() {
+        if (m_cooldown > 0) return;
+        m_animator.StopPlayback();
+        base.Fire1Fx();
 
-        if(_shootDelay > 0) return;
-        animator.StopPlayback();
-        base.Fire1();
-        
         Shoot();
-        if(reloadedRecently) {
+        if (m_reloadedRecently && m_tripleUltra) {
             Shoot();
             Shoot();
             Shoot();
-            reloadedRecently = false;
+            m_reloadedRecently = false;
         }
-        
-        _shootDelay = shootDelay;
+
+        m_cooldown = m_shotCooldown;
     }
 
     protected void Shoot() {
-        var go = Instantiate(bullet.gameObject, shootPoint.position, Quaternion.identity).GetComponent<Bullet>();
-        Vector3 dir = PlayerManager.Instance.camera.transform.forward;
+        var bullet = Instantiate(this.m_bullet.gameObject, m_shootPoint.position, Quaternion.identity).GetComponent<Bullet>();
+        Vector3 dir = Manager.CameraAim;
         RaycastHit aimTarget;
-        if(Physics.Raycast(PlayerManager.Instance.camera.transform.position, PlayerManager.Instance.camera.transform.forward, out aimTarget, 1000,aimMask, QueryTriggerInteraction.Ignore)) {
-            dir = aimTarget.point - shootPoint.position ;
+        if (Physics.Raycast(Manager.CameraPosition, Manager.CameraAim, out aimTarget, 1000, m_aimMask, QueryTriggerInteraction.Ignore)) {
+            dir = aimTarget.point - m_shootPoint.position;
             dir.Normalize();
-            dir += new Vector3(Random.Range(-1,1),Random.Range(-1,1),Random.Range(-1,1)).normalized * spread * 0.05f;
+            dir += new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * m_shotSpread * 0.05f;
             Debug.DrawLine(transform.position, aimTarget.point, Color.red, 1);
         }
-        go.Shoot(dir, bulletForce, damage);
+        bullet.Shoot(dir, m_bulletForce, m_bulletDamage);
     }
 
     public override void Fire2() {
-        if(!tripleUltra) return;
-        if(_shootDelay > 0) return;
+        if (m_cooldown > 0) return;
         base.Fire2();
-        _shootDelay = shootDelay* 3;
-        reloadedRecently = true;
+        m_cooldown = m_shotCooldown * 3;
+        m_reloadedRecently = true;
     }
 
     public override void WeaponUpdate() {
         base.WeaponUpdate();
-        _shootDelay -= Time.deltaTime;
+        m_cooldown -= Time.deltaTime;
     }
 }

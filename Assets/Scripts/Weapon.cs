@@ -1,39 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Serialization;
 
-
-public class Weapon : MonoBehaviour {
+public abstract class Weapon : MonoBehaviour {
+    [Header("Visuals")]
     public string weaponName;
     public string weaponDescription;
     public Sprite icon;
-    public AudioClip fire1, fire2;
-
+    [SerializeField][FormerlySerializedAs("fire1")] protected AudioClip m_fire1;
+    [SerializeField][FormerlySerializedAs("fire2")] protected AudioClip m_fire2;
+    [SerializeField][FormerlySerializedAs("animator")] protected Animator m_animator;
     protected WeaponManager Manager => WeaponManager.Instance;
+    protected bool ReadyToUse => m_cooldown <= 0;
+    protected float m_cooldown;
 
-    [SerializeField] protected Animator animator;
-
+    /// Called when Fire1 is pressed
     public virtual void Fire1() {
-        if (animator != null) animator.Play("Fire1", 0);
-        Manager.PlayAudio(fire1);
+        Fire1Fx();
     }
 
+    /// Basic effects for Fire2
+    protected virtual void Fire1Fx() {
+        if (m_animator != null) m_animator.Play("Fire1", 0);
+        Manager.PlayAudio(m_fire1);
+    }
+
+    /// Called when Fire2 is pressed
     public virtual void Fire2() {
-        if (animator != null) animator.Play("Fire2", 0);
-        Manager.PlayAudio(fire2);
+        Fire2Fx();
     }
 
+    /// Basic effects for Fire2
+    protected virtual void Fire2Fx() {
+        if (m_animator != null) m_animator.Play("Fire2", 0);
+        Manager.PlayAudio(m_fire2);
+    }
+
+    /// Called when the player switches to the weapon
     public virtual void Show() {
-        if (animator != null) animator.Play("Show", 0);
+        if (m_animator != null) m_animator.Play("Show", 0);
     }
 
+    /// Called when the player switches to another weapon
     public virtual void Hide() {
-        if (animator != null) {
-            animator.Play("Hide", 0);
+        if (m_animator != null) {
+            m_animator.Play("Hide", 0);
             float d;
             try {
-                d = animator.runtimeAnimatorController.animationClips.First(c => c.name == "Hide").averageDuration;
+                d = m_animator.runtimeAnimatorController.animationClips.First(c => c.name == "Hide").averageDuration;
             } catch {
                 d = 0;
             }
@@ -42,8 +56,9 @@ public class Weapon : MonoBehaviour {
         } else Destroy(gameObject);
     }
 
+    /// Gets called on Update when the weapon is equipped
     public virtual void WeaponUpdate() {
-
+        if (m_cooldown > 0) m_cooldown -= Time.deltaTime;
     }
 }
 

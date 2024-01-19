@@ -112,19 +112,21 @@ MonoBehaviour:
   weaponName: Rocket Bam Bam
   weaponDescription: remember to reload!
   icon: {fileID: 21300000, guid: c12fe8bffbe3f084c98bc2fdccb04391, type: 3}
-  fire1: {fileID: 0}
-  fire2: {fileID: 0}
-  animator: {fileID: 3152839070541596494}
-  shootDelay: 1
-  reloadDelay: 0
-  bulletForce: 6000
-  damage: 0
-  spread: 1
+  m_fire1: {fileID: 0}
+  m_fire2: {fileID: 0}
+  m_animator: {fileID: 3152839070541596494}
   shootPoint: {fileID: 2965350738395757246}
+  bullet: {fileID: 3144872771805313596, guid: 02636903c1e6eac44a812cdafdbaa049, type: 3}
   aimMask:
     serializedVersion: 2
     m_Bits: 1
-  bullet: {fileID: 3144872771805313596, guid: 02636903c1e6eac44a812cdafdbaa049, type: 3}
+  m_shotCooldown: 1
+  m_shotSpread: 1
+  m_bulletDamage: 0
+  m_bulletForce: 120
+  m_tripleUltra: 0
+  reloadDelay: 1
+  m_magSize: 1
 --- !u!1001 &4754033155444531019
 PrefabInstance:
   m_ObjectHideFlags: 0

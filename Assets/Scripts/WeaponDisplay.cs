@@ -1,7 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
-using System.Collections.Generic;
 using ElRaccoone.Tweens;
+
 public class WeaponDisplay : MonoBehaviour {
     [SerializeField] private Image weapon1, weapon2, weapon3;
     [SerializeField] private Sprite fallback;

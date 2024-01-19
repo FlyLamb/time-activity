@@ -1,27 +1,28 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class WeaponManager : MonoBehaviour {
     public static WeaponManager Instance {
         get {
-            if (instance == null)
-                instance = GameObject.FindObjectOfType<WeaponManager>();
-            return instance;
+            if (m_instance == null)
+                m_instance = GameObject.FindObjectOfType<WeaponManager>();
+            return m_instance;
         }
     }
 
-    private static WeaponManager instance;
-
-    public AudioSource source;
     public List<Weapon> weapons;
     public int SelectedWeapon => m_selected;
-    private int m_selected = 0;
+    public Vector3 CameraAim => PlayerManager.Instance.camera.transform.forward;
+    public Vector3 CameraPosition => PlayerManager.Instance.camera.transform.position;
+    public BajtixPlayerController PlayerController => PlayerManager.Instance.controller;
 
+    private static WeaponManager m_instance;
+    [SerializeField][FormerlySerializedAs("source")] private AudioSource m_source;
+    private int m_selected = 0;
     private Weapon m_selectedWeapon;
     private float switchWheelProgress = 0;
     private float delay = 0;
-
 
 
     private void Start() {
@@ -50,7 +51,7 @@ public class WeaponManager : MonoBehaviour {
 
     public void PlayAudio(AudioClip clip) {
         if (clip == null) return;
-        source.PlayOneShot(clip);
+        m_source.PlayOneShot(clip);
     }
 
     private void Update() {
