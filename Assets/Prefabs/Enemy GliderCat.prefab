@@ -245,7 +245,8 @@ MonoBehaviour:
   moneyDrop: 100
   target: {fileID: 0}
   path: []
-  speed: 5
+  speed: 10
+  upwardModifier: 15
   rigidbody: {fileID: 3062506793738612780}
   bombInterval: 2
   bombObject: {fileID: 360364855985497126, guid: a0c08c2bca85eca4e9f44ec1aba68daf, type: 3}
