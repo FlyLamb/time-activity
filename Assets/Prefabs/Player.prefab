@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560dc9cee9e189eff8142431371647c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_chaosBlade: {fileID: 0}
+  m_chaosBlade: {fileID: 498452549290849075, guid: e69e8a849ac8dfbf793451273c8b375b, type: 3}
   m_debugEnabled: 0
   m_debugLoadout: []
   m_dbgMoney: 32767
