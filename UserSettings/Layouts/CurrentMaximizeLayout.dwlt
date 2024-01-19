@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 500, y: 100}
   m_MaxSize: {x: 40480, y: 16192}
   vertical: 0
-  controlID: 3499
+  controlID: 8560
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -59,8 +59,10 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
-  m_SerializedViewNames: []
-  m_SerializedViewValues: []
+  m_SerializedViewNames:
+  - UnityEditor.DeviceSimulation.SimulatorWindow
+  m_SerializedViewValues:
+  - C:\Users\Walkan\Documents\GitHub\brackeysgamejam2021.2\Library\PlayModeViewStates\8e12e6cac71c7104fa0fef19db41cfe3
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0
@@ -147,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 3455
+  controlID: 8516
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -174,7 +176,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 50}
   m_MaxSize: {x: 32384, y: 8096}
   vertical: 0
-  controlID: 3431
+  controlID: 8492
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -238,9 +240,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 46810000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 9895ffffc297ffff0c9affffd89effffb4aaffff3ec5ffffaad3fffff4ffffff
+      m_ExpandedIDs: be25f9fff82ef9ff9895ffffc297ffff0c9affffd89effffb4aaffff3ec5ffffaad3fffff4ffffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -667,9 +669,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.86912227, y: 2.6735427, z: 69.39527}
+    m_Target: {x: 19.07546, y: 21.024757, z: 44.557144}
     speed: 2
-    m_Value: {x: 0.86912227, y: 2.6735427, z: 69.39527}
+    m_Value: {x: 19.07546, y: 21.024757, z: 44.557144}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -715,9 +717,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.018975096, y: 0.88799065, z: -0.45869565, w: 0.036212746}
+    m_Target: {x: -0.10822837, y: 0.8887672, z: -0.27386767, w: -0.35212627}
     speed: 2
-    m_Value: {x: 0.018975098, y: 0.8879907, z: -0.45869568, w: 0.03621275}
+    m_Value: {x: -0.027147522, y: 0.9515368, z: -0.29313213, w: -0.08896294}
   m_Size:
     m_Target: 8.228885
     speed: 2
@@ -858,7 +860,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 295.66663}
+    scrollPos: {x: 0, y: 279.66663}
     m_SelectedIDs: 187d0000
     m_LastClickedID: 32024
     m_ExpandedIDs: 00000000147d0000167d0000187d00001a7d0000967d000000ca9a3bffffff7f
@@ -914,9 +916,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 46810000
-    m_LastClickedInstanceID: 33094
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1005,7 +1007,7 @@ MonoBehaviour:
   - {fileID: 16}
   - {fileID: 17}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1075,7 +1077,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1393.3334
     y: 72.66667
-    width: 312.33337
+    width: 312.33325
     height: 815.6667
   m_SerializedDataModeController:
     m_DataMode: 0
