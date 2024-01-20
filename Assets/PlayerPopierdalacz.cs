@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,9 @@ public class PlayerPopierdalacz : MonoBehaviour {
 
     [Header("Control")][SerializeField] private float m_acceleration;
     [SerializeField] private float m_walkSpeed;
+    [SerializeField] private float m_jumpForce;
+
+    [SerializeField] private bool m_isGrounded;
 
 
     private void Start() {
@@ -52,6 +56,7 @@ public class PlayerPopierdalacz : MonoBehaviour {
         m_springJoint.connectedAnchor = transform.up * m_playerHeight;
         m_groundPoint.position = transform.position - transform.up * dst;
 
+        m_isGrounded = dst != m_playerHeight + m_margin;
 
         //transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
 
@@ -67,5 +72,14 @@ public class PlayerPopierdalacz : MonoBehaviour {
         var desiredVelocity = transform.TransformDirection(inputVector) * m_walkSpeed;
 
         m_rb.AddForce(desiredVelocity - velocity, ForceMode.VelocityChange);
+    }
+
+    private void Update() {
+        if (Input.GetButtonDown("Jump")) Jump();
+    }
+
+    private void Jump() {
+        if (!m_isGrounded) return;
+        m_rb.AddForce(transform.up * m_jumpForce, ForceMode.Impulse);
     }
 }
