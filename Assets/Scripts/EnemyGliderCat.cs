@@ -63,8 +63,8 @@ public class EnemyGliderCat : EnemyFlyingPathfinder
     protected override void Die()
     {
         rigidbody.useGravity = true;
-        gameObject.TweenLocalScale(Vector3.zero, 5);
+        gameObject.TweenLocalScale(Vector3.zero, 2);
         DropCash();
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 2);
     }
 }

@@ -494,8 +494,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 500
   speed: 8.5
-  jumpForce: 800
-  slamForce: 1900
+  jumpForce: 900
+  slamForce: 3500
   groundMask:
     serializedVersion: 2
     m_Bits: 1
