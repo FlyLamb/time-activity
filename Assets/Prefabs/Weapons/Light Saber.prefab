@@ -41,6 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3177664339705401442}
+  - component: {fileID: 7554216848497662005}
   - component: {fileID: 498452549290849075}
   - component: {fileID: 5147929790218957148}
   - component: {fileID: 6007983053374469106}
@@ -59,14 +60,36 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2833472582305532632}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.0000000037252903, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.25, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6307608023897612551}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 270, z: -9.353}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7554216848497662005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2833472582305532632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ecc7a3b480cab429c039a61f607009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Lightsaber
+  weaponDescription: disney sue no no pls
+  icon: {fileID: 21300000, guid: 286b029d19092c587bb2c7608efaf122, type: 3}
+  m_fire1: {fileID: 0}
+  m_fire2: {fileID: 0}
+  m_animator: {fileID: 518164583968340125}
+  m_hitbox: {fileID: 6007983053374469106}
+  m_damage: 10
+  m_attackCooldown: 0.55
+  m_slashDashStrength: 0.5
 --- !u!114 &498452549290849075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,7 +109,7 @@ MonoBehaviour:
   m_fire2: {fileID: 0}
   m_animator: {fileID: 518164583968340125}
   m_hitbox: {fileID: 6007983053374469106}
-  m_damage: 10
+  m_damage: 0
   m_attackCooldown: 0.55
   m_slashDashStrength: 0.5
 --- !u!65 &5147929790218957148
@@ -148,11 +171,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50b18a552f709a917a6d66ae0b720d6a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50b18a552f709a917a6d66ae0b720d6a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50b18a552f709a917a6d66ae0b720d6a, type: 3}
       propertyPath: m_LocalRotation.y
@@ -164,7 +187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50b18a552f709a917a6d66ae0b720d6a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50b18a552f709a917a6d66ae0b720d6a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
