@@ -42,7 +42,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3177664339705401442}
   - component: {fileID: 7554216848497662005}
-  - component: {fileID: 498452549290849075}
   - component: {fileID: 5147929790218957148}
   - component: {fileID: 6007983053374469106}
   m_Layer: 0
@@ -88,28 +87,6 @@ MonoBehaviour:
   m_animator: {fileID: 518164583968340125}
   m_hitbox: {fileID: 6007983053374469106}
   m_damage: 10
-  m_attackCooldown: 0.55
-  m_slashDashStrength: 0.5
---- !u!114 &498452549290849075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2833472582305532632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0228ce6d9b9aee685245a58b36253f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponName: Lightsaber
-  weaponDescription: disney sue no no pls
-  icon: {fileID: 21300000, guid: 286b029d19092c587bb2c7608efaf122, type: 3}
-  m_fire1: {fileID: 0}
-  m_fire2: {fileID: 0}
-  m_animator: {fileID: 518164583968340125}
-  m_hitbox: {fileID: 6007983053374469106}
-  m_damage: 0
   m_attackCooldown: 0.55
   m_slashDashStrength: 0.5
 --- !u!65 &5147929790218957148
