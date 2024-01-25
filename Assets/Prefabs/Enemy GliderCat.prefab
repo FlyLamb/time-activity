@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ba6fc40dfc36943b81203d197ee486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 75
+  maxHealth: 120
   moneyDrop: 100
   target: {fileID: 0}
   path: []

@@ -1,13 +1,13 @@
 # TODO
 
-add a `+` inside the braces to mark as done
+add a `+` inside the braces to mark as done '-' for in progress
 
 + [ ] player movement
 + [ ] enemies
     + [ ] melee skelly combat rework
-    + [ ] glider cat flight fix
+    + [+] glider cat flight fix
     + [ ] eye guy model/visuals
-    + [ ] design 1/2 new enemies
+    + [+] design 1/2 new enemies
 + [ ] arenas
     + [ ] Arena reorder
     + [ ] tutorial/arena 0
@@ -39,4 +39,4 @@ add a `+` inside the braces to mark as done
         + [ ] Nade launcher
     + [ ] Tweak
         + [ ] Rocket launcher
-        + [ ] Lightsaber
+        + [+] Lightsaber

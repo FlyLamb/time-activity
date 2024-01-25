@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpPad : MonoBehaviour {
+public class JumpPad : MonoBehaviour
+{
     public float force;
     public float chargeTime = 2;
     [SerializeField][ColorUsage(false, true)] private Color m_color;
@@ -10,20 +11,25 @@ public class JumpPad : MonoBehaviour {
     private float m_chargeTime;
     private MeshRenderer m_renderer;
 
-    private void Start() {
+    private void Start()
+    {
         m_renderer = GetComponent<MeshRenderer>();
     }
 
-    private void Update() {
+    private void Update()
+    {
         if (m_chargeTime > 0)
             m_chargeTime -= Time.deltaTime;
         m_renderer.materials[1].SetColor("_EmissionColor", m_color * (chargeTime - m_chargeTime) / chargeTime);
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other)
+    {
         if (m_chargeTime > 0) return;
 
-        if (other.GetComponent<Rigidbody>()) {
+        if (other.GetComponent<Rigidbody>())
+        {
+            other.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0); //sets object speed to zero to avoid overwhelming the jumppad
             other.GetComponent<Rigidbody>().AddForce(transform.forward * force, ForceMode.Impulse);
             m_chargeTime = chargeTime;
             m_particles.Play();
