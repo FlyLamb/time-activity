@@ -112,19 +112,19 @@ MonoBehaviour:
   weaponName: Pistol
   weaponDescription: Pew pew haha skrrrt boom boom pew skrt
   icon: {fileID: 21300000, guid: 418c7f6e57618cace8c4b71d782ef647, type: 3}
-  fire1: {fileID: 0}
-  fire2: {fileID: 0}
-  animator: {fileID: 7400785766670970287}
-  shootDelay: 0.2
-  bulletForce: 1000
-  damage: 1000
-  spread: 0
-  shootPoint: {fileID: 2965350738395757246}
-  aimMask:
+  m_fire1: {fileID: 0}
+  m_fire2: {fileID: 0}
+  m_animator: {fileID: 7400785766670970287}
+  m_shootPoint: {fileID: 2965350738395757246}
+  m_bullet: {fileID: 1309578595078785535, guid: 9d51ecde7b0ec5abcb6d7a1ad8ae7887, type: 3}
+  m_aimMask:
     serializedVersion: 2
     m_Bits: 769
-  bullet: {fileID: 1309578595078785535, guid: 9d51ecde7b0ec5abcb6d7a1ad8ae7887, type: 3}
-  tripleUltra: 1
+  m_shotCooldown: 0.2
+  m_shotSpread: 0
+  m_bulletDamage: 1000
+  m_bulletForce: 100
+  m_tripleUltra: 1
 --- !u!1 &7176647683547725046
 GameObject:
   m_ObjectHideFlags: 0

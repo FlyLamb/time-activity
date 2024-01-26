@@ -26,11 +26,11 @@ add a `+` inside the braces to mark as done '-' for in progress
 + [ ] Lore completion
 + [ ] Wave logic
 + [ ] Time blade unlock
-+ [ ] Weaponwheel fix
++ [+] Weaponwheel fix
 + [ ] Music rework
     + [ ] tutorial track
     + [ ] menu track
-    + [ ] remesters
+    + [ ] remasters
     + [ ] music controller rework
 + [ ] Modelling
     + [ ] Weapon model rework
@@ -38,5 +38,5 @@ add a `+` inside the braces to mark as done '-' for in progress
         + [ ] Pistol 2
         + [ ] Nade launcher
     + [ ] Tweak
-        + [ ] Rocket launcher
+        + [] Rocket launcher
         + [+] Lightsaber
