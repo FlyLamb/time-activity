@@ -19,7 +19,7 @@ public class WeaponSword : Weapon
     public override void Fire2()
     {
         if (!ReadyToUse) return;
-        if (m_animator != null) m_animator.SetTrigger("AttackAlt");
+        if (m_animator != null) m_animator.Play("FireAlt");
         Manager.PlayAudio(m_fire1);
         Attack();
         Manager.PlayerController.rb

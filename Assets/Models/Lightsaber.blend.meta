@@ -91,7 +91,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 1
     - serializedVersion: 16
-      name: AttackAlt
+      name: FireAlt
       takeName: Scene
       internalID: -491678979986718739
       firstFrame: 30
