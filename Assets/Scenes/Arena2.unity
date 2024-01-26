@@ -5399,6 +5399,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0506083b90b9894c913d55fe7112b06, type: 3}
+--- !u!1 &298264578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7872936050807340889, guid: a0506083b90b9894c913d55fe7112b06, type: 3}
+  m_PrefabInstance: {fileID: 298264577}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &300041287
 GameObject:
   m_ObjectHideFlags: 0
@@ -26279,7 +26284,7 @@ MonoBehaviour:
   - {fileID: 1580267501}
   - {fileID: 1844392621}
   - {fileID: 583163538}
-  blueprint: {fileID: 0}
+  blueprint: {fileID: 298264578}
   waves:
   - enemies:
     - {fileID: 3062506793738612823, guid: 4b356b63a28a6dc41a0492a58172f67f, type: 3}
