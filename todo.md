@@ -9,7 +9,7 @@
     + [ ] melee skelly combat rework
     + [ ] glider cat flight fix
     + [ ] eye guy model/visuals
-    + [ ] design 1/2 new enemies
+    + [X] design 1/2 new enemies
 + [ ] arenas
     + [ ] tutorial/arena 0
         + [ ] Blockout
