@@ -41,6 +41,7 @@ public class WaveManager : MonoBehaviour
     public List<Wave> waves;
 
     private List<GameObject> enemiesAlive = new List<GameObject>();
+    public float endWaveHealth = PlayerManager.Instance.health;
 
     [SerializeField]
     private Billboard[] billboards;
@@ -141,6 +142,8 @@ Come here, little one", true);
         }
 
         PlayerManager.Instance.Hit(-25);
+        endWaveHealth = PlayerManager.Instance.health;
+
     }
 
     private void FixedUpdate()

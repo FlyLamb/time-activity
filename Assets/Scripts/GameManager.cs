@@ -5,7 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
     public static GameManager instance;
 
     public static List<Weapon> unlocked = new List<Weapon>();
@@ -25,7 +26,8 @@ public class GameManager : MonoBehaviour {
 
     [ContextMenu("Reset to default")]
 
-    public void StartGame() {
+    public void StartGame()
+    {
         loadout = new List<Weapon>();
         money = 0;
         unlocked = new List<Weapon>();
@@ -37,15 +39,18 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(1);
     }
 
-    private void Awake() {
+    private void Awake()
+    {
         instance = this;
 
-        if (!Application.isEditor) {
+        if (!Application.isEditor)
+        {
             m_debugEnabled = false;
         }
     }
 
-    private void Start() {
+    private void Start()
+    {
         if (!m_debugEnabled) return;
         money = m_dbgMoney;
         loadout.Clear();
@@ -53,24 +58,30 @@ public class GameManager : MonoBehaviour {
         WeaponManager.Instance.weapons = loadout;
     }
 
-    public void Death() {
+    public void Death()
+    {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         waveNum = 0;
     }
 
-    public void MainMenu() {
+    public void MainMenu()
+    {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 
-    public void RestartWave() {
+    public void RestartWave()
+    {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PlayerManager.Instance.setPlayerHP(WaveManager.Instance.endWaveHealth);
         waveNum = WaveManager.Instance.waveNum;
+
     }
 
-    public void NextArena() {
+    public void NextArena()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
