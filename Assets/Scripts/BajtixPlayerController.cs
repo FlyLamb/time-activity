@@ -193,7 +193,14 @@ public class BajtixPlayerController : MonoBehaviour {
     void FixedUpdate() {
         isGrounded = CheckGroundClearence();
         // THE INPUT IS DONE HERE
-        input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        //input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        input = new Vector3(
+            (Input.GetKey(KeyCode.D) ? 1f : 0f)
+            + (Input.GetKey(KeyCode.A) ? -1f : 0f),
+            0,
+            (Input.GetKey(KeyCode.W) ? 1f : 0f)
+            + (Input.GetKey(KeyCode.S) ? -1f : 0f)
+        );
         Motors(input.x, input.z);
         var jump = Input.GetButton("Jump");
 
@@ -312,7 +319,7 @@ public class BajtixPlayerController : MonoBehaviour {
 
     ///<summary>Checks if the vectors are roughly opposite</summary>
     bool IsRoughlyOpposite(Vector3 a, Vector3 b) {
-        return Vector3.Angle(a, b) > 90;
+        return Vector3.Angle(a, b) > 85;
     }
 
     ///<summary>Ignores the Y component of vec3</summary>

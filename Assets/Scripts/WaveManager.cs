@@ -2,13 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using ElRaccoone.Tweens;
 
-public class WaveManager : MonoBehaviour
-{
+public class WaveManager : MonoBehaviour {
 
-    public static WaveManager Instance
-    {
-        get
-        {
+    public static WaveManager Instance {
+        get {
             if (instance == null)
                 instance = GameObject.FindObjectOfType<WaveManager>();
             return instance;
@@ -17,8 +14,7 @@ public class WaveManager : MonoBehaviour
 
     private static WaveManager instance;
 
-    private void Awake()
-    {
+    private void Awake() {
         if (instance != null)
             Destroy(instance);
         instance = this;
@@ -26,8 +22,7 @@ public class WaveManager : MonoBehaviour
 
 
     [System.Serializable]
-    public class Wave
-    {
+    public class Wave {
         public List<GameObject> enemies;
     }
 
@@ -46,81 +41,68 @@ public class WaveManager : MonoBehaviour
     private Billboard[] billboards;
 
     [ContextMenu("add children")]
-    public void Children()
-    {
+    public void Children() {
         spawnPoints = new List<Transform>();
-        for (int i = 0; i < transform.childCount; i++)
-        {
+        for (int i = 0; i < transform.childCount; i++) {
             spawnPoints.Add(transform.GetChild(i));
             transform.GetChild(i).gameObject.name = "" + i;
         }
     }
 
-    public Vector3 GetRandomSpawn()
-    {
+    public Vector3 GetRandomSpawn() {
         int r = Random.Range(0, spawnPoints.Count);
-        while (usedSpawns.Contains(r) && usedSpawns.Count != spawnPoints.Count)
-        {
+        while (usedSpawns.Contains(r) && usedSpawns.Count != spawnPoints.Count) {
             r = Random.Range(0, spawnPoints.Count);
         }
         usedSpawns.Add(r);
         return spawnPoints[r].position;
     }
 
-    public void UnregisterEnemy(GameObject e)
-    {
+    public void UnregisterEnemy(GameObject e) {
         if (enemiesAlive.Contains(e))
             enemiesAlive[enemiesAlive.IndexOf(e)] = null; // the cleanup will deal with it, this way is less likely to cause glitches
     }
 
-    public void RegisterEnemy(GameObject e)
-    {
+    public void RegisterEnemy(GameObject e) {
         if (enemiesAlive.Contains(e)) return;
         enemiesAlive.Add(e);
     }
 
-    private void Start()
-    {
+    private void Start() {
         Display(@"Interact to start.
 Come here, little one", true);
-        foreach (var item in billboards)
-        {
+        foreach (var item in billboards) {
             item.gameObject.AddComponent<Interactable>().onInteractAction += Interact;
         }
 
         waveNum = GameManager.waveNum;
     }
 
-    public void Interact(Interactable i)
-    {
+    public void Interact(Interactable i) {
         if (enemiesAlive.Count <= 0) UIManager.Instance.ShowShopMenu();
     }
 
 
 
     [ContextMenu("Spawn Wave")]
-    public void SpawnWave()
-    {
+    public void SpawnWave() {
         MusicManager.Instance.StartWave();
         usedSpawns.Clear();
         enemiesAlive.Clear();
-        foreach (var item in waves[waveNum].enemies)
-        {
+        foreach (var item in waves[waveNum].enemies) {
             enemiesAlive.Add(Instantiate(item, GetRandomSpawn(), Quaternion.identity));
         }
         UIManager.Instance.AnnounceNewWave(waveNum, enemiesAlive.Count);
     }
 
-    public void ReplayWave()
-    {
+    public void ReplayWave() {
         if (waveNum <= 0) return;
 
         waveNum--;
         SpawnWave();
     }
 
-    private void WaveFinished()
-    {
+    private void WaveFinished() {
         print("Wave finished");
         Display(@"Wave complete. 
 Interact to continue
@@ -131,8 +113,7 @@ Come here, little one", true);
 
         GameManager.money = PlayerManager.Instance.GetMoney();
 
-        if (waveNum >= waves.Count)
-        {
+        if (waveNum >= waves.Count) {
             Display(@"Claim your research.", true);
             UIManager.Instance.Announce("Arena finished!");
             blueprint.SetActive(true);
@@ -143,25 +124,21 @@ Come here, little one", true);
         PlayerManager.Instance.Hit(-25);
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
         if (enemiesAlive.Count > 0)
             CleanupList();
 
     }
 
-    private void CleanupList()
-    {
+    private void CleanupList() {
         enemiesAlive.RemoveAll((w) => w == null);
         Display($"<size=72>Wave {waveNum}</size><br>{enemiesAlive.Count} remaining");
         if (enemiesAlive.Count <= 0) WaveFinished();
 
     }
 
-    private void Display(string txt, bool scr = false)
-    {
-        foreach (var item in billboards)
-        {
+    private void Display(string txt, bool scr = false) {
+        foreach (var item in billboards) {
             item.SetText(txt, scr);
         }
     }

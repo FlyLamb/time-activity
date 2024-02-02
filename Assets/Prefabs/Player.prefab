@@ -513,7 +513,7 @@ MonoBehaviour:
   enableStairs: 1
   normalSteepPoint: 0.4
   rampAdjustForce: 500
-  airControl: 0.25
+  airControl: 0.3
   stepHeight: 0.8
   downPushForce: 15
   normalCheckerHeight: 1.157
