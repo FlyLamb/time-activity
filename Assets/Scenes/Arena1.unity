@@ -600,6 +600,7 @@ MonoBehaviour:
     - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
     - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
     - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
+  endWaveHealth: 0
   billboards:
   - {fileID: 1591076307}
 --- !u!4 &229367978
@@ -1574,7 +1575,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36612
+  m_Name: pb_Mesh63576
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -7880,7 +7881,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36598
+  m_Name: pb_Mesh63562
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -10920,7 +10921,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36578
+  m_Name: pb_Mesh63542
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -11293,6 +11294,10 @@ PrefabInstance:
     - target: {fileID: 7872936050807340889, guid: a0506083b90b9894c913d55fe7112b06, type: 3}
       propertyPath: m_Name
       value: blueprint
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872936050807340889, guid: a0506083b90b9894c913d55fe7112b06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
