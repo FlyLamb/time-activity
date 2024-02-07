@@ -2,16 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
-{
+public class PlayerManager : MonoBehaviour {
 
     private static PlayerManager instance;
-    public static PlayerManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
+    public static PlayerManager Instance {
+        get {
+            if (instance == null) {
                 instance = GameObject.FindObjectOfType<PlayerManager>();
             }
             return instance;
@@ -32,8 +28,7 @@ public class PlayerManager : MonoBehaviour
 
     private int money = 0;
 
-    private void Start()
-    {
+    private void Start() {
         display = GameObject.FindObjectOfType<StatsDisplay>();
         uI = UIManager.Instance;
         money = GameManager.money;
@@ -42,8 +37,7 @@ public class PlayerManager : MonoBehaviour
 
 
 
-    public void Hit(float dmg)
-    {
+    public void Hit(float dmg) {
         health -= dmg;
         if (health <= 0)
             Die();
@@ -53,8 +47,7 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    public void Die()
-    {
+    public void Die() {
         GameManager.waveNum = 0;
         Time.timeScale = 0.1f;
         uI.ShowDeath();
@@ -62,8 +55,7 @@ public class PlayerManager : MonoBehaviour
         MusicManager.Instance.StopWave();
     }
 
-    public void AddMoney(int amount, Vector3 fromPosition)
-    {
+    public void AddMoney(int amount, Vector3 fromPosition) {
         if (fromPosition == Vector3.zero) fromPosition = Vector3.positiveInfinity;
 
         Instantiate(moneyParticle, fromPosition, Quaternion.identity);
@@ -72,21 +64,17 @@ public class PlayerManager : MonoBehaviour
         display.SetMoney(money);
     }
 
-    public void setPlayerHP(float number)
-    {
-        if (number > 0 && number <= maxHealth)
-        {
+    public void setPlayerHP(float number) {
+        if (number > 0 && number <= maxHealth) {
             health = number;
         }
     }
 
-    public int GetMoney()
-    {
+    public int GetMoney() {
         return money;
     }
 
-    public bool CanAfford(int w)
-    {
+    public bool CanAfford(int w) {
         return w <= money;
     }
 
