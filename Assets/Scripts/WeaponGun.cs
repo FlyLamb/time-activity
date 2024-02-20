@@ -49,9 +49,4 @@ public class WeaponGun : Weapon {
         m_cooldown = m_shotCooldown * 3;
         m_reloadedRecently = true;
     }
-
-    public override void WeaponUpdate() {
-        base.WeaponUpdate();
-        m_cooldown -= Time.deltaTime;
-    }
 }
