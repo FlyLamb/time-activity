@@ -2457,6 +2457,7 @@ GameObject:
   - component: {fileID: 5990179703371283729}
   - component: {fileID: 5990179703371283730}
   - component: {fileID: 102494762}
+  - component: {fileID: 5608830357144597194}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2573,6 +2574,19 @@ MonoBehaviour:
   shopDisplay: {fileID: 920387551}
   menu: {fileID: 1314964894}
   shopMenu: {fileID: 225096947}
+--- !u!114 &5608830357144597194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5990179703371283731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053549c5427a5b46d96b9a0beaee1b4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator: {fileID: 1605929317567334965, guid: b6e9913092d23d42794f54335b4429f4, type: 3}
 --- !u!1001 &1038593745
 PrefabInstance:
   m_ObjectHideFlags: 0

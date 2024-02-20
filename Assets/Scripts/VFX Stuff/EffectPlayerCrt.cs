@@ -5,7 +5,7 @@ namespace TimeActivityFx {
     using UnityEngine.Rendering;
     using UnityEngine.Rendering.Universal;
 
-    [Serializable, VolumeComponentMenuForRenderPipeline("Custom/Test", typeof(UniversalRenderPipeline))]
+    [Serializable, VolumeComponentMenuForRenderPipeline("Custom/CRT Effect", typeof(UniversalRenderPipeline))]
     public class EffectPlayerCrt : VolumeComponent, IPostProcessComponent {
         [ShaderName("_Intensity")] public ClampedFloatParameter intensity = new ClampedFloatParameter(value: 0, min: 0, max: 1, overrideState: true);
         [ShaderName("_Curvature")] public FloatParameter curvature = new FloatParameter(value: 4, overrideState: true);

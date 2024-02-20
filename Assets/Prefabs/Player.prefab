@@ -305,7 +305,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 34ffaf29d5713ebd09bf5d2ae9ed6728, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 959d4aa1e0f0b84f5a3d19448d7e06d9, type: 2}
 --- !u!1 &7921605475234374915
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +588,7 @@ MonoBehaviour:
   camera: {fileID: 7921605475707256620}
   moneyParticle: {fileID: 7223936229037270320, guid: fbc79dd9d2c93d506a923ef33fde5ab6, type: 3}
   maxHealth: 100
+  health: 100
 --- !u!114 &994600094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,7 +825,7 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 0
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
