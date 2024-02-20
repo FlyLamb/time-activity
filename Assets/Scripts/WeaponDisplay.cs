@@ -23,7 +23,11 @@ public class WeaponDisplay : MonoBehaviour {
     }
 
     private Sprite GetImage(int index) {
-        if (index >= m_wm.weapons.Count || index < 0) return fallback;
-        return m_wm.weapons[index].icon;
+        index = index % m_wm.weapons.Count;
+        if (index < 0) index = m_wm.weapons.Count + index;
+
+        if (m_wm.weapons[index].icon != null)
+            return m_wm.weapons[index].icon;
+        else return fallback;
     }
 }
