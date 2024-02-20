@@ -33,6 +33,7 @@ public class WeaponManager : MonoBehaviour {
     }
 
     public void Select(int index) {
+        if (m_selected == index && m_selectedWeapon != null) return;
         if (delay > 0) return;
 
         if (m_selectedWeapon != null) {
