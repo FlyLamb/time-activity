@@ -6,6 +6,15 @@
       "source": "builtin",
       "dependencies": {}
     },
+    "com.unity.ai.navigation": {
+      "version": "1.1.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.ai": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.burst": {
       "version": "1.8.11",
       "depth": 1,
@@ -217,7 +226,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "9ae6cc4aa57111ff0ddd1b83e7d690734cbf6a8f"
+      "hash": "3516dc89bd94736792890b66166787785371be51"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
