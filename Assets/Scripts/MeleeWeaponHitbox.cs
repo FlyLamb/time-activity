@@ -1,33 +1,34 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeWeaponHitbox : MonoBehaviour
-{
+public class MeleeWeaponHitbox : MonoBehaviour {
 
-    protected List<Enemy> colliders = new List<Enemy>();
+    [SerializeField] protected List<Enemy> m_enemyColliders = new List<Enemy>();
 
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<Enemy>())
-            colliders.Add(other.GetComponent<Enemy>());
+    private void OnTriggerEnter(Collider other) {
+        var enemy = other.GetComponent<Enemy>();
+        if (enemy != null && !m_enemyColliders.Contains(enemy))
+            m_enemyColliders.Add(enemy);
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.GetComponent<Enemy>())
-            colliders.Remove(other.GetComponent<Enemy>());
+    private void OnTriggerStay(Collider other) {
+        var enemy = other.GetComponent<Enemy>(); //laggy!
+        if (enemy != null && !m_enemyColliders.Contains(enemy))
+            m_enemyColliders.Add(enemy);
     }
 
-    public void Hit(float dmg, DamageType type = DamageType.Normal, float knockback = 1)
-    {
-        colliders.RemoveAll((e) => e == null); // remove destroyed objects from the list
-        foreach (var w in colliders)
-        {
+    private void OnTriggerExit(Collider other) {
+        var enemy = other.GetComponent<Enemy>();
+        if (enemy != null && m_enemyColliders.Contains(enemy))
+            m_enemyColliders.Remove(other.GetComponent<Enemy>());
+    }
+
+    public void Hit(float dmg, Vector3 knockback, DamageType type = DamageType.Normal) {
+        m_enemyColliders.RemoveAll((e) => e == null); // remove destroyed objects from the list
+        foreach (var w in m_enemyColliders) {
             w.Hit(dmg, type);
-            if (w.GetComponent<Rigidbody>()) w.GetComponent<Rigidbody>().AddForce(PlayerManager.Instance.controller.transform.forward * knockback, ForceMode.Impulse);
-            colliders.Remove(w.GetComponent<Enemy>());
+            var rb = w.GetComponent<Rigidbody>();
+            if (rb != null) rb.AddForce(knockback, ForceMode.Impulse);
         }
     }
 }
