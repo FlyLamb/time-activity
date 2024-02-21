@@ -18,7 +18,7 @@ namespace TimeActivityFx {
         [ShaderName("_Artifact_Break_Time")] public FloatParameter artifactBreakTime = new FloatParameter(value: 0.1f, overrideState: true);
         [ShaderName("_Artifact_Profile")] public Vector2Parameter artifactProfile = new Vector2Parameter(value: new Vector2(0, 0.1f), overrideState: true);
 
-        public bool IsActive() => intensity.value > 0;
+        public bool IsActive() => intensity.value > 0 && !GameSettings.accessibleMode;
         public bool IsTileCompatible() => true;
     }
 

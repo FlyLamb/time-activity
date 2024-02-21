@@ -41,6 +41,8 @@ public class WaveManager : MonoBehaviour {
     [SerializeField]
     private Billboard[] billboards;
 
+    public bool IsLastWave => waveNum >= waves.Count - 1;
+
     [ContextMenu("add children")]
     public void Children() {
         spawnPoints = new List<Transform>();
@@ -114,12 +116,11 @@ Come here, little one", true);
 
         GameManager.money = PlayerManager.Instance.GetMoney();
 
-        if (waveNum >= waves.Count) {
-            Display(@"Claim your research.", true);
+        if (IsLastWave) {
+            Display(@"Claim your research
+Find the blueprint", true);
             UIManager.Instance.Announce("Arena finished!");
             blueprint.SetActive(true);
-
-
         }
 
         PlayerManager.Instance.Hit(-25);

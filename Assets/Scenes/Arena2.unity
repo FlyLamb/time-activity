@@ -5392,7 +5392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7872936050807340889, guid: a0506083b90b9894c913d55fe7112b06, type: 3}
       propertyPath: m_Name
-      value: blueprint
+      value: Blueprint
       objectReference: {fileID: 0}
     - target: {fileID: 7872936050807340889, guid: a0506083b90b9894c913d55fe7112b06, type: 3}
       propertyPath: m_IsActive

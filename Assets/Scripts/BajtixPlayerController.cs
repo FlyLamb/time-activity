@@ -259,7 +259,7 @@ public class BajtixPlayerController : MonoBehaviour {
             jumpCooldown = 0.5f;
         } else if (isWalled) {
             JustJump(jumpDirection, wallJumpForce);
-        } else {
+        } else if (GameSettings.allowSlam) {
             JustJump(Vector3.down, slamForce);
             jumpCooldown = 0.5f;
         }

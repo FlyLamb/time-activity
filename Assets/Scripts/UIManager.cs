@@ -34,13 +34,12 @@ public class UIManager : MonoBehaviour {
         }
     }
 
-    public void ShowDeath(string message = "<size=162>b</size>URWA") {
-        death.TweenCanvasGroupAlpha(1, 1.5f).SetUseUnscaledTime(true).SetOnComplete(() => GameManager.instance.Death());
+    public void ShowDeath() {
+        death.TweenCanvasGroupAlpha(1, 1.5f).SetUseUnscaledTime(true);
+        death.TweenDelayedInvoke(2f, () => GameManager.instance.Death()).SetUseUnscaledTime(true);
     }
 
     public void AnnounceNewWave(int waveNum, int enemyCount) {
-
-
         Announce($"<b>Wave {waveNum}</b>");
     }
 
@@ -59,17 +58,23 @@ public class UIManager : MonoBehaviour {
     }
 
     public void RestartWave() {
-        GameManager.instance.RestartWave();
+        Time.timeScale = 1;
+        Fader.Instance.FadeIn(() => {
+            GameManager.instance.RestartWave();
+        });
     }
 
-    public void ReplaytWave() {
+    public void ReplayWave() {
         HideShopMenu();
         WaveManager.Instance.ReplayWave();
     }
 
 
     public void MainMenu() {
-        GameManager.instance.MainMenu();
+        Time.timeScale = 1;
+        Fader.Instance.FadeIn(() => {
+            GameManager.instance.MainMenu();
+        });
     }
 
     public void HideShopMenu() {
@@ -81,6 +86,12 @@ public class UIManager : MonoBehaviour {
     }
 
     public void ShopMenuNewWave() {
+        if (WaveManager.Instance.IsLastWave) {
+            Announce("Claim your research");
+            HideShopMenu();
+            return;
+        }
+
         HideShopMenu();
         // gameObject.TweenDelayedInvoke(3,()=>WaveManager.Instance.SpawnWave());
         WaveManager.Instance.SpawnWave();
@@ -89,9 +100,8 @@ public class UIManager : MonoBehaviour {
     private void Update() {
         Cursor.visible = Cursor.lockState != CursorLockMode.Locked;
 
-        if (Input.GetKeyDown(KeyCode.Escape) && death.alpha < 0.5f) {
+        if (Input.GetKeyDown(KeyCode.Escape) && PlayerManager.Instance.health > 0) {
             Pause();
-
         }
     }
 

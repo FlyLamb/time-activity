@@ -11,7 +11,9 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void StartGame() {
-        GameManager.instance.StartGame();
+        Fader.Instance.FadeIn(() => {
+            GameManager.instance.StartGame();
+        });
     }
 
     public void QuitGame() {

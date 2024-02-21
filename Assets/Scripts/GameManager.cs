@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour {
     [Header("Debug")][SerializeField] private bool m_debugEnabled = false;
     [SerializeField] private List<Weapon> m_debugLoadout;
     [SerializeField] private int m_dbgMoney = 9999;
+    [SerializeField] private int m_dbgWave = 0;
+
+    public static bool IsDebugModeOn => instance.m_debugEnabled;
 
 
 
@@ -51,6 +54,7 @@ public class GameManager : MonoBehaviour {
             money = m_dbgMoney;
             loadout.Clear();
             loadout.AddRange(m_debugLoadout);
+            WaveManager.Instance.waveNum = m_dbgWave;
         }
         WeaponManager.Instance.weapons = loadout;
         WeaponManager.Instance.Select(0);
@@ -58,8 +62,10 @@ public class GameManager : MonoBehaviour {
 
     public void Death() {
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        waveNum = 0;
+        Fader.Instance.FadeIn(() => {
+            waveNum = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        });
     }
 
     public void MainMenu() {

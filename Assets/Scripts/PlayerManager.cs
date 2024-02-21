@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour {
     public BajtixPlayerController controller;
     public new PlayerCamera camera;
     private StatsDisplay display;
-    private UIManager uI;
+    private UIManager ui;
 
 
     [SerializeField]
@@ -30,7 +30,7 @@ public class PlayerManager : MonoBehaviour {
 
     private void Start() {
         display = GameObject.FindObjectOfType<StatsDisplay>();
-        uI = UIManager.Instance;
+        ui = UIManager.Instance;
         money = GameManager.money;
         display.SetMoney(money);
     }
@@ -50,7 +50,7 @@ public class PlayerManager : MonoBehaviour {
     public void Die() {
         GameManager.waveNum = 0;
         Time.timeScale = 0.1f;
-        uI.ShowDeath();
+        ui.ShowDeath();
 
         MusicManager.Instance.StopWave();
     }
