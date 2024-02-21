@@ -66,7 +66,7 @@ public class BajtixPlayerController : MonoBehaviour {
 
     private PhysicMaterial frictionMaterial;
     private Collider feet;
-    public Rigidbody rb;
+    [HideInInspector] public Rigidbody rb;
     private Vector3 feetPosition;
     private float stepCheckY;
     private Vector3 smoothedVelocity;

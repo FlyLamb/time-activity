@@ -1,48 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerCamera : MonoBehaviour {
     public float sensitivity = 10f;
+    public bool invertY;
 
-    [SerializeField]
-    private bool invertY;
+    [FormerlySerializedAs("playerController")][SerializeField] private Rigidbody m_playerController;
+    [SerializeField] private Vector2 m_yRange = new Vector2(-90, 90);
+    [FormerlySerializedAs("fovChangeSpeed")][SerializeField] private float m_fovChangeSpeed = 5;
+    [FormerlySerializedAs("fovKick")][SerializeField] private AnimationCurve m_fovKick;
 
-    [SerializeField]
-    private Rigidbody playerController;
 
-    private Vector2 rotation;
-    [SerializeField]
-    private float minY = -90, maxY = 90, fovChangeSpeed = 5;
-
-    [SerializeField]
-    private AnimationCurve fovKick;
-
-    private new Camera camera;
-
-    private float shakeTime, shakeStr;
-    private Vector3 originalPoint;
+    private Camera m_camera;
+    private Vector2 m_rotation;
+    private float m_shakeTime, m_shakeStr;
+    private Vector3 m_referencePosition;
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
-        camera = GetComponent<Camera>();
-        originalPoint = transform.localPosition;
+        m_camera = GetComponent<Camera>();
+        m_referencePosition = transform.localPosition;
+
+        m_rotation.x = m_playerController.transform.rotation.eulerAngles.y;
     }
 
 
 
     private void Update() {
         if (Cursor.lockState == CursorLockMode.None) return;
-
-
         Vector2 input = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y") * (invertY ? 1 : -1));
 
-        rotation += input * sensitivity;
-        rotation.y = Mathf.Clamp(rotation.y, minY, maxY);
+        m_rotation += input * sensitivity;
+        m_rotation.y = Mathf.Clamp(m_rotation.y, m_yRange.x, m_yRange.y);
 
-        playerController.transform.rotation = Quaternion.Euler(0, rotation.x, 0);
-        transform.localRotation = Quaternion.Euler(rotation.y, 0, 0);
-        camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, fovKick.Evaluate(playerController.velocity.magnitude) * 70, Time.deltaTime * fovChangeSpeed);
+        m_playerController.transform.rotation = Quaternion.Euler(0, m_rotation.x, 0);
+        transform.localRotation = Quaternion.Euler(m_rotation.y, 0, 0);
+        m_camera.fieldOfView = Mathf.Lerp(m_camera.fieldOfView, m_fovKick.Evaluate(m_playerController.velocity.magnitude) * 70, Time.deltaTime * m_fovChangeSpeed);
 
         if (Input.GetKeyDown(KeyCode.E)) {
             RaycastHit hit;
@@ -54,14 +49,14 @@ public class PlayerCamera : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if (shakeTime > 0) {
-            transform.localPosition = originalPoint + new Vector3(Random.Range(-shakeStr, shakeStr), Random.Range(-shakeStr, shakeStr), 0);
-            shakeTime -= Time.fixedDeltaTime;
-        } else transform.localPosition = originalPoint;
+        if (m_shakeTime > 0) {
+            transform.localPosition = m_referencePosition + new Vector3(Random.Range(-m_shakeStr, m_shakeStr), Random.Range(-m_shakeStr, m_shakeStr), 0);
+            m_shakeTime -= Time.fixedDeltaTime;
+        } else transform.localPosition = m_referencePosition;
     }
 
     public void Shake(float strength, float duration) {
-        shakeTime = duration;
-        shakeStr = strength;
+        m_shakeTime = duration;
+        m_shakeStr = strength;
     }
 }
