@@ -20,7 +20,7 @@ public class WeaponSword : Weapon {
         if (!ReadyToUse) return;
         if (m_animator != null)
             m_animator.Play("FireAlt");
-        Manager.PlayAudio(m_fire1);
+        Manager.PlayAudio(m_fire2);
         Attack();
         Manager.PlayerController.rb
             .AddForce(Manager.CameraAim * m_slashDashStrength, ForceMode.Impulse);
