@@ -320,6 +320,7 @@ MonoBehaviour:
   - {fileID: 8184739100865164654, guid: a482e7b32baf304409f2e8391d988461, type: 3}
   - {fileID: 5777148857974166071, guid: ece90a32d1da640489820a5fccf92a6a, type: 3}
   m_dbgMoney: 32767
+  m_dbgWave: 0
 --- !u!114 &57040103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4840,7 +4841,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh68654
+  m_Name: pb_Mesh314686
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
