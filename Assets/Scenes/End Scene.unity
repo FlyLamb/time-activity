@@ -244,6 +244,7 @@ MonoBehaviour:
   m_debugEnabled: 0
   m_debugLoadout: []
   m_dbgMoney: 32767
+  m_dbgWave: 0
 --- !u!114 &57040103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79555bf8b798d0545b67153f89412b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_gameTitlePanel: {fileID: 0}
+  m_settingsPanel: {fileID: 0}
 --- !u!1001 &131495549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1410,7 +1413,7 @@ MonoBehaviour:
 
     Created by flylamb dev.
 
-    Code: bajtix
+    Code: bajtix, WalkanFL
 
     Models:
     Walkanfl, bajtix</size>
@@ -1538,6 +1541,7 @@ GameObject:
   - component: {fileID: 503057265}
   - component: {fileID: 503057268}
   - component: {fileID: 503057269}
+  - component: {fileID: 503057270}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1684,6 +1688,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &503057270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503057264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 959d4aa1e0f0b84f5a3d19448d7e06d9, type: 2}
 --- !u!1001 &503572620
 PrefabInstance:
   m_ObjectHideFlags: 0
