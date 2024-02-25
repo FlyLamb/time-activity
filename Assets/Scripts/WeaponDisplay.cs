@@ -50,6 +50,11 @@ public class WeaponDisplay : MonoBehaviour {
     }
 
     private Sprite GetImage(int index) {
+        if (Manager.weapons.Count == 1 && index != 0) {
+            return m_fallback;
+        }
+
+
         index = index % Manager.weapons.Count;
         if (index < 0) index = Manager.weapons.Count + index;
 
