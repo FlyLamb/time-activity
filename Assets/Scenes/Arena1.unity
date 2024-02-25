@@ -1247,6 +1247,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
+      propertyPath: m_dbgMoney
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
       propertyPath: m_debugEnabled
       value: 0
       objectReference: {fileID: 0}

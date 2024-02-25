@@ -45,7 +45,7 @@ public class WeaponManager : MonoBehaviour {
             m_selected = index;
         }
 
-        if (m_selected == previous_selected && m_selectedWeapon != null && m_selectedWeapon.gameObject.name != weapons[m_selected].gameObject.name) return; // god is dead :)
+        if (m_selected == previous_selected && m_selectedWeapon != null && m_selectedWeapon.weaponName == weapons[m_selected].weaponName) return; // god is dead :)
 
         if (m_selectedWeapon != null) {
             m_selectedWeapon.Hide();
