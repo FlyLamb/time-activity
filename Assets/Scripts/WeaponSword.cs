@@ -10,8 +10,9 @@ public class WeaponSword : Weapon {
 
     public override void Fire1() {
         if (!ReadyToUse) return;
-        if (m_animator != null)
-            m_animator.Play("Fire1");
+        if (m_animator != null) {
+            m_animator.Play("Fire" + Random.Range(1, 3));
+        }
         Manager.PlayAudio(m_fire1);
         Attack();
     }
