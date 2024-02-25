@@ -83,6 +83,8 @@ public class UIManager : MonoBehaviour {
         shopMenu.TweenCanvasGroupAlpha(0, 0.2f).SetUseUnscaledTime(true).SetOnComplete(() => {
             shopMenu.gameObject.SetActive(false);
         });
+
+        WeaponManager.Instance.Select(WeaponManager.Instance.SelectedWeapon);
     }
 
     public void ShopMenuNewWave() {
