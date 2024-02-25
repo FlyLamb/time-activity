@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -7,14 +8,21 @@ public class WeaponSword : Weapon {
     [SerializeField][FormerlySerializedAs("attackInterval")] private float m_attackCooldown;
     [SerializeField] private float m_knockback = 1;
     [SerializeField][FormerlySerializedAs("pushForce")] private float m_slashDashStrength = 3;
-
+    int fireNum = 1;
     public override void Fire1() {
         if (!ReadyToUse) return;
         if (m_animator != null) {
-            m_animator.Play("Fire" + Random.Range(1, 3));
+
+            m_animator.Play("Fire" + fireNum);
         }
         Manager.PlayAudio(m_fire1);
         Attack();
+        if (fireNum == 1) {
+            fireNum = 2;
+            return;
+        }
+
+        if (fireNum == 2) fireNum = 1;
     }
 
     public override void Fire2() {
