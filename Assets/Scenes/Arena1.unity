@@ -663,7 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e53b64cb563eb170abf092d9b86741e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveNum: 3
+  waveNum: 0
   spawnPoints:
   - {fileID: 1810161752}
   - {fileID: 95605043}
@@ -713,6 +713,8 @@ MonoBehaviour:
     - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
     - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
     - {fileID: 2917332263047546948, guid: c39905930a90abd4c9d7098ae21aa2f4, type: 3}
+  - enemies:
+    - {fileID: 7609508577875035238, guid: 0cceaeb5dc492863098b96bebac982b2, type: 3}
   endWaveHealth: 0
   billboards:
   - {fileID: 1591076307}

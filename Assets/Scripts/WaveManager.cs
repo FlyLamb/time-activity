@@ -41,7 +41,7 @@ public class WaveManager : MonoBehaviour {
     [SerializeField]
     private Billboard[] billboards;
 
-    public bool IsLastWave => waveNum >= waves.Count - 1;
+    public bool IsLastWave => waveNum >= waves.Count;
 
     [ContextMenu("add children")]
     public void Children() {
