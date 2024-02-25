@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour {
         }
         WeaponManager.Instance.weapons = loadout;
         WeaponManager.Instance.Select(0);
+
+        WeaponDisplay.Instance.ShowAnimationTo(0, 0.1f);
     }
 
     public void Death() {

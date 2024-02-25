@@ -1,20 +1,30 @@
 using UnityEngine.UI;
 using UnityEngine;
 using ElRaccoone.Tweens;
+using UnityEngine.Serialization;
 
 public class WeaponDisplay : MonoBehaviour {
-    [SerializeField] private Image weapon1, weapon2, weapon3;
-    [SerializeField] private Sprite fallback;
-    private WeaponManager m_wm;
+
+    public static WeaponDisplay Instance => GameObject.FindObjectOfType<WeaponDisplay>();
+
+    [SerializeField][FormerlySerializedAs("weapon1")] private Image m_weapon1;
+    [SerializeField][FormerlySerializedAs("weapon2")] private Image m_weapon2;
+    [SerializeField][FormerlySerializedAs("weapon3")] private Image m_weapon3;
+
+    [SerializeField][FormerlySerializedAs("fallback")] private Sprite m_fallback;
+
+    private float m_defaultOffset = 0;
+    private WeaponManager Manager => WeaponManager.Instance;
+
 
     private void Start() {
-        m_wm = GameObject.FindObjectOfType<WeaponManager>();
+        m_defaultOffset = m_weapon1.rectTransform.anchoredPosition.y - m_weapon2.rectTransform.anchoredPosition.y;
     }
 
-    public void Update() {
-        weapon1.sprite = GetImage(m_wm.SelectedWeapon - 1);
-        weapon2.sprite = GetImage(m_wm.SelectedWeapon);
-        weapon3.sprite = GetImage(m_wm.SelectedWeapon + 1);
+    public void UpdateIcons() {
+        m_weapon1.sprite = GetImage(Manager.SelectedWeapon - 1);
+        m_weapon2.sprite = GetImage(Manager.SelectedWeapon);
+        m_weapon3.sprite = GetImage(Manager.SelectedWeapon + 1);
     }
 
     public void ShowAnimation() {
@@ -22,12 +32,29 @@ public class WeaponDisplay : MonoBehaviour {
         gameObject.TweenAnchoredPositionX(-75, 0.1f).SetOnComplete(() => gameObject.TweenAnchoredPositionX(75, 0.2f).SetDelay(2f));
     }
 
-    private Sprite GetImage(int index) {
-        index = index % m_wm.weapons.Count;
-        if (index < 0) index = m_wm.weapons.Count + index;
+    public void ShowAnimationTo(float yOffset, float dur) {
+        AnimateElement(m_weapon1, yOffset, m_defaultOffset, dur, GetImage(Manager.SelectedWeapon - 1));
+        AnimateElement(m_weapon2, yOffset, 0, dur, GetImage(Manager.SelectedWeapon));
+        AnimateElement(m_weapon3, yOffset, -m_defaultOffset, dur, GetImage(Manager.SelectedWeapon + 1));
+    }
 
-        if (m_wm.weapons[index].icon != null)
-            return m_wm.weapons[index].icon;
-        else return fallback;
+    private void AnimateElement(Image element, float yOffset, float defaultPosition, float duration, Sprite change) {
+        element.TweenCancelAll();
+        element.TweenAnchoredPositionY(defaultPosition + yOffset, duration).SetOnComplete(() => {
+            element.rectTransform.anchoredPosition = new Vector2(
+                element.rectTransform.anchoredPosition.x,
+                defaultPosition
+            );
+            element.sprite = change;
+        });
+    }
+
+    private Sprite GetImage(int index) {
+        index = index % Manager.weapons.Count;
+        if (index < 0) index = Manager.weapons.Count + index;
+
+        if (Manager.weapons[index].icon != null)
+            return Manager.weapons[index].icon;
+        else return m_fallback;
     }
 }

@@ -84,6 +84,7 @@ public class UIManager : MonoBehaviour {
             shopMenu.gameObject.SetActive(false);
         });
 
+        GameObject.FindObjectOfType<WeaponDisplay>().ShowAnimationTo(0, 0.1f);
         WeaponManager.Instance.Select(WeaponManager.Instance.SelectedWeapon);
     }
 

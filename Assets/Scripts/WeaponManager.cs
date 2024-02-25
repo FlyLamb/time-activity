@@ -29,7 +29,8 @@ public class WeaponManager : MonoBehaviour {
         if (GameManager.loadout != null) {
             weapons = GameManager.loadout;
         }
-        Select(0);
+        if (weapons.Count > 0)
+            Select(0);
     }
 
     public void Select(int index) {
@@ -52,7 +53,7 @@ public class WeaponManager : MonoBehaviour {
         }
         m_selectedWeapon = Instantiate(weapons[m_selected].gameObject, transform).GetComponent<Weapon>();
         m_selectedWeapon.Show();
-        GameObject.FindObjectOfType<WeaponDisplay>().ShowAnimation();
+        WeaponDisplay.Instance.ShowAnimation();
         delay = 0.2f;
         if (!GameManager.unlocked.Contains(weapons[m_selected])) {
             GameManager.unlocked.Add(weapons[m_selected]);
@@ -77,9 +78,14 @@ public class WeaponManager : MonoBehaviour {
         if (switchWheelProgress > 0.02f) {
             Select(m_selected + 1);
             switchWheelProgress = 0;
+            if (weapons.Count != 1)
+                WeaponDisplay.Instance.ShowAnimationTo(-150, 0.1f);
+
         } else if (switchWheelProgress < -0.02f) {
             Select(m_selected - 1);
             switchWheelProgress = 0;
+            if (weapons.Count != 1)
+                WeaponDisplay.Instance.ShowAnimationTo(150, 0.1f);
         }
 
         if (m_selectedWeapon != null) {
