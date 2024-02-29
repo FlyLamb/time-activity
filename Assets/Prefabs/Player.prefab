@@ -519,7 +519,7 @@ MonoBehaviour:
   normalCheckerHeight: 1.157
   stairLookahead: 16
   minWallJumpAngle: 80
-  wallJumpForce: 1000
+  wallJumpForce: 200
   angleFriction:
     serializedVersion: 2
     m_Curve:
