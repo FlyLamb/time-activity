@@ -7707,6 +7707,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483639
       objectReference: {fileID: 0}
+    - target: {fileID: 3075009622294666660, guid: 00b206ffb4cf44dc2ae566e6e5fb981e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a5c16c704003e9451b6fdbc4f4083cc6, type: 2}
     - target: {fileID: 3579337533095918705, guid: 00b206ffb4cf44dc2ae566e6e5fb981e, type: 3}
       propertyPath: m_Name
       value: Billboard (2)
@@ -7774,6 +7778,10 @@ PrefabInstance:
     - target: {fileID: 4426252643798010630, guid: 00b206ffb4cf44dc2ae566e6e5fb981e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483639
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426252644904725262, guid: 00b206ffb4cf44dc2ae566e6e5fb981e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4426252644904725262, guid: 00b206ffb4cf44dc2ae566e6e5fb981e, type: 3}
       propertyPath: m_StaticEditorFlags
