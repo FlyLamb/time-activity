@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour {
             money = m_dbgMoney;
             loadout.Clear();
             loadout.AddRange(m_debugLoadout);
+            waveNum = m_dbgWave;
             WaveManager.Instance.waveNum = m_dbgWave;
         }
         WeaponManager.Instance.weapons = loadout;
