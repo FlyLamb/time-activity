@@ -74,7 +74,7 @@ public class EnemyWalkingPathfinder : Enemy {
 
         bdir.y = 0;
         bdir.Normalize();
-        transform.rotation = Quaternion.LookRotation(bdir, Vector3.up);
+        enemyController.rb.rotation = Quaternion.LookRotation(bdir, Vector3.up);
         if (!nearTarget)
             enemyController.SetInput(bdir);
         else

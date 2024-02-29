@@ -55,7 +55,7 @@ public class EnemyGliderCat : EnemyFlyingPathfinder
         {
             target.position = DumbPathing.instance.GetRandomPoint() + Vector3.down * upwardModifier;
         }
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), Time.fixedDeltaTime);
+        rigidbody.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), Time.fixedDeltaTime);
 
         rigidbody.MovePosition(rigidbody.position + transform.forward * speed * Time.fixedDeltaTime);
     }

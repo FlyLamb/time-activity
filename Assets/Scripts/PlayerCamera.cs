@@ -35,7 +35,8 @@ public class PlayerCamera : MonoBehaviour {
         m_rotation += input * sensitivity;
         m_rotation.y = Mathf.Clamp(m_rotation.y, m_yRange.x, m_yRange.y);
 
-        m_playerController.transform.rotation = Quaternion.Euler(0, m_rotation.x, 0);
+        //m_playerController.transform.rotation = Quaternion.Euler(0, m_rotation.x, 0);
+        m_playerController.rotation = Quaternion.Euler(0, m_rotation.x, 0);
         transform.localRotation = Quaternion.Euler(m_rotation.y, 0, 0);
         m_camera.fieldOfView = Mathf.Lerp(m_camera.fieldOfView, m_fovKick.Evaluate(m_playerController.velocity.magnitude) * 70, Time.deltaTime * m_fovChangeSpeed);
 

@@ -63,6 +63,10 @@ public class GameManager : MonoBehaviour {
         WeaponDisplay.Instance.ShowAnimationTo(0, 0.1f);
     }
 
+    // private void Update() {
+    //     Physics.SyncTransforms(); DOES NOT RESOLVE THE ISSUE... 
+    // }
+
     public void Death() {
         Time.timeScale = 1;
         Fader.Instance.FadeIn(() => {
