@@ -41,8 +41,17 @@ public class EnemyWalkingPathfinder : Enemy {
         if (elapsed > 1.0f && enemyController.isGrounded) {
             elapsed -= 1.0f;
             NavMesh.CalculatePath(transform.position, target.position, NavMesh.AllAreas, path);
-            enemyController.SetJump(path.status == NavMeshPathStatus.PathInvalid);
-            enemyController.rb.AddForce(transform.forward * 5); // get unstack
+
+            // NavMeshHit hit;
+            // NavMesh.SamplePosition(transform.position, out hit, 10000, NavMesh.AllAreas);
+
+
+            if (path.status == NavMeshPathStatus.PathInvalid) {
+                enemyController.SetJump(true);
+                enemyController.rb.AddForce(transform.forward * 10);
+            } else {
+                enemyController.SetJump(false);
+            }
 
             cp = 0;
             if (cp < path.corners.Length) {
@@ -54,7 +63,7 @@ public class EnemyWalkingPathfinder : Enemy {
 
         }
         for (int i = 0; i < path.corners.Length - 1; i++)
-            Debug.DrawLine(path.corners[i], path.corners[i + 1], Color.red);
+            Debug.DrawLine(path.corners[i], path.corners[i + 1], Color.red, 10f);
 
         var wy = nextPoint;
         wy.y = 0;
