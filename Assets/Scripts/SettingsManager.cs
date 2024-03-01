@@ -6,22 +6,33 @@ public static class GameSettings {
     public static float volume = 1;
     public static bool allowSlam = true;
     public static bool accessibleMode = false;
+    public static bool fullscreen = false;
 }
 
 public class SettingsManager : MonoBehaviour {
     [SerializeField] private Slider m_setVolume;
     [SerializeField] private Toggle m_setAllowSlam;
     [SerializeField] private Toggle m_setAccessibleMode;
+    [SerializeField] private Toggle m_setFullscreen;
 
     private void OnEnable() {
         m_setVolume.value = GameSettings.volume;
         m_setAllowSlam.isOn = GameSettings.allowSlam;
         m_setAccessibleMode.isOn = GameSettings.accessibleMode;
+        m_setFullscreen.isOn = GameSettings.fullscreen;
 
 
         m_setVolume.onValueChanged.AddListener(f => GameSettings.volume = f);
         m_setAllowSlam.onValueChanged.AddListener(f => GameSettings.allowSlam = f);
         m_setAccessibleMode.onValueChanged.AddListener(f => GameSettings.accessibleMode = f);
+        m_setFullscreen.onValueChanged.AddListener(f => {
+            ChangeFullscreen(f);
+            GameSettings.fullscreen = f;
+        });
+    }
+
+    private void ChangeFullscreen(bool b) {
+        Screen.fullScreen = b;
     }
 
     private void Update() {
@@ -32,6 +43,7 @@ public class SettingsManager : MonoBehaviour {
         m_setVolume.onValueChanged.RemoveAllListeners();
         m_setAllowSlam.onValueChanged.RemoveAllListeners();
         m_setAccessibleMode.onValueChanged.RemoveAllListeners();
+        m_setFullscreen.onValueChanged.RemoveAllListeners();
     }
 
 
