@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 947944494}
-  m_IndirectSpecularColor: {r: 0.043674428, g: 0.044857424, b: 0.059592403, a: 1}
+  m_IndirectSpecularColor: {r: 0.04365709, g: 0.044818856, b: 0.05955075, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2016,10 +2016,6 @@ PrefabInstance:
     - target: {fileID: 7921605475269877122, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7921605475269877126, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
-      propertyPath: wallJumpForce
-      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 7921605475269877127, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
       propertyPath: m_Name
@@ -8924,7 +8920,7 @@ Light:
   m_BounceIntensity: 2
   m_ColorTemperature: 2954
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 4.6e-44, y: 2.0602e-41, z: 1.02e-43, w: 1.8149658e+11}
+  m_BoundingSphereOverride: {x: 8.480153e-33, y: 1.3563156e-19, z: 223.12569, w: -1.0454108e-26}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -45177,7 +45173,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4587302668392987624, guid: b4d16fef2088100d9bcc3351d0e0d710, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4587302668392987624, guid: b4d16fef2088100d9bcc3351d0e0d710, type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce0cfb04eb02ff2a8a54e121415ee252, type: 2}
+    - target: {fileID: -4587302668392987624, guid: b4d16fef2088100d9bcc3351d0e0d710, type: 3}
+      propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: ce0cfb04eb02ff2a8a54e121415ee252, type: 2}
     - target: {fileID: -2571118854743697038, guid: b4d16fef2088100d9bcc3351d0e0d710, type: 3}

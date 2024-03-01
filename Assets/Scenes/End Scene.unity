@@ -1402,28 +1402,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'THANKS FOR PLAYING
+  m_text: '<size=30>THANKS FOR PLAYING</size>
 
     <size=120>TIME ACTIVITY</size>
 
     PARANAUTICAL
     SLICER
 
-    <size=40>
+    <size=30>
 
-    Created by flylamb dev.
+    <b>Created by flylamb dev.</b>
 
-    Code: bajtix, WalkanFL
+    Code: bajtix,
+    WalkanFL
 
-    Models:
-    Walkanfl, bajtix</size>
+    Models: Walkanfl, bajtix
 
-    <size=20> Cursed models: REAFIKI</size>
+    Music: AZMO/BEENUT BUTTER
 
-    <size=40>MUSIC:
-    AZMO/BEENUT BUTTER
-
-'
+    </size>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f981a8791b3d874a1a1936d43e3fb435, type: 2}
   m_sharedMaterial: {fileID: 4770021149689609640, guid: f981a8791b3d874a1a1936d43e3fb435, type: 2}
@@ -1617,7 +1614,7 @@ Transform:
   m_GameObject: {fileID: 503057264}
   serializedVersion: 2
   m_LocalRotation: {x: 0.008530385, y: 0.92885494, z: -0.0053552664, w: 0.37030682}
-  m_LocalPosition: {x: 1.84, y: 1.53, z: -11.086}
+  m_LocalPosition: {x: 2.12, y: 0.23, z: -12.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1677,7 +1674,7 @@ Animator:
   m_GameObject: {fileID: 503057264}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c4ca59cd06d0f0347b90ad8da7432fa9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 821e4142b7a63b964ae6aef0302e8a3d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -2244,7 +2241,7 @@ LightingSettings:
   m_AlbedoBoost: 1
   m_IndirectOutputScale: 1
   m_UsingShadowmask: 1
-  m_BakeBackend: 1
+  m_BakeBackend: 2
   m_LightmapMaxSize: 1024
   m_BakeResolution: 40
   m_Padding: 2
