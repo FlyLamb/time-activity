@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 7641887457903098265}
   - component: {fileID: 5777148857974166071}
   m_Layer: 0
-  m_Name: Special 2
+  m_Name: Rocket Launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Rocket Bam Bam
   weaponDescription: remember to reload!
-  icon: {fileID: 21300000, guid: c12fe8bffbe3f084c98bc2fdccb04391, type: 3}
+  icon: {fileID: 21300000, guid: 216ea8965078f9f44950548c6a1e4712, type: 3}
   m_fire1: {fileID: 0}
   m_fire2: {fileID: 0}
   m_animator: {fileID: 3152839070541596494}

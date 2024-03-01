@@ -320,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayItem: {fileID: 8206472094768657065, guid: 49c5c383800ee2301926d9024f278aa0, type: 3}
   offset: 122
+  startOffset: -80
 --- !u!1 &529027700
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +360,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 204.173, y: 55.634033}
+  m_AnchoredPosition: {x: 204.17303, y: 55.634033}
   m_SizeDelta: {x: 408.326, y: 111.269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &529027703
@@ -785,7 +786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000065249165, y: 30.319824}
+  m_AnchoredPosition: {x: 0.000065249165, y: 30.32013}
   m_SizeDelta: {x: 1000, y: 79.094}
   m_Pivot: {x: 0.5, y: 0.38333628}
 --- !u!222 &778351835
@@ -1208,8 +1209,8 @@ MonoBehaviour:
       price: 3000
     - weapon: {fileID: 5777148857974166071, guid: ece90a32d1da640489820a5fccf92a6a, type: 3}
       price: 3000
-  spacing: 110
-  startPos: {x: -300, y: 250, z: 0}
+  spacing: 150
+  startPos: {x: -225, y: 250, z: 0}
   treeElement: {fileID: 4332137363189962651, guid: 82ad6943ec3e2ec06837eaa1fbe29c6d, type: 3}
 --- !u!1 &927471717
 GameObject:
@@ -5047,7 +5048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2323437212233066098, guid: 9d9efd1c1479009cd803a7b2746020c7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 2323437212233066098, guid: 9d9efd1c1479009cd803a7b2746020c7, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5174,7 +5175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2323437212233066098, guid: 9d9efd1c1479009cd803a7b2746020c7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 2323437212233066098, guid: 9d9efd1c1479009cd803a7b2746020c7, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6015,7 +6016,7 @@ PrefabInstance:
       objectReference: {fileID: 102494762}
     - target: {fileID: 215590917313309507, guid: 9d9efd1c1479009cd803a7b2746020c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartWave
+      value: ReplaytWave
       objectReference: {fileID: 0}
     - target: {fileID: 2323437212233066098, guid: 9d9efd1c1479009cd803a7b2746020c7, type: 3}
       propertyPath: m_Pivot.x

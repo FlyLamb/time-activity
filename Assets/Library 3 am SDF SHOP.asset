@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Library 3 am SDF
+  m_Name: Library 3 am SDF SHOP
   m_EditorClassIdentifier: 
-  hashCode: -2129460399
+  hashCode: -554736491
   material: {fileID: 4770021149689609640}
-  materialHashCode: -504143151
+  materialHashCode: -1691017963
   m_Version: 1.1.0
   m_SourceFontFileGUID: 04ac06a1eac6246c0af8c089bce7ce04
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 04ac06a1eac6246c0af8c089bce7ce04, type: 3}
@@ -2751,7 +2751,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.453
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333
@@ -2783,7 +2783,7 @@ Material:
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

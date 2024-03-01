@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: AR1
   weaponDescription: 'haha skrrrt bangbangbang. rapid. '
-  icon: {fileID: 21300000, guid: cf9e6a125dfd4b7c0b68083ce9286ffe, type: 3}
+  icon: {fileID: 21300000, guid: 4442c89d96c2ce14c84b085477cb314f, type: 3}
   m_fire1: {fileID: 8300000, guid: f3e42fb1cef895b48b19d6c48e38485a, type: 3}
   m_fire2: {fileID: 8300000, guid: c30b8a0d297fd2c44a5b2b04d8f06c84, type: 3}
   m_animator: {fileID: 8267099367588233475}

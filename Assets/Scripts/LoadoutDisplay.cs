@@ -7,6 +7,7 @@ public class LoadoutDisplay : MonoBehaviour {
     public GameObject displayItem;
 
     public float offset = 160;
+    public float startOffset = -70;
 
     private List<GameObject> existing = new List<GameObject>();
 
@@ -16,13 +17,13 @@ public class LoadoutDisplay : MonoBehaviour {
 
     public void Refresh() {
         List<Weapon> weapons = WeaponManager.Instance.weapons;
-        if(existing != null) foreach (var item in existing) {
-            Destroy(item);
-        }
+        if (existing != null) foreach (var item in existing) {
+                Destroy(item);
+            }
         existing.Clear();
-        for(int i = 0; i < weapons.Count; i++) {
+        for (int i = 0; i < weapons.Count; i++) {
             var a = Instantiate(displayItem, Vector3.forward, Quaternion.identity, transform);
-            a.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,-(i+0.5f) * offset);
+            a.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -i * offset + startOffset);
             a.GetComponent<LoadoutDisplayElement>().Load(weapons[i]);
             existing.Add(a);
         }
@@ -30,7 +31,7 @@ public class LoadoutDisplay : MonoBehaviour {
         WeaponManager.Instance.Select(0);
     }
 
-    
 
-    
+
+
 }

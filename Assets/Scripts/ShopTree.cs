@@ -11,10 +11,10 @@ public class ShopTree : MonoBehaviour {
         public int price;
     }
 
-[Serializable]
+    [Serializable]
     public class Column {
         public Sprite icon;
-        public List<Item> weapons; 
+        public List<Item> weapons;
     }
 
     public List<Column> tree;
@@ -31,22 +31,21 @@ public class ShopTree : MonoBehaviour {
     }
 
     public void Refresh() {
-        foreach (var item in existing)
-        {
+        foreach (var item in existing) {
             Destroy(item);
         }
         existing.Clear();
 
 
-        for(int i = 0; i < tree.Count; i++) {
+        for (int i = 0; i < tree.Count; i++) {
             var a = Instantiate(treeElement, Vector3.zero, Quaternion.identity, transform);
-            a.GetComponent<ShopTreeElement>().SetIcon(tree[i].icon);
+            a.GetComponent<ShopTreeElement>().SetCategory(tree[i].icon);
             a.GetComponent<RectTransform>().localPosition = new Vector3(i * spacing, 0) + startPos;
             existing.Add(a);
-            for(int j = 0; j < tree[i].weapons.Count; j++) {
+            for (int j = 0; j < tree[i].weapons.Count; j++) {
                 var w = Instantiate(treeElement, Vector3.zero, Quaternion.identity, transform);
-                w.GetComponent<RectTransform>().localPosition = new Vector3(i * spacing, (-j-1)*spacing) + startPos;
-                w.GetComponent<ShopTreeElement>().Set(tree[i].weapons[j].price, tree[i].weapons[j].weapon);
+                w.GetComponent<RectTransform>().localPosition = new Vector3(i * spacing, (-j - 1) * spacing) + startPos;
+                w.GetComponent<ShopTreeElement>().SetWeapon(tree[i].weapons[j].price, tree[i].weapons[j].weapon);
                 existing.Add(w);
             }
         }

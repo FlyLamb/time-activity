@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 7641887457903098265}
   - component: {fileID: 8184739100865164654}
   m_Layer: 0
-  m_Name: Special 1
+  m_Name: Nader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Nader 6000
   weaponDescription: klong bau hpf boing *KABOOM*
-  icon: {fileID: 21300000, guid: bc438847c2972ce49a10d3baf8d7c912, type: 3}
+  icon: {fileID: 21300000, guid: 8b74388752b1247488173ed1e422143e, type: 3}
   m_fire1: {fileID: 0}
   m_fire2: {fileID: 0}
   m_animator: {fileID: 3648017121955268697}

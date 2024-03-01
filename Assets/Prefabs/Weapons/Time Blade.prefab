@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Time Blade
   weaponDescription: wooo time slicer reference woooo
-  icon: {fileID: 21300000, guid: 6760cf8f2e19f0981b4fed76cd041f10, type: 3}
+  icon: {fileID: 21300000, guid: ad46613ad2351504e8f871939f4fe8b3, type: 3}
   m_fire1: {fileID: 8300000, guid: ffcd9249588feb9498b57ca46485256f, type: 3}
   m_fire2: {fileID: 8300000, guid: de71f96a8ad1c7d49a8cc675d9bf45d7, type: 3}
   m_animator: {fileID: 3786491378914237434}
