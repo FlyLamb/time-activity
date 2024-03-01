@@ -113,7 +113,7 @@ MonoBehaviour:
   weaponDescription: klong bau hpf boing *KABOOM*
   icon: {fileID: 21300000, guid: 8b74388752b1247488173ed1e422143e, type: 3}
   m_fire1: {fileID: 0}
-  m_fire2: {fileID: 0}
+  m_fire2: {fileID: 8300000, guid: c30b8a0d297fd2c44a5b2b04d8f06c84, type: 3}
   m_animator: {fileID: 3648017121955268697}
   m_shootPoint: {fileID: 2965350738395757246}
   m_bullet: {fileID: 3144872771805313596, guid: 9f66b6338fb939043be6fe51007cb256, type: 3}

@@ -37,9 +37,9 @@ public class WeaponGun : Weapon {
         if (Physics.Raycast(Manager.CameraPosition, Manager.CameraAim, out aimTarget, 1000, m_aimMask, QueryTriggerInteraction.Ignore)) {
             dir = aimTarget.point - m_shootPoint.position;
             dir.Normalize();
-            dir += new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * m_shotSpread * 0.05f;
             Debug.DrawLine(transform.position, aimTarget.point, Color.red, 1);
         }
+        dir += new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * m_shotSpread * 0.05f;
         bullet.Shoot(dir, m_bulletForce, m_bulletDamage);
     }
 
