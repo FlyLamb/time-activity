@@ -1973,6 +1973,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
+      propertyPath: m_debugEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
+      propertyPath: m_debugLoadout.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
+      propertyPath: m_debugLoadout.Array.data[0]
+      value: 
+      objectReference: {fileID: 5777148857974166071, guid: ece90a32d1da640489820a5fccf92a6a, type: 3}
     - target: {fileID: 3837870309669286298, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
       propertyPath: weight
       value: 1
@@ -39727,7 +39739,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.29999998
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 8a5b41185b369bbe095419b9fad775be, type: 2}
   m_BuildHeightMesh: 0
@@ -44699,6 +44711,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 778351833, guid: 53d87d523a476eef8914967d3a864758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 30.32019
+      objectReference: {fileID: 0}
     - target: {fileID: 2323437212339787727, guid: 53d87d523a476eef8914967d3a864758, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0

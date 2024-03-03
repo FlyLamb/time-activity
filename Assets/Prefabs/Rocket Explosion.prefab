@@ -9867,9 +9867,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad77e0e1002f1811bb6ff5e549a3119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 1000
+  force: 5000
   radius: 4
-  damage: 5
+  damage: 15
   explodeOnPlay: 1
 --- !u!1 &5025963822089050082
 GameObject:

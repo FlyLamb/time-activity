@@ -6395,7 +6395,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.29999998
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 3f84d3adbf8c2a34cb8a3c8ba8f09ed7, type: 2}
   m_BuildHeightMesh: 0
@@ -26684,7 +26684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
       propertyPath: m_debugLoadout.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
       propertyPath: m_debugLoadout.Array.data[0]
@@ -26693,7 +26693,7 @@ PrefabInstance:
     - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
       propertyPath: m_debugLoadout.Array.data[1]
       value: 
-      objectReference: {fileID: 8184739100865164654, guid: a482e7b32baf304409f2e8391d988461, type: 3}
+      objectReference: {fileID: 1879108789588423461, guid: 615d08eaae98a67db94212c29439bb4e, type: 3}
     - target: {fileID: 994600094, guid: 1d8fc8133ef428244ab8c906209a56d3, type: 3}
       propertyPath: m_debugLoadout.Array.data[2]
       value: 

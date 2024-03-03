@@ -38,7 +38,7 @@ public class EnemyWalkingPathfinder : Enemy {
     protected void Navigation() {
         // Update the way to the goal every second.
         elapsed += Time.deltaTime;
-        if (elapsed > 1.0f && enemyController.isGrounded) {
+        if (elapsed > 1.0f) {
             elapsed -= 1.0f;
             NavMesh.CalculatePath(transform.position, target.position, NavMesh.AllAreas, path);
 
@@ -62,8 +62,10 @@ public class EnemyWalkingPathfinder : Enemy {
             }
 
         }
-        for (int i = 0; i < path.corners.Length - 1; i++)
-            Debug.DrawLine(path.corners[i], path.corners[i + 1], Color.red, 10f);
+
+
+
+
 
         var wy = nextPoint;
         wy.y = 0;
@@ -88,6 +90,12 @@ public class EnemyWalkingPathfinder : Enemy {
             enemyController.SetInput(bdir);
         else
             enemyController.SetInput(Vector2.zero);
+    }
+
+    private void OnDrawGizmosSelected() {
+        for (int i = 0; i < path.corners.Length - 1; i++)
+            Gizmos.DrawLine(path.corners[i], path.corners[i + 1]);
+
     }
 
 
